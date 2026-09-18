@@ -176,45 +176,62 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden xl:flex items-center gap-5 lg:gap-7" aria-label="Навигация по сайту">
+      <nav class="hidden xl:flex items-center gap-2 lg:gap-3" aria-label="Основная навигация сайта">
+        
+        <!-- Dropdown: УСЛУГИ -->
         <div class="relative group py-2">
-          <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-[#1b4221] transition-all flex items-center gap-1 cursor-pointer text-[#1b4221] font-bold border-b-2 border-salad" href="./services-epb.html">
-            <span>Услуги ЭПБ</span>
-            <span class="material-symbols-outlined text-xs group-hover:rotate-180 transition-transform">expand_more</span>
+          <a class="nav-link whitespace-nowrap px-3 py-1.5 font-mono-tech text-[11px] uppercase tracking-[0.14em] font-bold text-[#1b4221] bg-[#9ee673]/25 border border-[#9ee673]/90 rounded-sm flex items-center gap-1 cursor-pointer transition-all shadow-sm" href="./index.html#services">
+            <span>УСЛУГИ</span>
+            <span class="material-symbols-outlined text-xs text-[#1b4221] group-hover:rotate-180 transition-transform">expand_more</span>
           </a>
           <!-- Dropdown menu -->
-          <div class="absolute top-full left-0 w-80 bg-white border border-light-border shadow-2xl p-2.5 hidden group-hover:flex flex-col gap-1 z-50 rounded-sm">
-            <a href="./services-epb.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">01. Экспертиза промбезопасности</span>
+          <div class="absolute top-full left-0 w-80 bg-white border border-light-border shadow-2xl p-2 hidden group-hover:flex flex-col gap-1 z-50 rounded-sm">
+            <a href="./services-epb.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40 last:border-b-0 rounded-sm">
+              <span class="font-bold">01. Экспертиза ЭПБ</span>
               <span class="text-[10px] text-moss-muted">ФЗ-116</span>
             </a>
-            <a href="./services-lab.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">02. Лаборатория ЛНК</span>
+            <a href="./services-lab.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40 last:border-b-0 rounded-sm">
+              <span class="font-bold">02. Лаборатория ЛНК</span>
               <span class="text-[10px] text-moss-muted">№ 61А140925</span>
             </a>
-            <a href="./services-buildings.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">03. Здания и сооружения</span>
+            <a href="./services-buildings.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40 last:border-b-0 rounded-sm">
+              <span class="font-bold">03. Здания и сооружения</span>
               <span class="text-[10px] text-moss-muted">ГОСТ 31937</span>
             </a>
-            <a href="./services-diagnostics.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">04. Техдиагностирование</span>
-              <span class="text-[10px] text-moss-muted">Ресурс</span>
+            <a href="./services-diagnostics.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider bg-salad/25 text-[#1b4221] font-bold transition-colors flex items-center justify-between border-b border-light-border/40 last:border-b-0 rounded-sm">
+              <span class="font-bold">04. Техдиагностирование</span>
+              <span class="text-[10px] text-[#1b4221] font-bold">РЕСУРС</span>
             </a>
-            <a href="./services-vessels.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">05. Сосуды и трубопроводы</span>
-              <span class="text-[10px] text-moss-muted">Давление</span>
+            <a href="./services-vessels.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40 last:border-b-0 rounded-sm">
+              <span class="font-bold">05. Сосуды и трубопроводы</span>
+              <span class="text-[10px] text-moss-muted">ДАВЛЕНИЕ</span>
             </a>
-            <a href="./services-passports.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between">
-              <span class="font-semibold">06. Паспорта оборудования</span>
+            <a href="./services-passports.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40 last:border-b-0 rounded-sm">
+              <span class="font-bold">06. Паспорта оборудования</span>
               <span class="text-[10px] text-moss-muted">ТР ТС 032</span>
             </a>
           </div>
         </div>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all " href="./services-lab.html">Лаборатория ЛНК</a>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./index.html#industries">Отрасли</a>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./index.html#engineering">Регламент</a>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./index.html#calculator">Калькулятор</a>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all " href="./contacts.html">Контакты</a>
+
+        <!-- ОТРАСЛИ -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] font-bold text-obsidian hover:text-[#24502a] hover:bg-black/[0.04] rounded-sm flex items-center gap-1 transition-all" href="./index.html#industries">
+          <span>ОТРАСЛИ</span>
+        </a>
+
+        <!-- РЕГЛАМЕНТ -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] font-bold text-obsidian hover:text-[#24502a] hover:bg-black/[0.04] rounded-sm flex items-center gap-1 transition-all" href="./index.html#engineering">
+          <span>РЕГЛАМЕНТ</span>
+        </a>
+
+        <!-- КАЛЬКУЛЯТОР -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] font-bold text-obsidian hover:text-[#24502a] hover:bg-black/[0.04] rounded-sm flex items-center gap-1 transition-all" href="./index.html#calculator">
+          <span>КАЛЬКУЛЯТОР</span>
+        </a>
+
+        <!-- КОНТАКТЫ -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] font-bold text-obsidian hover:text-[#24502a] hover:bg-black/[0.04] rounded-sm flex items-center gap-1 transition-all" href="./contacts.html">
+          <span>КОНТАКТЫ</span>
+        </a>
       </nav>
 
       <!-- Right Contacts & Salad CTA -->
@@ -243,7 +260,7 @@
     </div>
   </header>
 
-  <!-- ==================== MOBILE MENU DRAWER (FULL ACCREDITED NAVIGATION) ==================== -->
+  <!-- ==================== MOBILE MENU DRAWER (FULL MULTI-PAGE PORTAL NAVIGATION) ==================== -->
   <div id="mobile-drawer" class="mobile-drawer-root border-t border-light-border shadow-2xl hidden flex-col xl:hidden" aria-label="Мобильное меню навигации">
     <div class="px-4 sm:px-6 py-6 flex flex-col gap-6 max-w-lg mx-auto w-full pb-36">
       
@@ -253,53 +270,115 @@
           <span class="w-2.5 h-2.5 rounded-full bg-[#24502a] animate-pulse"></span>
           <div class="flex flex-col">
             <span class="font-mono-tech text-[10.5px] font-bold text-obsidian uppercase tracking-[0.2em]">ООО «МАЯК» // ОПО</span>
-            <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider">Аттестация Ростехнадзора ФЗ-116</span>
+            <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider">Многостраничный портал ФЗ-116</span>
           </div>
         </div>
         <span class="font-mono-tech text-[9.5px] bg-[#9ee673]/20 border border-[#9ee673]/80 text-[#1b4221] px-2 py-0.5 font-bold uppercase tracking-wider rounded-sm">
-          ДЕЙСТВУЕТ
+          8 СТРАНИЦ
         </span>
       </div>
 
-      <!-- Section 1: Главные разделы сайта -->
+      <!-- Section 1: Главные страницы портала (Многостраничный сайт) -->
       <div class="flex flex-col gap-2">
         <div class="flex items-center justify-between px-1 pb-1">
-          <span class="font-mono-tech text-[10px] uppercase tracking-[0.25em] text-[#24502a] font-bold">1. Разделы сайта</span>
-          <span class="font-mono-tech text-[9.5px] text-moss-muted uppercase tracking-wider">навигация</span>
+          <span class="font-mono-tech text-[10px] uppercase tracking-[0.25em] text-[#24502a] font-bold">1. Страницы портала</span>
+          <span class="font-mono-tech text-[9.5px] text-[#24502a] font-bold uppercase tracking-wider bg-salad/20 px-1.5 py-0.5 rounded-sm">ОТДЕЛЬНЫЕ СТРАНИЦЫ</span>
         </div>
-        <nav class="flex flex-col gap-1.5 font-mono-tech text-xs uppercase tracking-[0.14em]" aria-label="Основные разделы">
-          <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./index.html#top">
-            <span class="flex items-center gap-2">
+        <nav class="flex flex-col gap-1.5 font-mono-tech text-xs uppercase tracking-[0.14em]" aria-label="Страницы портала">
+          <a class="mobile-nav-link py-3 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98 shadow-sm" href="./index.html">
+            <span class="flex items-center gap-2.5">
               <span class="material-symbols-outlined text-base text-[#24502a]">home</span>
-              <span>Главная страница</span>
+              <span class="font-bold">Главная страница</span>
             </span>
-            <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
+            <span class="text-[9px] bg-warm-beige text-moss-gray px-1.5 py-0.5 border border-light-border uppercase font-semibold">ПОРТАЛ</span>
           </a>
           
-          <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./index.html#services">
-            <span class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-base text-[#24502a]">engineering</span>
-              <span>Виды выполняемых работ</span>
+          <a class="mobile-nav-link py-3 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98 shadow-sm" href="./services-epb.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-base text-[#24502a]">verified</span>
+              <div class="flex flex-col text-left">
+                <span class="font-bold">01. Экспертиза ЭПБ</span>
+                <span class="font-body text-[10.5px] text-moss-gray lowercase tracking-normal font-normal">техустройства, здания, проекты (фз-116)</span>
+              </div>
             </span>
-            <span class="text-[9.5px] bg-warm-ivory text-moss-muted px-2 py-0.5 border border-light-border font-mono-tech rounded-sm">6 УСЛУГ</span>
+            <span class="text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-bold shrink-0">СТРАНИЦА →</span>
           </a>
 
-          <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./index.html#industries">
-            <span class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-base text-[#24502a]">factory</span>
-              <span>Отрасли промышленности</span>
+          <a class="mobile-nav-link py-3 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98 shadow-sm" href="./services-lab.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-base text-[#24502a]">biotech</span>
+              <div class="flex flex-col text-left">
+                <span class="font-bold">02. Лаборатория ЛНК</span>
+                <span class="font-body text-[10.5px] text-moss-gray lowercase tracking-normal font-normal">узк, рк, вик, свидетельство 61а140925</span>
+              </div>
             </span>
-            <span class="text-[9.5px] bg-warm-ivory text-moss-muted px-2 py-0.5 border border-light-border font-mono-tech rounded-sm">10 СФЕР</span>
+            <span class="text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-bold shrink-0">СТРАНИЦА →</span>
           </a>
 
-          <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./index.html#engineering">
-            <span class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-base text-[#24502a]">verified_user</span>
-              <span>Регламенты и ГОСТ</span>
+          <a class="mobile-nav-link py-3 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98 shadow-sm" href="./services-buildings.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-base text-[#24502a]">apartment</span>
+              <div class="flex flex-col text-left">
+                <span class="font-bold">03. Здания и сооружения</span>
+                <span class="font-body text-[10.5px] text-moss-gray lowercase tracking-normal font-normal">инструментальный аудит по гост 31937</span>
+              </div>
             </span>
-            <span class="text-[9.5px] bg-warm-ivory text-moss-muted px-2 py-0.5 border border-light-border font-mono-tech rounded-sm">ФЗ-116</span>
+            <span class="text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-bold shrink-0">СТРАНИЦА →</span>
           </a>
 
+          <a class="mobile-nav-link py-3 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98 shadow-sm" href="./services-diagnostics.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-base text-[#24502a]">troubleshoot</span>
+              <div class="flex flex-col text-left">
+                <span class="font-bold">04. Диагностика и ресурс</span>
+                <span class="font-body text-[10.5px] text-moss-gray lowercase tracking-normal font-normal">оценка фактического техсостояния</span>
+              </div>
+            </span>
+            <span class="text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-bold shrink-0">СТРАНИЦА →</span>
+          </a>
+
+          <a class="mobile-nav-link py-3 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98 shadow-sm" href="./services-vessels.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-base text-[#24502a]">valve</span>
+              <div class="flex flex-col text-left">
+                <span class="font-bold">05. Сосуды и трубопроводы</span>
+                <span class="font-body text-[10.5px] text-moss-gray lowercase tracking-normal font-normal">освидетельствование под давлением, рвс</span>
+              </div>
+            </span>
+            <span class="text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-bold shrink-0">СТРАНИЦА →</span>
+          </a>
+
+          <a class="mobile-nav-link py-3 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98 shadow-sm" href="./services-passports.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-base text-[#24502a]">menu_book</span>
+              <div class="flex flex-col text-left">
+                <span class="font-bold">06. Паспорта оборудования</span>
+                <span class="font-body text-[10.5px] text-moss-gray lowercase tracking-normal font-normal">разработка по тр тс 032/2013 и дубликаты</span>
+              </div>
+            </span>
+            <span class="text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-bold shrink-0">СТРАНИЦА →</span>
+          </a>
+
+          <a class="mobile-nav-link py-3 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98 shadow-sm" href="./contacts.html">
+            <span class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-base text-[#24502a]">pin_drop</span>
+              <div class="flex flex-col text-left">
+                <span class="font-bold">Контакты и реквизиты</span>
+                <span class="font-body text-[10.5px] text-moss-gray lowercase tracking-normal font-normal">офис в Ижевске, схема проезда, ИНН</span>
+              </div>
+            </span>
+            <span class="text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-bold shrink-0">СТРАНИЦА →</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Section 2: Быстрый переход к разделам главной страницы -->
+      <div class="flex flex-col gap-2 pt-2 border-t border-light-border">
+        <div class="flex items-center justify-between px-1 pb-1">
+          <span class="font-mono-tech text-[10px] uppercase tracking-[0.25em] text-[#24502a] font-bold">2. Интерактивные блоки главной</span>
+          <span class="font-mono-tech text-[9.5px] text-moss-muted uppercase tracking-wider">якоря</span>
+        </div>
+        <div class="grid grid-cols-1 gap-1.5 font-mono-tech text-xs uppercase tracking-[0.14em]">
           <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-[#9ee673] bg-[#9ee673]/15 hover:bg-[#9ee673]/30 transition-all flex items-center justify-between text-obsidian font-bold active:scale-98 shadow-sm" href="./index.html#calculator">
             <span class="flex items-center gap-2">
               <span class="material-symbols-outlined text-base text-[#1b4221]">calculate</span>
@@ -308,84 +387,33 @@
             <span class="text-[9px] font-bold bg-[#9ee673] text-[#121915] px-2 py-0.5 rounded-sm uppercase tracking-wider">РАСЧЕТ</span>
           </a>
 
+          <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./index.html#industries">
+            <span class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-base text-[#24502a]">factory</span>
+              <span>Отрасли промышленности ОПО</span>
+            </span>
+            <span class="text-[9.5px] bg-warm-ivory text-moss-muted px-2 py-0.5 border border-light-border font-mono-tech rounded-sm">10 СФЕР</span>
+          </a>
+
+          <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./index.html#engineering">
+            <span class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-base text-[#24502a]">verified_user</span>
+              <span>Стандарты и регламенты ГОСТ</span>
+            </span>
+            <span class="text-[9.5px] bg-warm-ivory text-moss-muted px-2 py-0.5 border border-light-border font-mono-tech rounded-sm">ФЗ-116</span>
+          </a>
+
           <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./index.html#metrics-grid">
             <span class="flex items-center gap-2">
               <span class="material-symbols-outlined text-base text-[#24502a]">business</span>
-              <span>О компании и показатели</span>
+              <span>Показатели и аккредитация</span>
             </span>
             <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
           </a>
-
-          <a class="mobile-nav-link py-2.5 px-3.5 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./contacts.html">
-            <span class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-base text-[#24502a]">pin_drop</span>
-              <span>Контакты и реквизиты</span>
-            </span>
-            <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
-          </a>
-        </nav>
-      </div>
-
-      <!-- Section 2: Все 6 направлений экспертизы -->
-      <div class="flex flex-col gap-2 pt-2 border-t border-light-border">
-        <div class="flex items-center justify-between px-1 pb-1">
-          <span class="font-mono-tech text-[10px] uppercase tracking-[0.25em] text-[#24502a] font-bold">2. Каталог экспертиз</span>
-          <span class="font-mono-tech text-[9.5px] text-moss-muted uppercase tracking-wider">6 услуг</span>
-        </div>
-        <div class="grid grid-cols-1 gap-2">
-          
-          <a class="mobile-nav-link p-3 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex flex-col gap-1 text-obsidian active:scale-98 shadow-sm" href="./services-epb.html">
-            <div class="flex items-center justify-between">
-              <span class="font-mono-tech text-xs font-bold text-obsidian">01. Экспертиза ЭПБ</span>
-              <span class="font-mono-tech text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-semibold">ФЗ №116</span>
-            </div>
-            <p class="font-body text-[11.5px] text-moss-gray leading-tight">Техустройства, здания и сооружения, проекты консервации и ликвидации</p>
-          </a>
-
-          <a class="mobile-nav-link p-3 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex flex-col gap-1 text-obsidian active:scale-98 shadow-sm" href="./services-lab.html">
-            <div class="flex items-center justify-between">
-              <span class="font-mono-tech text-xs font-bold text-obsidian">02. Лаборатория ЛНК</span>
-              <span class="font-mono-tech text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-semibold">№ 61А140925</span>
-            </div>
-            <p class="font-body text-[11.5px] text-moss-gray leading-tight">Аттестованные методы: УЗК, РК, ВИК, МПК, ПВК сварных швов и металлов</p>
-          </a>
-
-          <a class="mobile-nav-link p-3 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex flex-col gap-1 text-obsidian active:scale-98 shadow-sm" href="./services-buildings.html">
-            <div class="flex items-center justify-between">
-              <span class="font-mono-tech text-xs font-bold text-obsidian">03. Здания и сооружения</span>
-              <span class="font-mono-tech text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-semibold">ГОСТ 31937</span>
-            </div>
-            <p class="font-body text-[11.5px] text-moss-gray leading-tight">Инструментальное обследование несущих конструкций, эстакад и труб ОПО</p>
-          </a>
-
-          <a class="mobile-nav-link p-3 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex flex-col gap-1 text-obsidian active:scale-98 shadow-sm" href="./services-diagnostics.html">
-            <div class="flex items-center justify-between">
-              <span class="font-mono-tech text-xs font-bold text-obsidian">04. Диагностика и ресурс</span>
-              <span class="font-mono-tech text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-semibold">РЕСУРС</span>
-            </div>
-            <p class="font-body text-[11.5px] text-moss-gray leading-tight">Оценка фактического состояния, вибродиагностика и продление ресурса</p>
-          </a>
-
-          <a class="mobile-nav-link p-3 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex flex-col gap-1 text-obsidian active:scale-98 shadow-sm" href="./services-vessels.html">
-            <div class="flex items-center justify-between">
-              <span class="font-mono-tech text-xs font-bold text-obsidian">05. Сосуды и трубопроводы</span>
-              <span class="font-mono-tech text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-semibold">ДАВЛЕНИЕ</span>
-            </div>
-            <p class="font-body text-[11.5px] text-moss-gray leading-tight">Освидетельствование сосудов под давлением, котлов, РВС и трубопроводов</p>
-          </a>
-
-          <a class="mobile-nav-link p-3 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex flex-col gap-1 text-obsidian active:scale-98 shadow-sm" href="./services-passports.html">
-            <div class="flex items-center justify-between">
-              <span class="font-mono-tech text-xs font-bold text-obsidian">06. Паспорта оборудования</span>
-              <span class="font-mono-tech text-[9px] bg-warm-beige text-[#1b4221] px-1.5 py-0.5 border border-light-border uppercase font-semibold">ТР ТС 032</span>
-            </div>
-            <p class="font-body text-[11.5px] text-moss-gray leading-tight">Разработка, дубликаты, прочностные расчеты по ТР ТС 032/2013 и 010/2011</p>
-          </a>
-
         </div>
       </div>
 
-      <!-- Section 3: Полные контакты (Comprehensive Contacts Card) -->
+      <!-- Section 3: Полные контакты -->
       <div class="flex flex-col gap-3 pt-2 border-t border-light-border">
         <div class="flex items-center justify-between px-1">
           <span class="font-mono-tech text-[10px] uppercase tracking-[0.25em] text-[#24502a] font-bold">3. Прямая связь и офис</span>
