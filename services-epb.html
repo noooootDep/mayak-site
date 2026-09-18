@@ -128,7 +128,7 @@
   <!-- ==================== READING PROGRESS BAR ==================== -->
   <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-salad via-salad-dark to-[#24502a] z-[70] transition-all duration-75 ease-out" style="width: 0%;"></div>
 
-    <!-- ==================== TOP ACCREDITATION & STATUS RIBBON ==================== -->
+      <!-- ==================== TOP ACCREDITATION & STATUS RIBBON ==================== -->
   <div class="fixed top-0 left-0 w-full z-50 bg-[#121915] text-[#d4ded6] border-b border-[#243328] text-[10px] sm:text-[11px] font-mono-tech py-1.5 px-4 sm:px-8 lg:px-14">
     <div class="w-full max-w-[1440px] mx-auto flex items-center justify-between gap-3">
       <div class="flex items-center gap-2 sm:gap-3 overflow-hidden text-ellipsis whitespace-nowrap">
@@ -138,7 +138,7 @@
         </span>
         <span class="text-[#3b5242]">|</span>
         <span class="hidden md:inline text-[#a3b8aa]">Экспертиза ОПО (ФЗ-116)</span>
-        <span class="hidden md:inline text-[#3b5242]">|</span>
+        <span class="text-[#3b5242] hidden md:inline">|</span>
         <span class="text-[#c7d6cb]">Свидетельство ЛНК № 61А140925</span>
         <span class="hidden lg:inline text-[#3b5242]">|</span>
         <span class="hidden lg:inline text-[#8da393]">Ростехнадзор</span>
@@ -176,12 +176,14 @@
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden xl:flex items-center gap-5 lg:gap-7" aria-label="Навигация по сайту">
+      <!-- Desktop Nav - Completely Uniform & Single-Line -->
+      <nav class="hidden xl:flex items-center gap-1.5 lg:gap-2.5" aria-label="Навигация по сайту">
+        
+        <!-- Dropdown: Услуги ЭПБ -->
         <div class="relative group py-2">
-          <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-[#1b4221] transition-all flex items-center gap-1 cursor-pointer text-[#1b4221] font-bold border-b-2 border-salad" href="./services-epb.html">
+          <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-[#1b4221] font-bold bg-[#9ee673]/20 border border-[#9ee673]/40 cursor-pointer" href="./services-epb.html">
             <span>Услуги ЭПБ</span>
-            <span class="material-symbols-outlined text-xs group-hover:rotate-180 transition-transform">expand_more</span>
+            <span class="material-symbols-outlined text-xs text-moss-muted group-hover:rotate-180 transition-transform">expand_more</span>
           </a>
           <!-- Dropdown menu -->
           <div class="absolute top-full left-0 w-80 bg-white border border-light-border shadow-2xl p-2.5 hidden group-hover:flex flex-col gap-1 z-50 rounded-sm">
@@ -211,11 +213,31 @@
             </a>
           </div>
         </div>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all " href="./services-lab.html">Лаборатория ЛНК</a>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./index.html#industries">Отрасли</a>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./index.html#engineering">Регламент</a>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./index.html#calculator">Калькулятор</a>
-        <a class="nav-link font-mono-tech text-[11px] tracking-[0.18em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all " href="./contacts.html">Контакты</a>
+
+        <!-- Лаборатория ЛНК -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="./services-lab.html">
+          <span>Лаборатория ЛНК</span>
+        </a>
+
+        <!-- Отрасли -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="./index.html#industries">
+          <span>Отрасли</span>
+        </a>
+
+        <!-- Регламент -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="./index.html#engineering">
+          <span>Регламент</span>
+        </a>
+
+        <!-- Калькулятор -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="./index.html#calculator">
+          <span>Калькулятор</span>
+        </a>
+
+        <!-- Контакты -->
+        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="./contacts.html">
+          <span>Контакты</span>
+        </a>
       </nav>
 
       <!-- Right Contacts & Salad CTA -->
