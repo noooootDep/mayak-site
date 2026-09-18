@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="ru" id="top">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+  <title>Контакты и реквизиты — ООО «МАЯК» (Ижевск)</title>
+  <meta name="description" content="Официальные контакты и реквизиты ООО «МАЯК». Центральный офис и лаборатория ЛНК: 426063, г. Ижевск, ул. Ключевой посёлок, 83а, оф. 1001. Телефон: 8 (912) 466-92-77."/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "warm-ivory": "#fbf8f2",
+            "warm-beige": "#f5efe5",
+            "warm-card": "#ffffff",
+            "warm-card-soft": "#f7f3eb",
+            "salad": "#9ee673",
+            "salad-hover": "#8fe05d",
+            "salad-dark": "#76c845",
+            "salad-tint": "rgba(158, 230, 115, 0.18)",
+            "obsidian": "#121915",
+            "obsidian-light": "#1b2520",
+            "moss-gray": "#4d5c52",
+            "moss-muted": "#6a7b70",
+            "light-border": "#e3dccf",
+            "light-border-strong": "#cfc4b2",
+            "salad-border": "#8fd964"
+          },
+          fontFamily: {
+            "display": ["Cinzel", "serif"],
+            "antique": ["Cormorant Garamond", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "mono-tech": ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+      body { background-color: #fbf8f2; color: #121915; font-family: 'Manrope', sans-serif; overflow-x: hidden; }
+      ::selection { background-color: #9ee673; color: #121915; }
+    }
+    .ivory-mesh {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(158, 230, 115, 0.14) 0%, transparent 65%),
+        radial-gradient(circle at 100% 100%, rgba(224, 214, 194, 0.45) 0%, transparent 60%);
+    }
+    .light-box-shadow { box-shadow: 0 16px 36px -12px rgba(18, 25, 21, 0.07), 0 1px 3px 0 rgba(18, 25, 21, 0.04); }
+    .inner-soft { box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.8), inset 0 0 12px 0 rgba(77, 92, 82, 0.02); }
+    @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f5efe5; }
+    ::-webkit-scrollbar-thumb { background: #cfc4b2; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #9ee673; }
+  </style>
+</head>
+<body class="bg-warm-ivory text-obsidian antialiased min-h-screen flex flex-col justify-between selection:bg-salad selection:text-obsidian relative">
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-6 right-6 z-[1000] bg-obsidian text-white border border-salad-border/60 px-5 py-3.5 shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none rounded-sm">
+    <div class="w-5 h-5 rounded-full bg-salad/20 border border-salad flex items-center justify-center text-salad">
+      <span class="material-symbols-outlined text-xs">done</span>
+    </div>
+    <span id="toast-message" class="font-mono-tech text-xs tracking-wider">Скопировано в буфер обмена</span>
+  </div>
+
+  <!-- Page Curtain -->
+  <div id="page-curtain" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 transition-opacity duration-300 bg-[#fbf8f2] flex flex-col items-center justify-center">
+    <div class="relative flex flex-col items-center gap-4 text-center px-4">
+      <div class="w-14 h-14 border border-salad-border bg-white flex items-center justify-center p-2.5 shadow-[0_0_25px_rgba(158,230,115,0.45)]">
+        <svg class="w-full h-full text-obsidian animate-pulse" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+          <polygon fill="#9ee673" fill-opacity="0.45" points="12 4, 19 20, 5 20"></polygon>
+        </svg>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#24502a] animate-ping"></span>
+        <span class="font-display tracking-[0.25em] text-sm font-bold text-obsidian uppercase">МАЯК // ПЕРЕХОД</span>
+      </div>
+      <span class="font-mono-tech text-[10px] text-moss-muted uppercase tracking-[0.2em]">КОНТАКТЫ И СХЕМА ПРОЕЗДА</span>
+      <div class="w-48 h-[2px] bg-light-border overflow-hidden relative mt-1">
+        <div class="w-20 h-full bg-salad animate-[shimmer_1.2s_infinite]"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-salad via-salad-dark to-[#24502a] z-[70] transition-all duration-75 ease-out" style="width: 0%;"></div>
+
+  <!-- Header -->
+  <header id="site-header" class="fixed top-0 left-0 w-full z-50 border-b border-light-border transition-shadow duration-300" style="background-color: #fbf8f2;">
+    <div class="h-20 sm:h-24 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 flex items-center justify-between gap-4">
+      <a class="flex items-center gap-3 sm:gap-4 group focus:outline-none" href="./index.html" aria-label="МАЯК — На главную">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 border border-salad-border/70 flex items-center justify-center p-2 bg-white inner-soft transition-all duration-300 group-hover:border-salad group-hover:shadow-[0_0_15px_rgba(158,230,115,0.45)] group-hover:scale-105">
+          <svg class="w-full h-full text-obsidian" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+            <line stroke-linecap="round" x1="12" x2="12" y1="2" y2="22"></line>
+            <polygon fill="#9ee673" fill-opacity="0.35" points="12 4, 19 20, 5 20"></polygon>
+            <circle cx="12" cy="8" fill="#121915" r="1.5"></circle>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display tracking-[0.28em] text-[15px] sm:text-[16px] font-bold text-obsidian uppercase leading-tight group-hover:text-[#2d6934] transition-colors">МАЯК</span>
+          <span class="font-mono-tech text-[8.5px] sm:text-[9.5px] uppercase tracking-[0.24em] text-moss-gray">Контакты // Реквизиты</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden xl:flex items-center gap-8" aria-label="Основное меню">
+        <a class="nav-link font-mono-tech text-[11.5px] tracking-[0.2em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./index.html">Главная</a>
+        <div class="relative group py-2">
+          <a class="nav-link font-mono-tech text-[11.5px] tracking-[0.2em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all flex items-center gap-1" href="./services-epb.html">
+            <span>Услуги ЭПБ</span>
+            <span class="material-symbols-outlined text-xs group-hover:rotate-180 transition-transform">expand_more</span>
+          </a>
+          <div class="absolute top-full left-0 w-72 bg-white border border-light-border shadow-xl p-2.5 hidden group-hover:flex flex-col gap-1 z-50 rounded-sm">
+            <a href="./services-epb.html" class="px-3 py-2 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between">
+              <span>01. Экспертиза ЭПБ</span>
+              <span class="text-[10px] text-moss-muted">ФЗ №116</span>
+            </a>
+            <a href="./services-lab.html" class="px-3 py-2 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between">
+              <span>02. Лаборатория ЛНК</span>
+              <span class="text-[10px] text-moss-muted">УЗК, РК, ВИК</span>
+            </a>
+            <a href="./services-buildings.html" class="px-3 py-2 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between">
+              <span>03. Здания и сооружения</span>
+              <span class="text-[10px] text-moss-muted">ГОСТ 31937</span>
+            </a>
+            <a href="./services-diagnostics.html" class="px-3 py-2 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between">
+              <span>04. Диагностирование ОПО</span>
+              <span class="text-[10px] text-moss-muted">Остат. ресурс</span>
+            </a>
+            <a href="./services-vessels.html" class="px-3 py-2 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between">
+              <span>05. Сосуды и трубы</span>
+              <span class="text-[10px] text-moss-muted">ФНП ОРПД</span>
+            </a>
+            <a href="./services-passports.html" class="px-3 py-2 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between">
+              <span>06. Паспорта устройств</span>
+              <span class="text-[10px] text-moss-muted">ТР ТС 032</span>
+            </a>
+          </div>
+        </div>
+        <a class="nav-link font-mono-tech text-[11.5px] tracking-[0.2em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./services-lab.html">Лаборатория ЛНК</a>
+        <a class="nav-link font-mono-tech text-[11.5px] tracking-[0.2em] uppercase text-moss-gray hover:text-obsidian hover:text-[#24502a] transition-all relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-salad hover:after:w-full after:transition-all" href="./index.html#calculator">Калькулятор</a>
+        <a class="nav-link font-mono-tech text-[11.5px] tracking-[0.2em] uppercase text-[#1b4221] font-bold transition-all border-b-2 border-salad py-1.5" href="./contacts.html">Контакты</a>
+      </nav>
+
+      <!-- Right Contacts -->
+      <div class="flex items-center gap-3 sm:gap-6">
+        <div class="hidden md:flex flex-col items-end text-right">
+          <span class="font-mono-tech text-[9px] tracking-[0.22em] text-moss-muted uppercase">Ижевск // Офис 1001</span>
+          <a class="font-mono-tech text-xs sm:text-sm tracking-widest text-obsidian hover:text-[#2b6432] transition-colors font-semibold" href="tel:89124669277">8 (912) 466-92-77</a>
+        </div>
+        <a class="hidden sm:inline-flex relative items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 border border-salad-border/80 bg-salad hover:bg-salad-hover text-obsidian font-mono-tech text-[10.5px] sm:text-[11px] font-semibold tracking-[0.22em] uppercase transition-all duration-300 shadow-[0_4px_16px_rgba(158,230,115,0.35)] hover:border-salad-dark" href="#question-form">
+          Написать нам
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="w-full flex-grow pt-24 sm:pt-28">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-14 py-4">
+      <nav class="flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-moss-gray">
+        <a href="./index.html" class="hover:text-obsidian">Главная</a>
+        <span>/</span>
+        <span class="text-[#24502a] font-bold">Контакты и реквизиты</span>
+      </nav>
+    </div>
+
+    <!-- Contacts Header -->
+    <section class="w-full ivory-mesh border-b border-light-border px-4 sm:px-10 lg:px-14 py-12">
+      <div class="w-full max-w-[1440px] mx-auto flex flex-col gap-4">
+        <span class="font-mono-tech text-[10.5px] uppercase tracking-[0.3em] text-[#24502a] font-bold">
+          КОНТАКТНАЯ ИНФОРМАЦИЯ И СВЯЗЬ // ООО «МАЯК»
+        </span>
+        <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl text-obsidian font-normal">
+          Контакты, лаборатория и реквизиты
+        </h1>
+        <p class="font-body text-sm sm:text-base text-moss-gray font-light max-w-3xl leading-relaxed">
+          Центральный офис экспертной организации и лаборатория неразрушающего контроля расположены в Ижевске. Выездные инженерные бригады работают по всей территории Российской Федерации.
+        </p>
+      </div>
+    </section>
+
+    <!-- Two-Column Grid: Requisites & Interactive Yandex Map -->
+    <section class="w-full bg-white border-b border-light-border px-4 sm:px-10 lg:px-14 py-16 sm:py-20">
+      <div class="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left 6 cols: Contacts & Official Legal Requisites -->
+        <div class="lg:col-span-6 flex flex-col gap-8">
+          
+          <!-- Key Points -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="border border-light-border p-5 bg-warm-ivory/60">
+              <span class="font-mono-tech text-[10px] uppercase tracking-wider text-moss-muted block mb-1">Центральный офис</span>
+              <p class="font-body text-xs text-obsidian font-semibold leading-relaxed">
+                426063, Удмуртская Республика, г. Ижевск, ул. Ключевой посёлок, д. 83а, офис 1001
+              </p>
+            </div>
+
+            <div class="border border-light-border p-5 bg-warm-ivory/60">
+              <span class="font-mono-tech text-[10px] uppercase tracking-wider text-moss-muted block mb-1">Режим работы</span>
+              <p class="font-body text-xs text-obsidian font-semibold leading-relaxed">
+                Офис: Пн–Пт 08:00 – 18:00<br/>
+                Лаборатория / Выезды: 24/7
+              </p>
+            </div>
+          </div>
+
+          <!-- Direct Lines -->
+          <div class="border border-light-border p-6 bg-white flex flex-col gap-4">
+            <div class="flex items-center justify-between border-b border-light-border pb-3">
+              <span class="font-mono-tech text-xs text-moss-gray">Прямой номер эксперта:</span>
+              <a href="tel:89124669277" class="font-mono-tech text-base font-bold text-obsidian hover:text-[#24502a]">
+                +7 (912) 466-92-77
+              </a>
+            </div>
+            <div class="flex items-center justify-between border-b border-light-border pb-3">
+              <span class="font-mono-tech text-xs text-moss-gray">Электронная почта:</span>
+              <a href="mailto:mayak.izh@yandex.ru" class="font-mono-tech text-sm font-semibold text-obsidian hover:text-[#24502a]">
+                mayak.izh@yandex.ru
+              </a>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="font-mono-tech text-xs text-moss-gray">Быстрые мессенджеры:</span>
+              <div class="flex items-center gap-2">
+                <a href="https://t.me/+79124669277" target="_blank" class="px-3 py-1 bg-warm-beige hover:bg-salad/20 border border-light-border text-xs font-mono-tech font-bold text-obsidian transition-colors">
+                  Telegram
+                </a>
+                <a href="https://wa.me/79124669277" target="_blank" class="px-3 py-1 bg-warm-beige hover:bg-salad/20 border border-light-border text-xs font-mono-tech font-bold text-obsidian transition-colors">
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Legal & Bank Requisites Card with Copy buttons -->
+          <div class="border border-salad-border/70 p-6 sm:p-8 bg-warm-ivory flex flex-col gap-5 light-box-shadow">
+            <div class="flex items-center justify-between pb-3 border-b border-light-border">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base text-[#24502a]">account_balance</span>
+                <span class="font-mono-tech text-xs uppercase tracking-widest text-[#24502a] font-bold">ОФИЦИАЛЬНЫЕ РЕКВИЗИТЫ</span>
+              </div>
+              <span class="text-[10px] font-mono-tech text-moss-muted">Нажмите для копирования</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono-tech text-xs">
+              <div class="copy-box p-3 bg-white border border-light-border hover:border-salad-dark cursor-pointer transition-all flex flex-col justify-between" data-copy="1800035269" data-name="ИНН">
+                <div class="flex justify-between text-moss-muted text-[10px] uppercase">
+                  <span>ИНН</span>
+                  <span class="material-symbols-outlined text-xs">content_copy</span>
+                </div>
+                <span class="font-bold text-obsidian text-sm mt-1">1800035269</span>
+              </div>
+
+              <div class="copy-box p-3 bg-white border border-light-border hover:border-salad-dark cursor-pointer transition-all flex flex-col justify-between" data-copy="1251800006248" data-name="ОГРН">
+                <div class="flex justify-between text-moss-muted text-[10px] uppercase">
+                  <span>ОГРН</span>
+                  <span class="material-symbols-outlined text-xs">content_copy</span>
+                </div>
+                <span class="font-bold text-obsidian text-sm mt-1">1251800006248</span>
+              </div>
+
+              <div class="copy-box p-3 bg-white border border-light-border hover:border-salad-dark cursor-pointer transition-all flex flex-col justify-between" data-copy="180001001" data-name="КПП">
+                <div class="flex justify-between text-moss-muted text-[10px] uppercase">
+                  <span>КПП</span>
+                  <span class="material-symbols-outlined text-xs">content_copy</span>
+                </div>
+                <span class="font-bold text-obsidian text-sm mt-1">180001001</span>
+              </div>
+
+              <div class="copy-box p-3 bg-white border border-light-border hover:border-salad-dark cursor-pointer transition-all flex flex-col justify-between" data-copy="97321482" data-name="ОКПО">
+                <div class="flex justify-between text-moss-muted text-[10px] uppercase">
+                  <span>ОКПО</span>
+                  <span class="material-symbols-outlined text-xs">content_copy</span>
+                </div>
+                <span class="font-bold text-obsidian text-sm mt-1">97321482</span>
+              </div>
+            </div>
+
+            <!-- Bank Account -->
+            <div class="p-4 bg-white border border-light-border flex flex-col gap-2 font-mono-tech text-xs">
+              <span class="text-[10px] text-moss-muted uppercase tracking-wider">Банковские реквизиты</span>
+              <div class="flex justify-between items-center copy-box cursor-pointer hover:text-[#24502a]" data-copy="40702810468000018924" data-name="Расчетный счет">
+                <span class="text-moss-gray">Р/счет:</span>
+                <span class="font-bold text-obsidian flex items-center gap-1.5">
+                  <span>40702810468000018924</span>
+                  <span class="material-symbols-outlined text-xs">content_copy</span>
+                </span>
+              </div>
+              <div class="flex justify-between items-center text-moss-gray">
+                <span>Банк:</span>
+                <span class="font-semibold text-obsidian">Удмуртское отделение №8618 ПАО Сбербанк</span>
+              </div>
+              <div class="flex justify-between items-center copy-box cursor-pointer hover:text-[#24502a]" data-copy="049401601" data-name="БИК">
+                <span class="text-moss-gray">БИК:</span>
+                <span class="font-bold text-obsidian flex items-center gap-1.5">
+                  <span>049401601</span>
+                  <span class="material-symbols-outlined text-xs">content_copy</span>
+                </span>
+              </div>
+              <div class="flex justify-between items-center copy-box cursor-pointer hover:text-[#24502a]" data-copy="30101810400000000601" data-name="Корр. счет">
+                <span class="text-moss-gray">Корр. счет:</span>
+                <span class="font-bold text-obsidian flex items-center gap-1.5">
+                  <span>30101810400000000601</span>
+                  <span class="material-symbols-outlined text-xs">content_copy</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 6 cols: High-Definition Interactive Yandex Map Card -->
+        <div class="lg:col-span-6 flex flex-col gap-5">
+          <div class="border border-salad-border/80 bg-white p-6 sm:p-8 light-box-shadow flex flex-col gap-5">
+            <div class="flex items-center justify-between pb-3 border-b border-light-border">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-salad animate-pulse"></span>
+                <span class="font-mono-tech text-xs uppercase tracking-widest text-[#24502a] font-bold">СХЕМА ПРОЕЗДА И ПАРКОВКА</span>
+              </div>
+              <span class="font-mono-tech text-xs text-moss-muted">56.8402° N, 53.2562° E</span>
+            </div>
+
+            <!-- Responsive Interactive Map Widget -->
+            <div class="relative w-full h-[360px] sm:h-[420px] rounded border border-light-border overflow-hidden shadow-inner">
+              <iframe src="https://yandex.ru/map-widget/v1/?ll=53.256247%2C56.840212&z=16&pt=53.256247,56.840212,pm2gnm&text=ООО+МАЯК+Ижевск+Ключевой+поселок+83а" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; width:100%; height:100%; border:0;" title="Интерактивная карта Яндекс - ООО МАЯК"></iframe>
+              <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm border border-light-border px-3 py-1.5 text-xs font-mono-tech text-obsidian flex items-center gap-2 shadow-md">
+                <span class="material-symbols-outlined text-sm text-[#24502a]">business</span>
+                <span>Центральный вход, оф. 1001</span>
+              </div>
+            </div>
+
+            <!-- Route Actions -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a href="https://yandex.ru/maps/?text=Ижевск+Ключевой+поселок+83а" target="_blank" class="py-3 px-4 bg-salad hover:bg-salad-hover border border-salad-border font-mono-tech text-xs uppercase tracking-wider text-obsidian font-bold text-center flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all">
+                <span>Маршрут в Яндекс.Картах</span>
+                <span class="material-symbols-outlined text-xs">open_in_new</span>
+              </a>
+              <a href="https://yandex.ru/navi/?whatshere%5Bpoint%5D=53.256247%2C56.840212&whatshere%5Bzoom%5D=16" target="_blank" class="py-3 px-4 bg-white hover:bg-warm-beige border border-light-border font-mono-tech text-xs uppercase tracking-wider text-obsidian font-semibold text-center flex items-center justify-center gap-2 active:scale-95 transition-all">
+                <span>Яндекс.Навигатор</span>
+                <span class="material-symbols-outlined text-xs text-[#24502a]">near_me</span>
+              </a>
+            </div>
+
+            <!-- Parking Note -->
+            <div class="p-3.5 bg-warm-ivory border border-light-border text-xs font-body text-moss-gray leading-relaxed">
+              <strong>Парковка и пропускной режим:</strong> На территории офисного комплекса действует свободная гостевая парковка для легкового и грузового транспорта заказчиков. Для прохода в офис 1001 достаточно документа, удостоверяющего личность.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quick Question Form -->
+    <section class="w-full bg-warm-beige border-b border-light-border px-4 sm:px-10 lg:px-14 py-16" id="question-form">
+      <div class="w-full max-w-2xl mx-auto bg-white border border-light-border p-6 sm:p-10 light-box-shadow flex flex-col gap-6">
+        <div class="flex flex-col gap-2 text-center">
+          <span class="font-mono-tech text-[10.5px] uppercase tracking-widest text-[#24502a] font-bold">ОБРАТНАЯ СВЯЗЬ</span>
+          <h2 class="font-display text-2xl sm:text-3xl text-obsidian">Написать руководству ООО «МАЯК»</h2>
+          <p class="font-body text-xs text-moss-gray">Оставьте ваше сообщение или вопрос по экспертизе ОПО, и мы ответим в течение рабочего дня.</p>
+        </div>
+
+        <form id="msg-form" class="flex flex-col gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" required placeholder="Ваше имя" class="bg-warm-ivory border border-light-border p-2.5 text-xs text-obsidian focus:border-salad-dark focus:outline-none" />
+            <input type="tel" required placeholder="Телефон для ответа *" class="bg-warm-ivory border border-light-border p-2.5 text-xs text-obsidian focus:border-salad-dark focus:outline-none" />
+          </div>
+          <textarea rows="4" required placeholder="Ваш вопрос или техническое задание..." class="bg-warm-ivory border border-light-border p-2.5 text-xs text-obsidian focus:border-salad-dark focus:outline-none"></textarea>
+          <button type="submit" class="py-3.5 bg-salad hover:bg-salad-hover border border-salad-border font-mono-tech text-xs uppercase tracking-widest text-obsidian font-bold transition-all shadow-sm">
+            Отправить сообщение
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-warm-beige border-t border-light-border text-moss-gray">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-14 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div class="flex flex-col gap-4">
+          <a class="flex items-center gap-3" href="./index.html">
+            <div class="w-7 h-7 border border-salad-border flex items-center justify-center p-1 bg-white">
+              <svg class="w-full h-full text-obsidian" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+                <polygon fill="#9ee673" fill-opacity="0.4" points="12 4, 18 19, 6 19"></polygon>
+              </svg>
+            </div>
+            <span class="font-display tracking-[0.24em] text-base font-bold text-obsidian uppercase">МАЯК</span>
+          </a>
+          <p class="font-body text-xs text-moss-gray leading-relaxed font-light">
+            Экспертиза промышленной безопасности, ЛНК и техническое диагностирование ОПО.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2.5">
+          <span class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-obsidian mb-2 font-semibold">Направления</span>
+          <a class="font-body text-xs text-moss-gray hover:text-obsidian" href="./services-epb.html">Экспертиза ЭПБ (ФЗ №116)</a>
+          <a class="font-body text-xs text-moss-gray hover:text-obsidian" href="./services-lab.html">Лаборатория контроля ЛНК</a>
+          <a class="font-body text-xs text-moss-gray hover:text-obsidian" href="./services-buildings.html">Здания и сооружения ОПО</a>
+          <a class="font-body text-xs text-moss-gray hover:text-obsidian" href="./services-diagnostics.html">Диагностика и ресурс</a>
+          <a class="font-body text-xs text-moss-gray hover:text-obsidian" href="./services-vessels.html">Сосуды и трубопроводы</a>
+          <a class="font-body text-xs text-moss-gray hover:text-obsidian" href="./services-passports.html">Паспорта оборудования</a>
+        </div>
+        <div class="flex flex-col gap-2.5">
+          <span class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-obsidian mb-2 font-semibold">Контакты</span>
+          <span class="font-mono-tech text-xs text-moss-gray">Ижевск, ул. Ключевой посёлок, 83а, оф. 1001</span>
+          <span class="font-mono-tech text-xs text-obsidian font-bold">+7 (912) 466-92-77</span>
+          <span class="font-mono-tech text-xs text-moss-gray">mayak.izh@yandex.ru</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-obsidian mb-1 font-semibold">Аттестация</span>
+          <span class="font-mono-tech text-xs text-[#24502a] font-bold">Свидетельство ЛНК № 61А140925</span>
+          <span class="font-body text-xs text-moss-gray leading-relaxed">Внесение экспертных заключений в Реестр Ростехнадзора.</span>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-light-border/70 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tech text-moss-muted">
+        <span>© 2026 ООО «МАЯК». Все права защищены.</span>
+        <span>Готово для хостинга GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0 ? (window.pageYOffset / totalHeight) * 100 : 0;
+        if (progressBar) progressBar.style.width = progress + '%';
+      });
+
+      const curtain = document.getElementById('page-curtain');
+      if (curtain) {
+        curtain.classList.remove('opacity-100');
+        curtain.classList.add('opacity-0', 'pointer-events-none');
+      }
+
+      window.addEventListener('pageshow', () => {
+        if (curtain) {
+          curtain.classList.remove('opacity-100');
+          curtain.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        if (
+          href.startsWith('#') ||
+          href.startsWith('tel:') ||
+          href.startsWith('mailto:') ||
+          href.startsWith('javascript:') ||
+          link.getAttribute('target') === '_blank' ||
+          href.startsWith('http://') ||
+          href.startsWith('https://')
+        ) return;
+
+        link.addEventListener('click', (e) => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+          e.preventDefault();
+          if (curtain) {
+            curtain.classList.remove('pointer-events-none', 'opacity-0');
+            curtain.classList.add('opacity-100');
+          }
+          setTimeout(() => {
+            window.location.href = href;
+          }, 200);
+        });
+      });
+
+      // Toast Copy System
+      const toastEl = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      let toastTimeout = null;
+
+      function showToast(message) {
+        if (!toastEl || !toastMsg) return;
+        toastMsg.textContent = message;
+        toastEl.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        toastEl.classList.add('opacity-100', 'translate-y-0');
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toastEl.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+          toastEl.classList.remove('opacity-100', 'translate-y-0');
+        }, 3000);
+      }
+
+      document.querySelectorAll('.copy-box').forEach(box => {
+        box.addEventListener('click', () => {
+          const val = box.getAttribute('data-copy');
+          const name = box.getAttribute('data-name');
+          if (val && navigator.clipboard) {
+            navigator.clipboard.writeText(val).then(() => {
+              showToast(`✓ ${name} ${val} скопирован в буфер`);
+            }).catch(() => {
+              showToast(`Скопировано: ${val}`);
+            });
+          }
+        });
+      });
+
+      const msgForm = document.getElementById('msg-form');
+      if (msgForm) {
+        msgForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert('Ваше сообщение успешно отправлено! Мы свяжемся с вами в течение рабочего дня.');
+          msgForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
