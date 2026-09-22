@@ -1,1697 +1,277 @@
 <!DOCTYPE html>
-<html class="light scroll-smooth" lang="ru" id="top">
+<html lang="ru" class="scroll-smooth" id="top">
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
-  <title>ООО «МАЯК» — Экспертиза промышленной безопасности и неразрушающий контроль ОПО</title>
-  <meta name="description" content="Официальная регистрация заключений ЭПБ в территориальных органах Ростехнадзора. Выездные инструментальные испытания, диагностирование и расчет остаточного ресурса."/>
-
-  <!-- Google Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <title>ООО «Маяк» — испытания, экспертиза и технический контроль ОПО</title>
+  <meta name="description" content="ООО «Маяк», Ижевск. Экспертиза промышленной безопасности, лаборатория НК, обследование зданий и диагностирование оборудования. Лицензия Ростехнадзора Л043-00109-18/02671242, ЛНК-056А0801."/>
+  <link rel="icon" href="./assets/images/logo.svg"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script id="tailwind-config">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
     tailwind.config = {
-      darkMode: "class",
       theme: {
         extend: {
-          colors: {
-            "warm-ivory": "#fbf8f2",
-            "warm-beige": "#f5efe5",
-            "warm-card": "#ffffff",
-            "warm-card-soft": "#f7f3eb",
-            "salad": "#9ee673",
-            "salad-hover": "#8fe05d",
-            "salad-dark": "#76c845",
-            "salad-tint": "rgba(158, 230, 115, 0.18)",
-            "obsidian": "#121915",
-            "obsidian-light": "#1b2520",
-            "moss-gray": "#4d5c52",
-            "moss-muted": "#6a7b70",
-            "light-border": "#e3dccf",
-            "light-border-strong": "#cfc4b2",
-            "salad-border": "#8fd964"
-          },
-          fontFamily: {
-            "display": ["Cinzel", "serif"],
-            "antique": ["Cormorant Garamond", "serif"],
-            "body": ["Manrope", "sans-serif"],
-            "mono-tech": ["Space Grotesk", "sans-serif"]
-          }
+          colors: { ink: "#141414", paper: "#f4f7f3", rose: "#c45c64", "rose-deep": "#1f6b45", green: "#1f6b45", "green-deep": "#134830", line: "#d5e0d6", muted: "#5d6a60" },
+          fontFamily: { display: ["Cormorant Garamond", "serif"], antique: ["Cormorant Garamond", "serif"], body: ["Manrope", "sans-serif"], "mono-tech": ["Space Grotesk", "sans-serif"] }
         }
       }
     };
   </script>
-
-  <style>
-    @layer base {
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 100px;
-      }
-      body {
-        background-color: #fbf8f2;
-        color: #121915;
-        font-family: 'Manrope', sans-serif;
-        overflow-x: hidden;
-      }
-      ::selection {
-        background-color: #9ee673;
-        color: #121915;
-      }
-    }
-
-    /* Backgrounds & Textures */
-    .ivory-mesh {
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(158, 230, 115, 0.14) 0%, transparent 65%),
-        radial-gradient(circle at 100% 100%, rgba(224, 214, 194, 0.45) 0%, transparent 60%);
-    }
-    .fine-grid-light {
-      background-size: 64px 64px;
-      background-image: 
-        linear-gradient(to right, rgba(77, 92, 82, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(77, 92, 82, 0.05) 1px, transparent 1px);
-    }
-    .salad-sheen {
-      background: linear-gradient(135deg, #1b3820 0%, #2f6932 45%, #184824 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .light-box-shadow {
-      box-shadow: 0 16px 36px -12px rgba(18, 25, 21, 0.07), 0 1px 3px 0 rgba(18, 25, 21, 0.04);
-    }
-    .light-box-shadow-hover {
-      box-shadow: 0 20px 40px -15px rgba(118, 200, 69, 0.25), 0 2px 6px 0 rgba(18, 25, 21, 0.05);
-    }
-    .inner-soft {
-      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.8), inset 0 0 12px 0 rgba(77, 92, 82, 0.02);
-    }
-
-    /* Scroll Reveal Animations */
-    /* Scroll Reveal Animations - Safe by default, smoothly animated on scroll */
-    .reveal-block, .reveal-left, .reveal-right {
-      opacity: 1;
-      transform: none;
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .reveal-block.is-revealed,
-    .reveal-left.is-revealed,
-    .reveal-right.is-revealed {
-      opacity: 1 !important;
-      transform: none !important;
-    }
-
-    /* Stagger Delays */
-    .delay-100 { transition-delay: 100ms; }
-    .delay-200 { transition-delay: 200ms; }
-    .delay-300 { transition-delay: 300ms; }
-    .delay-400 { transition-delay: 400ms; }
-    .delay-500 { transition-delay: 500ms; }
-
-    /* Interactive Flash Highlight for Form Targeting */
-    @keyframes pulse-highlight {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(158, 230, 115, 0); }
-      50% { box-shadow: 0 0 0 8px rgba(158, 230, 115, 0.6); }
-    }
-    .flash-target {
-      animation: pulse-highlight 1.4s ease-in-out;
-    }
-
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(250%); }
-    }
-
-    /* Custom Slim Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f5efe5;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #cfc4b2;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #9ee673;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/brand.css"/>
 </head>
-<body class="bg-warm-ivory text-obsidian antialiased min-h-screen flex flex-col justify-between selection:bg-salad selection:text-obsidian relative">
+<body class="bg-paper text-ink antialiased min-h-screen flex flex-col">
+  <div id="site-top"></div>
 
-  <!-- ==================== LUXURY CINEMATIC PAGE CURTAIN ==================== -->
-  <div id="page-curtain" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 transition-opacity duration-300 bg-[#fbf8f2] flex flex-col items-center justify-center">
-    <div class="relative flex flex-col items-center gap-4 text-center px-4">
-      <div class="w-14 h-14 border border-salad-border bg-white flex items-center justify-center p-2.5 shadow-[0_0_25px_rgba(158,230,115,0.45)]">
-        <svg class="w-full h-full text-obsidian animate-pulse" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
-          <polygon fill="#9ee673" fill-opacity="0.45" points="12 4, 19 20, 5 20"></polygon>
-        </svg>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-[#24502a] animate-ping"></span>
-        <span class="font-display tracking-[0.25em] text-sm font-bold text-obsidian uppercase">МАЯК // ПЕРЕХОД</span>
-      </div>
-      <span class="font-mono-tech text-[10px] text-moss-muted uppercase tracking-[0.2em]">ПРОМЫШЛЕННАЯ БЕЗОПАСНОСТЬ И ЛНК</span>
-      <div class="w-48 h-[2px] bg-light-border overflow-hidden relative mt-1">
-        <div class="w-20 h-full bg-salad animate-[shimmer_1.2s_infinite]"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== READING PROGRESS BAR ==================== -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-salad via-salad-dark to-[#24502a] z-[70] transition-all duration-75 ease-out" style="width: 0%;"></div>
-
-      <!-- ==================== TOP ACCREDITATION & STATUS RIBBON ==================== -->
-  <div class="fixed top-0 left-0 w-full z-50 bg-[#121915] text-[#d4ded6] border-b border-[#243328] text-[10px] sm:text-[11px] font-mono-tech py-1.5 px-4 sm:px-8 lg:px-14">
-    <div class="w-full max-w-[1440px] mx-auto flex items-center justify-between gap-3">
-      <div class="flex items-center gap-2 sm:gap-3 overflow-hidden text-ellipsis whitespace-nowrap">
-        <span class="inline-flex items-center gap-1.5 text-white font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#9ee673] animate-pulse"></span>
-          <span>ООО «МАЯК»</span>
-        </span>
-        <span class="text-[#3b5242]">|</span>
-        <span class="hidden md:inline text-[#a3b8aa]">Экспертиза ОПО (ФЗ-116)</span>
-        <span class="text-[#3b5242] hidden md:inline">|</span>
-        <span class="text-[#c7d6cb]">Свидетельство ЛНК № 61А140925</span>
-        <span class="hidden lg:inline text-[#3b5242]">|</span>
-        <span class="hidden lg:inline text-[#8da393]">Ростехнадзор</span>
-      </div>
-      <div class="flex items-center gap-3 sm:gap-5 shrink-0 text-[#9cb1a2]">
-        <span class="hidden sm:inline font-mono-tech text-[10px]">Пн–Пт 08:00–18:00 (МСК)</span>
-        <a href="mailto:mayak.izh@yandex.ru" class="hover:text-white transition-colors flex items-center gap-1 text-[10.5px]">
-          <span class="material-symbols-outlined text-xs text-[#9ee673]">mail</span>
-          <span class="hidden md:inline">mayak.izh@yandex.ru</span>
-        </a>
-        <div class="flex items-center gap-1.5">
-          <a href="https://t.me/+79124669277" target="_blank" class="px-1.5 py-0.5 rounded bg-[#1f2f24] hover:bg-[#9ee673] hover:text-[#121915] text-[#9ee673] text-[9.5px] font-bold uppercase transition-colors" title="Написать в Telegram">TG</a>
-          <a href="https://wa.me/79124669277" target="_blank" class="px-1.5 py-0.5 rounded bg-[#1f2f24] hover:bg-[#9ee673] hover:text-[#121915] text-[#9ee673] text-[9.5px] font-bold uppercase transition-colors" title="Написать в WhatsApp">WA</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== MAIN LUXURY HEADER ==================== -->
-  <header id="site-header" class="fixed top-[28px] sm:top-[30px] left-0 w-full z-50 bg-[#fbf8f2]/95 backdrop-blur-md border-b border-light-border transition-all duration-300">
-    <div class="h-16 sm:h-20 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 flex items-center justify-between gap-4">
-      
-      <!-- Regal Brandmark -->
-      <a class="flex items-center gap-3 group focus:outline-none shrink-0" href="#top" aria-label="ООО МАЯК Главная">
-        <div class="w-10 h-10 sm:w-11 sm:h-11 border border-[#9ee673]/80 bg-[#121915] flex items-center justify-center p-2 rounded-sm shadow-[0_2px_10px_rgba(18,25,21,0.2)] transition-all duration-300 group-hover:border-[#9ee673] group-hover:shadow-[0_0_15px_rgba(158,230,115,0.45)] group-hover:scale-105">
-          <svg class="w-full h-full text-white" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
-            <line stroke-linecap="round" x1="12" x2="12" y1="2" y2="22"></line>
-            <polygon fill="#9ee673" fill-opacity="0.65" points="12 4, 19 20, 5 20" stroke-linecap="round" stroke-linejoin="round"></polygon>
-            <circle cx="12" cy="8" fill="#ffffff" r="1.5"></circle>
-          </svg>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-display tracking-[0.22em] text-[16px] sm:text-[18px] font-bold text-obsidian uppercase leading-tight group-hover:text-[#2d6934] transition-colors">МАЯК</span>
-          <span class="font-mono-tech text-[8.5px] sm:text-[9px] uppercase tracking-[0.2em] text-[#24502a] font-semibold">ПРОМБЕЗОПАСНОСТЬ // ОПО</span>
-        </div>
-      </a>
-
-      <!-- Desktop Nav - Completely Uniform & Single-Line -->
-      <nav class="hidden xl:flex items-center gap-1.5 lg:gap-2.5" aria-label="Навигация по сайту">
-        
-        <!-- Dropdown: Услуги ЭПБ -->
-        <div class="relative group py-2">
-          <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04] cursor-pointer" href="./services-epb.html">
-            <span>Услуги ЭПБ</span>
-            <span class="material-symbols-outlined text-xs text-moss-muted group-hover:rotate-180 transition-transform">expand_more</span>
-          </a>
-          <!-- Dropdown menu -->
-          <div class="absolute top-full left-0 w-80 bg-white border border-light-border shadow-2xl p-2.5 hidden group-hover:flex flex-col gap-1 z-50 rounded-sm">
-            <a href="./services-epb.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">01. Экспертиза промбезопасности</span>
-              <span class="text-[10px] text-moss-muted">ФЗ-116</span>
-            </a>
-            <a href="./services-lab.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">02. Лаборатория ЛНК</span>
-              <span class="text-[10px] text-moss-muted">№ 61А140925</span>
-            </a>
-            <a href="./services-buildings.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">03. Здания и сооружения</span>
-              <span class="text-[10px] text-moss-muted">ГОСТ 31937</span>
-            </a>
-            <a href="./services-diagnostics.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">04. Техдиагностирование</span>
-              <span class="text-[10px] text-moss-muted">Ресурс</span>
-            </a>
-            <a href="./services-vessels.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between border-b border-light-border/40">
-              <span class="font-semibold">05. Сосуды и трубопроводы</span>
-              <span class="text-[10px] text-moss-muted">Давление</span>
-            </a>
-            <a href="./services-passports.html" class="px-3 py-2.5 text-xs font-mono-tech uppercase tracking-wider text-obsidian hover:bg-salad/20 hover:text-[#1b4221] transition-colors flex items-center justify-between">
-              <span class="font-semibold">06. Паспорта оборудования</span>
-              <span class="text-[10px] text-moss-muted">ТР ТС 032</span>
-            </a>
+  <main class="flex-1">
+    <section class="stage">
+      <div class="stage-grid">
+        <div>
+          <p class="kicker">Ижевск · вся Россия</p>
+          <h1 class="font-display">Испытания, экспертиза и технический контроль</h1>
+          <p class="lead">ООО «Маяк» проводит экспертизу промышленной безопасности, лабораторный контроль и диагностирование ОПО. Заключения вносим в реестр Ростехнадзора.</p>
+          <div class="stage-actions">
+            <a class="btn btn-light" href="./question.html">Задать технический вопрос</a>
+            <a class="btn btn-ghost" href="./pricing.html">Стоимость услуг</a>
+          </div>
+          <div class="stage-docs">
+            <div>
+              <small>Лицензия Ростехнадзора</small>
+              <b>Л043-00109-18/02671242</b>
+            </div>
+            <div>
+              <small>Свидетельство ЛНК</small>
+              <b>ЛНК-056А0801 · до 2029</b>
+            </div>
           </div>
         </div>
-
-        <!-- Лаборатория ЛНК -->
-        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="./services-lab.html">
-          <span>Лаборатория ЛНК</span>
-        </a>
-
-        <!-- Отрасли -->
-        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="#industries">
-          <span>Отрасли</span>
-        </a>
-
-        <!-- Регламент -->
-        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="#engineering">
-          <span>Регламент</span>
-        </a>
-
-        <!-- Калькулятор -->
-        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="#calculator">
-          <span>Калькулятор</span>
-        </a>
-
-        <!-- Контакты -->
-        <a class="nav-link whitespace-nowrap px-3 py-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] transition-all rounded-sm flex items-center gap-1 text-moss-gray hover:text-obsidian hover:bg-black/[0.04]" href="./contacts.html">
-          <span>Контакты</span>
-        </a>
-      </nav>
-
-      <!-- Right Contacts & Salad CTA -->
-      <div class="flex items-center gap-3 sm:gap-5 shrink-0">
-        <div class="hidden md:flex flex-col items-end text-right whitespace-nowrap">
-          <div class="flex items-center gap-1.5 text-[9.5px] font-mono-tech text-moss-muted uppercase tracking-wider">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#34d399] animate-pulse"></span>
-            <span>Ижевск // Вся Россия</span>
-          </div>
-          <a class="whitespace-nowrap font-mono-tech text-xs sm:text-sm tracking-widest text-obsidian hover:text-[#2b6432] transition-colors font-bold active:scale-95" href="tel:89124669277">
-            +7 (912) 466-92-77
-          </a>
+        <div class="stage-mark">
+          <img src="./assets/images/logo-mark.png" alt="Логотип Маяк"/>
         </div>
-        <a class="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-[#121915] hover:bg-[#1f2d25] border border-[#9ee673]/70 text-[#9ee673] font-mono-tech text-[10.5px] sm:text-[11px] font-bold tracking-[0.18em] uppercase transition-all duration-300 shadow-[0_4px_16px_rgba(18,25,21,0.25)] hover:shadow-[0_6px_22px_rgba(158,230,115,0.35)] hover:-translate-y-0.5 active:scale-95 whitespace-nowrap rounded-sm" href="#calculator">
-          <span>Заказать расчет</span>
-          <span class="material-symbols-outlined text-xs">north_east</span>
-        </a>
-
-        <!-- Mobile / Tablet Hamburger Toggle Button -->
-        <button id="mobile-menu-btn" class="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border border-light-border bg-white p-2 text-obsidian hover:border-salad hover:bg-warm-beige transition-all active:scale-95 focus:outline-none" aria-label="Открыть мобильное меню" aria-expanded="false">
-          <span class="bar-1 w-5 h-0.5 bg-obsidian transition-transform duration-300"></span>
-          <span class="bar-2 w-5 h-0.5 bg-obsidian transition-opacity duration-300"></span>
-          <span class="bar-3 w-5 h-0.5 bg-obsidian transition-transform duration-300"></span>
-        </button>
       </div>
-    </div>
-  </header>
-
-  <!-- ==================== MOBILE MENU DRAWER (SOLID FULL COVERAGE) ==================== -->
-  <div id="mobile-drawer" class="fixed inset-0 top-[96px] sm:top-[108px] w-full h-[calc(100vh-80px)] sm:h-[calc(100vh-96px)] overflow-y-auto border-t border-light-border shadow-2xl hidden flex-col xl:hidden z-50" style="background-color: #fbf8f2 !important;">
-    <div class="px-5 py-6 sm:py-8 flex flex-col gap-6 max-w-lg mx-auto w-full">
-      <nav class="flex flex-col gap-2 font-mono-tech text-xs uppercase tracking-[0.16em]" aria-label="Мобильная навигация">
-        <a class="mobile-nav-link py-3 px-4 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./services-epb.html">
-          <span>01. Экспертиза ЭПБ (ФЗ №116)</span>
-          <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
-        </a>
-        <a class="mobile-nav-link py-3 px-4 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./services-lab.html">
-          <span>02. Лаборатория ЛНК № 61А140925</span>
-          <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
-        </a>
-        <a class="mobile-nav-link py-3 px-4 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./services-buildings.html">
-          <span>03. Здания и сооружения</span>
-          <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
-        </a>
-        <a class="mobile-nav-link py-3 px-4 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./services-diagnostics.html">
-          <span>04. Диагностика и ресурс</span>
-          <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
-        </a>
-        <a class="mobile-nav-link py-3 px-4 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./services-vessels.html">
-          <span>05. Сосуды и трубопроводы</span>
-          <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
-        </a>
-        <a class="mobile-nav-link py-3 px-4 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./services-passports.html">
-          <span>06. Паспорта оборудования</span>
-          <span class="material-symbols-outlined text-sm text-[#24502a]">arrow_forward</span>
-        </a>
-        <a class="mobile-nav-link py-3 px-4 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="#calculator">
-          <span>Расчет стоимости сметы</span>
-          <span class="material-symbols-outlined text-sm text-[#24502a]">calculate</span>
-        </a>
-        <a class="mobile-nav-link py-3 px-4 rounded border border-light-border bg-white hover:border-salad-dark hover:bg-salad/10 transition-all flex items-center justify-between text-obsidian font-semibold active:scale-98" href="./contacts.html">
-          <span>Контакты и реквизиты</span>
-          <span class="material-symbols-outlined text-sm text-[#24502a]">pin_drop</span>
-        </a>
-      </nav>
-
-      <div class="pt-4 border-t border-light-border flex flex-col gap-4">
-        <div class="flex flex-col gap-1 p-4 bg-white border border-light-border">
-          <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-muted">Прямой номер эксперта</span>
-          <a class="font-mono-tech text-lg font-bold text-obsidian hover:text-[#24502a] transition-colors inline-block" href="tel:89124669277">8 (912) 466-92-77</a>
-          <span class="font-body text-xs text-moss-gray">г. Ижевск, ул. Ключевой посёлок, 83а, оф. 1001</span>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <a class="flex items-center justify-center gap-2 py-3 bg-white border border-salad-border font-mono-tech text-xs uppercase tracking-wider text-obsidian hover:bg-salad/20 transition-all active:scale-95" href="https://t.me/+79124669277" target="_blank">
-            <span>Telegram</span>
-            <span class="material-symbols-outlined text-xs text-[#24502a]">north_east</span>
-          </a>
-          <a class="flex items-center justify-center gap-2 py-3 bg-white border border-salad-border font-mono-tech text-xs uppercase tracking-wider text-obsidian hover:bg-salad/20 transition-all active:scale-95" href="https://wa.me/79124669277" target="_blank">
-            <span>WhatsApp</span>
-            <span class="material-symbols-outlined text-xs text-[#24502a]">north_east</span>
-          </a>
-        </div>
-
-        <a class="mobile-nav-link w-full py-4 text-center bg-salad hover:bg-salad-hover border border-salad-dark font-mono-tech text-xs font-bold uppercase tracking-[0.24em] text-obsidian shadow-md transition-all active:scale-95" href="#calculator">
-          Заказать расчет сметы
-        </a>
+      <div class="stage-metrics">
+        <div><strong>99</strong><span>заключений ЭПБ в реестре</span></div>
+        <div><strong>11</strong><span>эксплуатирующих организаций</span></div>
+        <div><strong>2029</strong><span>аттестация лаборатории до января</span></div>
+        <div><strong>7–16</strong><span>Пн–Пт, время московское</span></div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="w-full pt-28 sm:pt-32 flex-1">
-    <div class="flex flex-col w-full">
-
-      <!-- ==================== HERO SECTION ==================== -->
-      <section class="relative w-full border-b border-light-border bg-warm-ivory fine-grid-light ivory-mesh px-4 sm:px-10 lg:px-14 py-16 sm:py-24 lg:py-32 overflow-hidden">
-        <div class="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col gap-12 sm:gap-16">
-          
-          <!-- Institutional Metadata Strip -->
-          <div class="reveal-block flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-light-border">
-            <div class="flex items-center gap-3">
-              <div class="w-2.5 h-2.5 rotate-45 bg-salad-dark animate-pulse"></div>
-              <span class="font-mono-tech text-[10.5px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] text-[#224827] uppercase font-semibold">
-                ГОСУДАРСТВЕННЫЙ РЕЕСТР РОСТЕХНАДЗОРА // ФЗ №116
-              </span>
-            </div>
-            <div class="flex items-center gap-6 sm:gap-8 font-mono-tech text-[10.5px] sm:text-[11px] text-moss-gray tracking-[0.18em] uppercase">
-              <span class="hidden sm:inline font-medium text-obsidian">СВИДЕТЕЛЬСТВО ЛНК: № 61А140925</span>
-              <span class="text-moss-muted">ВЫЕЗД: ВСЕ РЕГИОНЫ РФ</span>
-            </div>
+    <section class="block" id="services">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Направления</p>
+            <h2 class="font-display">Виды выполняемых работ</h2>
           </div>
-
-          <!-- Hero Matrix -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            
-            <!-- Left Regal Title Canvas -->
-            <div class="lg:col-span-8 flex flex-col gap-6 sm:gap-8 reveal-left">
-              <div class="inline-flex items-center gap-3 border border-salad-border/60 px-3.5 py-1.5 bg-white/90 w-fit font-mono-tech text-[10px] tracking-[0.25em] text-[#1c4422] uppercase inner-soft shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-salad-dark animate-ping"></span>
-                <span class="font-medium">ИЖЕВСК • УДМУРТСКАЯ РЕСПУБЛИКА</span>
-              </div>
-              <h1 class="font-display text-3xl sm:text-5xl lg:text-[64px] leading-[1.12] sm:leading-[1.08] text-obsidian font-normal">
-                Комплексная экспертиза <br class="hidden sm:inline"/>
-                <span class="salad-sheen font-antique italic text-4xl sm:text-6xl lg:text-[76px] tracking-wide font-normal">промышленной безопасности</span> <br/>
-                и неразрушающий контроль ОПО
-              </h1>
-              <p class="font-body text-sm sm:text-base lg:text-lg text-moss-gray max-w-2xl font-light leading-relaxed">
-                Официальная регистрация заключений ЭПБ в территориальных органах Ростехнадзора. Выездные инструментальные испытания, диагностирование и точный расчет остаточного ресурса технических устройств и строительных сооружений.
-              </p>
-
-              <!-- Actions -->
-              <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-3">
-                <a class="inline-flex items-center gap-3.5 bg-salad hover:bg-salad-hover text-obsidian border border-salad-border px-6 sm:px-8 py-3.5 sm:py-4 font-mono-tech text-[11px] sm:text-[11.5px] font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_8px_25px_rgba(158,230,115,0.38)] hover:shadow-[0_10px_30px_rgba(158,230,115,0.55)] hover:-translate-y-0.5 active:scale-95" href="#calculator">
-                  <span>Рассчитать стоимость экспертизы</span>
-                  <span class="material-symbols-outlined text-base">north_east</span>
-                </a>
-                <a class="inline-flex items-center gap-3 border border-light-border-strong bg-white hover:bg-warm-beige text-obsidian px-6 sm:px-7 py-3.5 sm:py-4 font-mono-tech text-[11px] sm:text-[11.5px] font-semibold tracking-[0.2em] uppercase transition-all duration-300 hover:border-salad-border inner-soft light-box-shadow hover:-translate-y-0.5 active:scale-95" href="#contacts">
-                  <span>Карточка компании и реквизиты</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Right Architectural Spec Ledger (Warm Card with Salad Accents) -->
-            <div class="lg:col-span-4 border border-salad-border/70 bg-white p-6 sm:p-8 lg:p-10 light-box-shadow relative reveal-right delay-200">
-              <div class="absolute -top-2.5 right-6 px-3 py-0.5 bg-salad border border-salad-dark text-obsidian font-mono-tech text-[9px] font-bold tracking-[0.28em] uppercase shadow-sm">
-                ОФИЦИАЛЬНО
-              </div>
-              <div class="flex items-center justify-between pb-5 border-b border-light-border">
-                <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#1c4422] font-semibold">РЕГЛАМЕНТ И СТАНДАРТЫ</span>
-                <span class="font-mono-tech text-[10px] text-moss-muted">РЕЕСТР 2025</span>
-              </div>
-              <div class="py-6 flex flex-col gap-6 border-b border-light-border">
-                <div class="flex flex-col gap-1.5">
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.16em] text-moss-gray font-medium">Лаборатория неразрушающего контроля</span>
-                  <span class="font-antique text-lg sm:text-xl text-obsidian tracking-wide font-medium">Свидетельство об аттестации № 61А140925</span>
-                </div>
-                <div class="flex flex-col gap-1.5">
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.16em] text-moss-gray font-medium">Квалификация экспертов</span>
-                  <span class="font-antique text-lg sm:text-xl text-obsidian tracking-wide font-medium">Высшая категория допуска по ФЗ-116</span>
-                </div>
-                <div class="flex flex-col gap-1.5">
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.16em] text-moss-gray font-medium">Юридическая гарантия</span>
-                  <span class="font-antique text-lg sm:text-xl text-obsidian tracking-wide font-medium">Сопровождение до внесения в реестр Ростехнадзора</span>
-                </div>
-              </div>
-              <div class="pt-6 flex flex-col gap-2">
-                <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-gray font-medium">Инженерная консультация</span>
-                <a class="font-mono-tech text-base sm:text-lg tracking-widest text-obsidian hover:text-[#2a6833] transition-colors font-bold active:scale-95 inline-block" href="tel:89124669277">
-                  8 (912) 466-92-77
-                </a>
-                <span class="font-mono-tech text-[11px] text-moss-gray tracking-wide mt-1">г. Ижевск, ул. Ключевой посёлок, 83а, оф. 1001</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Key Metrics Regal Grid with Animated Counters -->
-          <div id="metrics-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-light-border border border-light-border light-box-shadow reveal-block delay-300">
-            <div class="p-6 sm:p-8 lg:p-9 bg-white hover:bg-warm-beige/60 transition-all duration-300 flex flex-col justify-between group">
-              <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">Сфера деятельности</span>
-              <div class="mt-6 sm:mt-8">
-                <div class="font-display text-4xl text-obsidian font-semibold flex items-baseline">
-                  <span class="counter-val" data-target="10">0</span><span>+</span>
-                </div>
-                <span class="font-antique text-base text-[#1b3d22] block mt-2 tracking-wide font-semibold">Отраслей промышленности</span>
-                <p class="font-body text-[12.5px] text-moss-gray mt-1 leading-normal font-light">Нефтегазовый сектор, энергетика, металлургия, ОПК и химия</p>
-              </div>
-            </div>
-            <div class="p-6 sm:p-8 lg:p-9 bg-white hover:bg-warm-beige/60 transition-all duration-300 flex flex-col justify-between group">
-              <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">Надежность</span>
-              <div class="mt-6 sm:mt-8">
-                <div class="font-display text-4xl text-obsidian font-semibold flex items-baseline">
-                  <span class="counter-val" data-target="100">0</span><span>%</span>
-                </div>
-                <span class="font-antique text-base text-[#1b3d22] block mt-2 tracking-wide font-semibold">Внесение в реестр</span>
-                <p class="font-body text-[12.5px] text-moss-gray mt-1 leading-normal font-light">Полное юридическое сопровождение до официального уведомления</p>
-              </div>
-            </div>
-            <div class="p-6 sm:p-8 lg:p-9 bg-white hover:bg-warm-beige/60 transition-all duration-300 flex flex-col justify-between group">
-              <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">Контроль материалов</span>
-              <div class="mt-6 sm:mt-8">
-                <div class="font-display text-4xl text-obsidian font-semibold flex items-baseline">
-                  <span class="counter-val" data-target="5">0</span><span class="text-2xl font-normal ml-2">методов</span>
-                </div>
-                <span class="font-antique text-base text-[#1b3d22] block mt-2 tracking-wide font-semibold">Лабораторный комплекс</span>
-                <p class="font-body text-[12.5px] text-moss-gray mt-1 leading-normal font-light">Аттестованные методы: УЗК, РК, ВИК, МПК и капиллярный (ПВК)</p>
-              </div>
-            </div>
-            <div class="p-6 sm:p-8 lg:p-9 bg-white hover:bg-warm-beige/60 transition-all duration-300 flex flex-col justify-between group">
-              <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">Оперативность</span>
-              <div class="mt-6 sm:mt-8">
-                <div class="font-display text-4xl text-obsidian font-semibold flex items-baseline">
-                  <span class="text-2xl font-normal mr-2">От</span><span class="counter-val" data-target="5">0</span><span class="text-2xl font-normal ml-2">дн.</span>
-                </div>
-                <span class="font-antique text-base text-[#1b3d22] block mt-2 tracking-wide font-semibold">Подготовка заключения</span>
-                <p class="font-body text-[12.5px] text-moss-gray mt-1 leading-normal font-light">Срочный выезд инженерной группы с парком поверенных приборов</p>
-              </div>
-            </div>
-          </div>
-
+          <p>Шесть направлений — те же названия, что в меню. Подробности на отдельных страницах.</p>
         </div>
-      </section>
-
-      <!-- ==================== SCOPE OF WORK (6 SERVICES INTERACTIVE) ==================== -->
-      <section class="w-full bg-warm-beige/60 border-b border-light-border px-4 sm:px-10 lg:px-14 py-20 sm:py-28 fine-grid-light" id="services">
-        <div class="w-full max-w-[1440px] mx-auto flex flex-col gap-12 sm:gap-14">
-          <div class="reveal-block flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-light-border">
-            <div class="flex flex-col gap-3">
-              <span class="font-mono-tech text-[10.5px] uppercase tracking-[0.3em] text-[#24502a] font-semibold">
-                РЕЕСТР ОСНОВНЫХ НАПРАВЛЕНИЙ // ФЗ №116
-              </span>
-              <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl text-obsidian font-normal">
-                Виды выполняемых работ
-              </h2>
-            </div>
-            <p class="font-body text-xs sm:text-sm text-moss-gray font-light max-w-md leading-relaxed">
-              Кликните на интересующее направление, чтобы мгновенно подставить его в форму калькулятора сметы.
-            </p>
-          </div>
-
-          <!-- 6 Majestic Interactive Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <!-- 01 -->
-            <div class="service-card group border border-light-border hover:border-salad-dark bg-white p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 light-box-shadow hover:shadow-[0_16px_36px_rgba(158,230,115,0.3)] hover:-translate-y-1.5 reveal-block delay-100" data-service="devices">
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <span class="font-mono-tech text-xs tracking-[0.25em] text-[#24502a] font-bold">01</span>
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-gray bg-warm-beige border border-light-border px-2.5 py-0.5 rounded-sm">ФЗ-116</span>
-                </div>
-                <h3 class="font-display text-lg sm:text-xl text-obsidian font-semibold mb-3.5 group-hover:text-[#24502a] transition-colors">
-                  <a href="./services-epb.html" class="hover:underline">Экспертиза промышленной безопасности</a>
-                </h3>
-                <p class="font-body text-[13px] sm:text-[13.5px] text-moss-gray font-light leading-relaxed mb-6">
-                  Экспертиза технических устройств, зданий и сооружений на опасных производственных объектах. Экспертиза проектной документации на техническое перевооружение, консервацию и ликвидацию ОПО.
-                </p>
-              </div>
-              <div class="pt-5 border-t border-light-border flex items-center justify-between gap-3">
-                <a href="./services-epb.html" class="inline-flex items-center gap-1.5 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-[#24502a] font-bold hover:underline">
-                  <span>Подробнее</span>
-                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
-                </a>
-                <button type="button" class="calc-btn text-[10.5px] font-mono-tech uppercase tracking-wider text-moss-muted hover:text-obsidian flex items-center gap-1 cursor-pointer" data-service="devices">
-                  <span>В смету</span>
-                  <span class="material-symbols-outlined text-xs">calculate</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 02 -->
-            <div class="service-card group border border-light-border hover:border-salad-dark bg-white p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 light-box-shadow hover:shadow-[0_16px_36px_rgba(158,230,115,0.3)] hover:-translate-y-1.5 reveal-block delay-200" data-service="devices">
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <span class="font-mono-tech text-xs tracking-[0.25em] text-[#24502a] font-bold">02</span>
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-gray bg-warm-beige border border-light-border px-2.5 py-0.5 rounded-sm">ЛАБОРАТОРИЯ</span>
-                </div>
-                <h3 class="font-display text-lg sm:text-xl text-obsidian font-semibold mb-3.5 group-hover:text-[#24502a] transition-colors">
-                  <a href="./services-lab.html" class="hover:underline">Лабораторные исследования и контроль</a>
-                </h3>
-                <p class="font-body text-[13px] sm:text-[13.5px] text-moss-gray font-light leading-relaxed mb-6">
-                  Неразрушающий и разрушающий контроль качества материалов и сварных соединений: УЗК (ультразвуковой), РК (радиографический), ВИК (визуально-измерительный), МПК (магнитопорошковый), ПВК (проникающими веществами).
-                </p>
-              </div>
-              <div class="pt-5 border-t border-light-border flex items-center justify-between gap-3">
-                <a href="./services-lab.html" class="inline-flex items-center gap-1.5 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-[#24502a] font-bold hover:underline">
-                  <span>Подробнее</span>
-                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
-                </a>
-                <button type="button" class="calc-btn text-[10.5px] font-mono-tech uppercase tracking-wider text-moss-muted hover:text-obsidian flex items-center gap-1 cursor-pointer" data-service="devices">
-                  <span>В смету</span>
-                  <span class="material-symbols-outlined text-xs">calculate</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 03 -->
-            <div class="service-card group border border-light-border hover:border-salad-dark bg-white p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 light-box-shadow hover:shadow-[0_16px_36px_rgba(158,230,115,0.3)] hover:-translate-y-1.5 reveal-block delay-300" data-service="buildings">
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <span class="font-mono-tech text-xs tracking-[0.25em] text-[#24502a] font-bold">03</span>
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-gray bg-warm-beige border border-light-border px-2.5 py-0.5 rounded-sm">КОНСТРУКЦИИ</span>
-                </div>
-                <h3 class="font-display text-lg sm:text-xl text-obsidian font-semibold mb-3.5 group-hover:text-[#24502a] transition-colors">
-                  <a href="./services-buildings.html" class="hover:underline">Техническое обследование зданий и сооружений</a>
-                </h3>
-                <p class="font-body text-[13px] sm:text-[13.5px] text-moss-gray font-light leading-relaxed mb-6">
-                  Комплексный инструментальный аудит несущих строительных конструкций, эстакад, дымовых труб, фундаментов, резервуарных парков и производственных корпусов ОПО по ГОСТ 31937-2011.
-                </p>
-              </div>
-              <div class="pt-5 border-t border-light-border flex items-center justify-between gap-3">
-                <a href="./services-buildings.html" class="inline-flex items-center gap-1.5 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-[#24502a] font-bold hover:underline">
-                  <span>Подробнее</span>
-                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
-                </a>
-                <button type="button" class="calc-btn text-[10.5px] font-mono-tech uppercase tracking-wider text-moss-muted hover:text-obsidian flex items-center gap-1 cursor-pointer" data-service="buildings">
-                  <span>В смету</span>
-                  <span class="material-symbols-outlined text-xs">calculate</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 04 -->
-            <div class="service-card group border border-light-border hover:border-salad-dark bg-white p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 light-box-shadow hover:shadow-[0_16px_36px_rgba(158,230,115,0.3)] hover:-translate-y-1.5 reveal-block delay-100" data-service="devices">
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <span class="font-mono-tech text-xs tracking-[0.25em] text-[#24502a] font-bold">04</span>
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-gray bg-warm-beige border border-light-border px-2.5 py-0.5 rounded-sm">ДИАГНОСТИКА</span>
-                </div>
-                <h3 class="font-display text-lg sm:text-xl text-obsidian font-semibold mb-3.5 group-hover:text-[#24502a] transition-colors">
-                  <a href="./services-diagnostics.html" class="hover:underline">Техническое диагностирование оборудования</a>
-                </h3>
-                <p class="font-body text-[13px] sm:text-[13.5px] text-moss-gray font-light leading-relaxed mb-6">
-                  Оценка фактического технического состояния технологического оборудования, машин, насосных станций и агрегатов, выявление критических напряжений и установление срока безопасной эксплуатации.
-                </p>
-              </div>
-              <div class="pt-5 border-t border-light-border flex items-center justify-between gap-3">
-                <a href="./services-diagnostics.html" class="inline-flex items-center gap-1.5 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-[#24502a] font-bold hover:underline">
-                  <span>Подробнее</span>
-                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
-                </a>
-                <button type="button" class="calc-btn text-[10.5px] font-mono-tech uppercase tracking-wider text-moss-muted hover:text-obsidian flex items-center gap-1 cursor-pointer" data-service="devices">
-                  <span>В смету</span>
-                  <span class="material-symbols-outlined text-xs">calculate</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 05 -->
-            <div class="service-card group border border-light-border hover:border-salad-dark bg-white p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 light-box-shadow hover:shadow-[0_16px_36px_rgba(158,230,115,0.3)] hover:-translate-y-1.5 reveal-block delay-200" data-service="pipes">
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <span class="font-mono-tech text-xs tracking-[0.25em] text-[#24502a] font-bold">05</span>
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-gray bg-warm-beige border border-light-border px-2.5 py-0.5 rounded-sm">ОСВИДЕТЕЛЬСТВОВАНИЕ</span>
-                </div>
-                <h3 class="font-display text-lg sm:text-xl text-obsidian font-semibold mb-3.5 group-hover:text-[#24502a] transition-colors">
-                  <a href="./services-vessels.html" class="hover:underline">Освидетельствование сосудов и трубопроводов</a>
-                </h3>
-                <p class="font-body text-[13px] sm:text-[13.5px] text-moss-gray font-light leading-relaxed mb-6">
-                  Первичное, периодическое и внеочередное техническое освидетельствование сосудов, работающих под избыточным давлением, технологических и магистральных трубопроводов, паровых котлов и резервуаров РВС.
-                </p>
-              </div>
-              <div class="pt-5 border-t border-light-border flex items-center justify-between gap-3">
-                <a href="./services-vessels.html" class="inline-flex items-center gap-1.5 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-[#24502a] font-bold hover:underline">
-                  <span>Подробнее</span>
-                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
-                </a>
-                <button type="button" class="calc-btn text-[10.5px] font-mono-tech uppercase tracking-wider text-moss-muted hover:text-obsidian flex items-center gap-1 cursor-pointer" data-service="pipes">
-                  <span>В смету</span>
-                  <span class="material-symbols-outlined text-xs">calculate</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 06 -->
-            <div class="service-card group border border-light-border hover:border-salad-dark bg-white p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 light-box-shadow hover:shadow-[0_16px_36px_rgba(158,230,115,0.3)] hover:-translate-y-1.5 reveal-block delay-300" data-service="passports">
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <span class="font-mono-tech text-xs tracking-[0.25em] text-[#24502a] font-bold">06</span>
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-gray bg-warm-beige border border-light-border px-2.5 py-0.5 rounded-sm">ДОКУМЕНТАЦИЯ</span>
-                </div>
-                <h3 class="font-display text-lg sm:text-xl text-obsidian font-semibold mb-3.5 group-hover:text-[#24502a] transition-colors">
-                  <a href="./services-passports.html" class="hover:underline">Разработка и восстановление паспортов</a>
-                </h3>
-                <p class="font-body text-[13px] sm:text-[13.5px] text-moss-gray font-light leading-relaxed mb-6">
-                  Инженерная разработка, дублирование и восстановление утраченных паспортов, руководств по эксплуатации, прочностные расчеты и обоснования безопасности ОПО по ТР ТС 032/2013 и ТР ТС 010/2011.
-                </p>
-              </div>
-              <div class="pt-5 border-t border-light-border flex items-center justify-between gap-3">
-                <a href="./services-passports.html" class="inline-flex items-center gap-1.5 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-[#24502a] font-bold hover:underline">
-                  <span>Подробнее</span>
-                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
-                </a>
-                <button type="button" class="calc-btn text-[10.5px] font-mono-tech uppercase tracking-wider text-moss-muted hover:text-obsidian flex items-center gap-1 cursor-pointer" data-service="passports">
-                  <span>В смету</span>
-                  <span class="material-symbols-outlined text-xs">calculate</span>
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== TARGET INDUSTRIES (10 SECTORS INTERACTIVE) ==================== -->
-      <section class="w-full bg-warm-ivory border-b border-light-border px-4 sm:px-10 lg:px-14 py-20 sm:py-28" id="industries">
-        <div class="w-full max-w-[1440px] mx-auto flex flex-col gap-12 sm:gap-14">
-          <div class="reveal-block flex flex-col gap-3 max-w-3xl">
-            <span class="font-mono-tech text-[10.5px] uppercase tracking-[0.3em] text-[#24502a] font-semibold">
-              СФЕРА ПРИМЕНЕНИЯ И АТТЕСТАЦИИ
+        <div class="work-list reveal">
+          <a class="work-row" href="./services-epb.html">
+            <span class="work-idx">01</span>
+            <span>
+              <span class="work-tag">ФЗ-116</span>
+              <strong>Экспертиза промышленной безопасности</strong>
+              <span class="work-text">Техустройства, здания и сооружения, документация на перевооружение, консервацию и ликвидацию. Регистрация заключения в реестре.</span>
             </span>
-            <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl text-obsidian font-normal">
-              Отрасли промышленности
-            </h2>
-            <p class="font-body text-xs sm:text-sm text-moss-gray font-light leading-relaxed">
-              Нажмите на любую отрасль, чтобы выбрать её в калькуляторе сметы и перейти к расчету.
-            </p>
-          </div>
-
-          <!-- 10 Sectors Interactive Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-light-border border border-light-border light-box-shadow reveal-block delay-200">
-            
-            <!-- 1 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Сети газораспределения и газопотребления" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">01</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">ГАЗ</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Сети газораспределения и газопотребления</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">ГРП, ШРП, газопроводы</span>
-              </div>
-            </div>
-
-            <!-- 2 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Объекты теплоэнергетического комплекса (ТЭЦ / Котельные)" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">02</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">ТЭК</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Теплоэнергетический комплекс</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">ТЭЦ, котельные, котлы</span>
-              </div>
-            </div>
-
-            <!-- 3 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Нефтяная и газовая промышленность" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">03</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">ДОБЫЧА</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Нефтяная и газовая промышленность</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">Добыча, скважины, УПН</span>
-              </div>
-            </div>
-
-            <!-- 4 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Хранение и транспортировка нефти и нефтепродуктов" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">04</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">ХРАНЕНИЕ</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Хранение нефти и нефтепродуктов</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">Нефтебазы, РВС, налив</span>
-              </div>
-            </div>
-
-            <!-- 5 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Магистральный трубопроводный транспорт" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">05</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">ТРАНСПОРТ</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Магистральный трубопроводный транспорт</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">Нефтепроводы, КС, НПС</span>
-              </div>
-            </div>
-
-            <!-- 6 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Нефтегазоперерабатывающая и нефтехимическая отрасль" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">06</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">НЕФТЕХИМИЯ</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Нефтегазоперерабатывающая отрасль</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">НПЗ, крекинг, ректификация</span>
-              </div>
-            </div>
-
-            <!-- 7 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Химическая промышленность" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">07</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">ХИМИЯ</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Химическая промышленность</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">Агрессивные среды, емкости</span>
-              </div>
-            </div>
-
-            <!-- 8 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Металлургическая промышленность" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">08</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">МЕТАЛЛ</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Металлургическая промышленность</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">Плавильные печи, краны</span>
-              </div>
-            </div>
-
-            <!-- 9 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Пищевая промышленность" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">09</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">ПИЩЕВАЯ</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Пищевая промышленность</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">Аммиачные ХУ, сосуды</span>
-              </div>
-            </div>
-
-            <!-- 10 -->
-            <div class="sector-card p-6 sm:p-7 bg-white hover:bg-salad/20 hover:border-salad-dark transition-all duration-300 flex flex-col justify-between min-h-[165px] sm:min-h-[175px] group cursor-pointer active:scale-95" data-sector="Оборонно-промышленный комплекс (ОПК)" role="button" tabindex="0">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-tech text-[11px] text-[#24502a] font-bold">10</span>
-                <span class="font-mono-tech text-[9px] text-moss-muted uppercase tracking-wider bg-warm-ivory px-1.5 py-0.5 border border-light-border">ОПК</span>
-              </div>
-              <div class="mt-6 sm:mt-8">
-                <h4 class="font-display text-sm text-obsidian font-medium group-hover:text-[#24502a] transition-colors leading-snug">Оборонно-промышленный комплекс</h4>
-                <span class="font-mono-tech text-[10px] text-moss-gray block mt-2">Спецпроизводства, полигоны</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== ENGINEERING PRECISION ==================== -->
-      <section class="w-full bg-warm-beige/40 border-b border-light-border px-4 sm:px-10 lg:px-14 py-20 sm:py-28" id="engineering">
-        <div class="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          
-          <div class="lg:col-span-5 flex flex-col gap-6 reveal-left">
-            <span class="font-mono-tech text-[10.5px] uppercase tracking-[0.3em] text-[#24502a] font-semibold">
-              ИНЖЕНЕРНЫЙ РЕГЛАМЕНТ
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-lab.html">
+            <span class="work-idx">02</span>
+            <span>
+              <span class="work-tag">ЛНК-056А0801</span>
+              <strong>Лабораторные исследования и контроль</strong>
+              <span class="work-text">Неразрушающий и разрушающий контроль: УЗК, РК, МПК, ПВК, ВИК, ТК. Выезд лаборатории на объект.</span>
             </span>
-            <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl text-obsidian font-normal leading-tight">
-              Безупречная точность и ответственность
-            </h2>
-            <p class="font-body text-xs sm:text-sm text-moss-gray font-light leading-relaxed">
-              Деятельность ООО «МАЯК» ориентирована на строгое соблюдение законодательных требований и защиту заказчика от регуляторных рисков при проверках контрольно-надзорных органов.
-            </p>
-            <div class="mt-2 p-6 sm:p-8 border border-salad-border/70 bg-white flex flex-col gap-3 inner-soft light-box-shadow">
-              <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">Метрологический учет</span>
-              <p class="font-body text-[13px] text-moss-gray font-light leading-relaxed">
-                Все применяемые ультразвуковые, рентгенографические и оптические средства измерений внесены в Государственный реестр СИ РФ (ФГИС «АРШИН») и имеют действующие свидетельства о поверке.
-              </p>
-            </div>
-          </div>
-
-          <div class="lg:col-span-7 flex flex-col gap-5 reveal-right delay-200">
-            <!-- 01 -->
-            <div class="p-6 sm:p-8 border border-light-border bg-white hover:border-salad-dark transition-all duration-300 flex gap-4 sm:gap-6 items-start inner-soft light-box-shadow hover:-translate-y-1">
-              <span class="font-mono-tech text-base text-[#2b6432] pt-1 font-bold">01</span>
-              <div class="flex flex-col gap-2">
-                <h4 class="font-display text-base sm:text-lg text-obsidian font-semibold">Аттестованные эксперты высшей квалификации</h4>
-                <p class="font-body text-xs sm:text-sm text-moss-gray font-light leading-relaxed">
-                  В штате организации состоят эксперты с подтвержденными категориями в Единой системе оценки соответствия в области промышленной безопасности. Регулярная переаттестация по всем ключевым направлениям.
-                </p>
-              </div>
-            </div>
-            <!-- 02 -->
-            <div class="p-6 sm:p-8 border border-light-border bg-white hover:border-salad-dark transition-all duration-300 flex gap-4 sm:gap-6 items-start inner-soft light-box-shadow hover:-translate-y-1">
-              <span class="font-mono-tech text-base text-[#2b6432] pt-1 font-bold">02</span>
-              <div class="flex flex-col gap-2">
-                <h4 class="font-display text-base sm:text-lg text-obsidian font-semibold">Мобильная лаборатория неразрушающего контроля</h4>
-                <p class="font-body text-xs sm:text-sm text-moss-gray font-light leading-relaxed">
-                  Оснащенные мобильные комплексы высокой проходимости для автономной работы на промысловых трубопроводах, удаленных производственных площадках и действующих цехах без остановки технологического цикла.
-                </p>
-              </div>
-            </div>
-            <!-- 03 -->
-            <div class="p-6 sm:p-8 border border-light-border bg-white hover:border-salad-dark transition-all duration-300 flex gap-4 sm:gap-6 items-start inner-soft light-box-shadow hover:-translate-y-1">
-              <span class="font-mono-tech text-base text-[#2b6432] pt-1 font-bold">03</span>
-              <div class="flex flex-col gap-2">
-                <h4 class="font-display text-base sm:text-lg text-obsidian font-semibold">Юридическая гарантия регистрации заключения</h4>
-                <p class="font-body text-xs sm:text-sm text-moss-gray font-light leading-relaxed">
-                  Полное сопровождение документации до момента получения официального письма-уведомления территориального управления Ростехнадзора о внесении заключения в государственный реестр.
-                </p>
-              </div>
-            </div>
-          </div>
-
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-buildings.html">
+            <span class="work-idx">03</span>
+            <span>
+              <span class="work-tag">ГОСТ 31937</span>
+              <strong>Техническое обследование зданий и сооружений</strong>
+              <span class="work-text">Инструментальный анализ несущих конструкций, эстакад, фундаментов и корпусов на ОПО.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-diagnostics.html">
+            <span class="work-idx">04</span>
+            <span>
+              <span class="work-tag">Диагностика</span>
+              <strong>Техническое диагностирование оборудования</strong>
+              <span class="work-text">Фактическое состояние, причины износа, остаточный ресурс и режимы дальнейшей безопасной работы.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-vessels.html">
+            <span class="work-idx">05</span>
+            <span>
+              <span class="work-tag">Давление</span>
+              <strong>Освидетельствование сосудов и трубопроводов</strong>
+              <span class="work-text">Первичное, периодическое и внеочередное освидетельствование сосудов, котлов, трубопроводов и РВС.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-passports.html">
+            <span class="work-idx">06</span>
+            <span>
+              <span class="work-tag">Документация</span>
+              <strong>Разработка и восстановление паспортов</strong>
+              <span class="work-text">Паспорта техустройств, ПЛА, ПЛАРН, обоснование безопасности и эксплуатационная документация ОПО.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ==================== CALCULATION & ESTIMATION REQUEST ==================== -->
-      <section class="w-full bg-warm-beige/60 border-b border-light-border px-4 sm:px-10 lg:px-14 py-20 sm:py-28" id="calculator">
-        <div class="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          
-          <!-- Left Info Strip -->
-          <div class="lg:col-span-5 flex flex-col justify-between gap-8 reveal-left">
-            <div class="flex flex-col gap-4">
-              <span class="font-mono-tech text-[10.5px] uppercase tracking-[0.3em] text-[#24502a] font-semibold">
-                РАСЧЕТ СТОИМОСТИ
-              </span>
-              <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl text-obsidian font-normal">
-                Заявка на проведение экспертизы
-              </h2>
-              <p class="font-body text-xs sm:text-sm text-moss-gray font-light leading-relaxed">
-                Укажите параметры объекта и состав задачи. Ведущий инженер подготовит технико-коммерческое предложение с детализированным расчетом стоимости и графика работ в течение одного рабочего дня.
-              </p>
-              
-              <div class="mt-4 p-6 sm:p-8 border border-light-border bg-white flex flex-col gap-4 inner-soft light-box-shadow">
-                <span class="font-mono-tech text-[10.5px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">Что включено в смету:</span>
-                <ul class="flex flex-col gap-2.5 font-body text-[13px] text-moss-gray font-light">
-                  <li class="flex items-center gap-3">
-                    <div class="w-1.5 h-1.5 rotate-45 bg-salad-dark flex-shrink-0"></div>
-                    <span>Выезд аттестованных дефектоскопистов и экспертов</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <div class="w-1.5 h-1.5 rotate-45 bg-salad-dark flex-shrink-0"></div>
-                    <span>Инструментальный контроль и лабораторные испытания</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <div class="w-1.5 h-1.5 rotate-45 bg-salad-dark flex-shrink-0"></div>
-                    <span>Расчетно-поверочные процедуры и оценка остаточного ресурса</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <div class="w-1.5 h-1.5 rotate-45 bg-salad-dark flex-shrink-0"></div>
-                    <span>Внесение заключения ЭПБ в реестр Ростехнадзора</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Direct Engineer Hotlink -->
-            <div class="p-6 sm:p-7 border border-light-border bg-white flex items-center justify-between inner-soft light-box-shadow hover:border-salad-dark transition-colors">
-              <div class="flex flex-col">
-                <span class="font-mono-tech text-[10px] text-moss-muted uppercase tracking-[0.2em]">Прямая линия инженера</span>
-                <a class="font-mono-tech text-base sm:text-lg text-obsidian hover:text-[#2b6432] transition-colors font-bold mt-1 active:scale-95" href="tel:89124669277">
-                  8 (912) 466-92-77
-                </a>
-              </div>
-              <span class="font-mono-tech text-[10px] text-[#1b4322] border border-salad-border bg-salad/20 px-3 py-1 font-semibold uppercase tracking-wider">ИЖЕВСК</span>
-            </div>
+    <section class="block" id="scheme" style="padding-top: 0">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Как мы работаем</p>
+            <h2 class="font-display">Схема взаимодействия</h2>
           </div>
-
-          <!-- Calculation Form: Light Warm Luxury + Salad Accents -->
-          <div id="calc-form-container" class="lg:col-span-7 border border-salad-border/70 bg-white p-6 sm:p-10 lg:p-12 light-box-shadow relative reveal-right delay-200">
-            <form id="calc-form" class="flex flex-col gap-6 sm:gap-7">
-              
-              <!-- 1. Object Type -->
-              <div class="flex flex-col gap-3">
-                <label class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-[#24502a] font-semibold">
-                  1. Категория объекта или тип услуги
-                </label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="service-options-group">
-                  <label class="service-radio-label flex items-center gap-3 p-3.5 sm:p-4 border border-salad-border bg-salad/10 cursor-pointer hover:border-salad-dark transition-all">
-                    <input checked="" class="text-salad-dark focus:ring-salad focus:ring-offset-0 bg-white border-light-border-strong cursor-pointer" name="service_type" type="radio" value="devices"/>
-                    <span class="font-body text-xs text-obsidian font-medium select-none">Технические устройства ОПО</span>
-                  </label>
-                  <label class="service-radio-label flex items-center gap-3 p-3.5 sm:p-4 border border-light-border bg-warm-ivory/80 cursor-pointer hover:border-salad-dark transition-all">
-                    <input class="text-salad-dark focus:ring-salad focus:ring-offset-0 bg-white border-light-border-strong cursor-pointer" name="service_type" type="radio" value="buildings"/>
-                    <span class="font-body text-xs text-obsidian font-medium select-none">Здания и сооружения</span>
-                  </label>
-                  <label class="service-radio-label flex items-center gap-3 p-3.5 sm:p-4 border border-light-border bg-warm-ivory/80 cursor-pointer hover:border-salad-dark transition-all">
-                    <input class="text-salad-dark focus:ring-salad focus:ring-offset-0 bg-white border-light-border-strong cursor-pointer" name="service_type" type="radio" value="pipes"/>
-                    <span class="font-body text-xs text-obsidian font-medium select-none">Трубопроводы и сосуды</span>
-                  </label>
-                  <label class="service-radio-label flex items-center gap-3 p-3.5 sm:p-4 border border-light-border bg-warm-ivory/80 cursor-pointer hover:border-salad-dark transition-all">
-                    <input class="text-salad-dark focus:ring-salad focus:ring-offset-0 bg-white border-light-border-strong cursor-pointer" name="service_type" type="radio" value="passports"/>
-                    <span class="font-body text-xs text-obsidian font-medium select-none">Разработка / паспортизация</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- 2. Sector -->
-              <div class="flex flex-col gap-2.5">
-                <label class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-[#24502a] font-semibold" for="sector_select">
-                  2. Отрасль предприятия
-                </label>
-                <div class="relative">
-                  <select class="w-full bg-warm-ivory/90 border border-light-border text-obsidian p-3.5 text-xs font-body focus:border-salad-dark focus:ring-2 focus:ring-salad/40 transition-all rounded-none cursor-pointer" id="sector_select" name="sector">
-                    <option value="Сети газораспределения и газопотребления">Сети газораспределения и газопотребления</option>
-                    <option value="Объекты теплоэнергетического комплекса (ТЭЦ / Котельные)">Объекты теплоэнергетического комплекса (ТЭЦ / Котельные)</option>
-                    <option value="Нефтяная и газовая промышленность">Нефтяная и газовая промышленность</option>
-                    <option value="Хранение и транспортировка нефти и нефтепродуктов">Хранение и транспортировка нефти и нефтепродуктов</option>
-                    <option value="Магистральный трубопроводный транспорт">Магистральный трубопроводный транспорт</option>
-                    <option value="Нефтегазоперерабатывающая и нефтехимическая отрасль">Нефтегазоперерабатывающая и нефтехимическая отрасль</option>
-                    <option value="Химическая промышленность">Химическая промышленность</option>
-                    <option value="Металлургическая промышленность">Металлургическая промышленность</option>
-                    <option value="Пищевая промышленность">Пищевая промышленность</option>
-                    <option value="Оборонно-промышленный комплекс (ОПК)">Оборонно-промышленный комплекс (ОПК)</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- 3. Notes / Specs -->
-              <div class="flex flex-col gap-2.5">
-                <label class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-[#24502a] font-semibold" for="comment_input">
-                  3. Описание объекта или техническое задание
-                </label>
-                <textarea id="comment_input" name="comment" class="w-full bg-warm-ivory/90 border border-light-border text-obsidian p-3.5 text-xs font-body placeholder:text-moss-muted focus:border-salad-dark focus:ring-2 focus:ring-salad/40 transition-all resize-none rounded-none" placeholder="Укажите наименование оборудования, год ввода в эксплуатацию, рабочие параметры либо перечень дефектов..." rows="3"></textarea>
-                
-                <div class="flex flex-wrap items-center justify-between gap-3 p-3.5 bg-warm-ivory border border-light-border">
-                  <div class="flex items-center gap-2.5 text-moss-gray">
-                    <span class="material-symbols-outlined text-base text-[#24502a]">attach_file</span>
-                    <span id="file-name-label" class="font-mono-tech text-xs truncate max-w-[240px] sm:max-w-xs">Прикрепить ТЗ / проект (PDF, DOCX, ZIP)</span>
-                  </div>
-                  <label class="cursor-pointer border border-salad-border bg-white px-4 py-1.5 font-mono-tech text-[10px] font-semibold uppercase tracking-wider text-obsidian hover:bg-salad hover:border-salad-dark transition-all active:scale-95">
-                    Выбрать
-                    <input id="file-input" class="hidden" type="file"/>
-                  </label>
-                </div>
-              </div>
-
-              <!-- 4. Contacts -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="flex flex-col gap-1.5">
-                  <label class="font-mono-tech text-[10.5px] uppercase tracking-[0.16em] text-moss-muted font-medium" for="phone_input">Телефон для связи *</label>
-                  <input id="phone_input" name="phone" class="w-full bg-warm-ivory/90 border border-light-border text-obsidian p-3.5 text-xs font-body focus:border-salad-dark focus:ring-2 focus:ring-salad/40 transition-all placeholder:text-moss-muted rounded-none" placeholder="+7 (___) ___-__-__" required="" type="tel"/>
-                </div>
-                <div class="flex flex-col gap-1.5">
-                  <label class="font-mono-tech text-[10.5px] uppercase tracking-[0.16em] text-moss-muted font-medium" for="email_input">Корпоративная почта *</label>
-                  <input id="email_input" name="email" class="w-full bg-warm-ivory/90 border border-light-border text-obsidian p-3.5 text-xs font-body focus:border-salad-dark focus:ring-2 focus:ring-salad/40 transition-all placeholder:text-moss-muted rounded-none" placeholder="name@company.ru" required="" type="email"/>
-                </div>
-              </div>
-
-              <!-- Submit Button -->
-              <button id="calc-submit-btn" class="w-full mt-2 bg-salad hover:bg-salad-hover text-obsidian border border-salad-dark py-4 font-mono-tech text-xs font-bold tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_6px_22px_rgba(158,230,115,0.4)] hover:shadow-[0_8px_28px_rgba(143,224,93,0.6)] active:scale-[0.98] cursor-pointer" type="submit">
-                Отправить заявку на расчет сметы
-              </button>
-              <span class="font-mono-tech text-[10px] text-moss-muted text-center tracking-wider">
-                Нажимая кнопку, вы подтверждаете согласие с регламентом конфиденциальности ФЗ №152.
-              </span>
-            </form>
-          </div>
-
+          <a class="more" href="./powers.html">Полномочия и полная схема</a>
         </div>
-      </section>
+        <div class="steps">
+          <article class="step reveal d1"><em>01</em><h3>Заявка</h3><p>Пишете технический вопрос и прикладываете паспорт, схему или фото объекта.</p></article>
+          <article class="step reveal d2"><em>02</em><h3>Анализ и договор</h3><p>Смотрим состав работ, нормативные сроки и готовим коммерческое предложение.</p></article>
+          <article class="step reveal d3"><em>03</em><h3>Выезд и контроль</h3><p>Лаборатория и эксперты выезжают на площадку, проводят НК и обследование.</p></article>
+          <article class="step reveal d4"><em>04</em><h3>Реестр</h3><p>Оформляем заключение и сопровождаем внесение в реестр Ростехнадзора.</p></article>
+        </div>
+      </div>
+    </section>
 
-      <!-- ==================== OFFICIAL CONTACTS & CREDENTIALS ==================== -->
-      <section class="w-full bg-warm-ivory border-b border-light-border px-4 sm:px-10 lg:px-14 py-20 sm:py-28" id="contacts">
-        <div class="w-full max-w-[1440px] mx-auto flex flex-col gap-12 sm:gap-14">
-          
-          <div class="reveal-block flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-light-border">
-            <div class="flex flex-col gap-3">
-              <span class="font-mono-tech text-[10.5px] uppercase tracking-[0.3em] text-[#24502a] font-semibold">
-                ЮРИДИЧЕСКИЙ СТАТУС И СВЯЗЬ
-              </span>
-              <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl text-obsidian font-normal">
-                ООО «МАЯК» • Контакты и реквизиты
-              </h2>
-            </div>
-            <a class="font-mono-tech text-sm text-obsidian hover:text-[#24502a] transition-colors flex items-center gap-2.5 font-medium active:scale-95" href="mailto:mayak.izh@yandex.ru">
-              <span class="material-symbols-outlined text-base text-[#24502a]">mail</span>
-              <span class="tracking-wide">mayak.izh@yandex.ru</span>
-            </a>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            <!-- Left 7 Cols: Address + Executives + Requisites -->
-            <div class="lg:col-span-7 flex flex-col gap-6 reveal-left">
-              
-              <!-- Address -->
-              <div class="p-6 sm:p-8 border border-light-border bg-white flex flex-col gap-2.5 inner-soft light-box-shadow">
-                <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">Местонахождение и адрес для корреспонденции</span>
-                <p class="font-antique text-xl sm:text-2xl text-obsidian tracking-wide font-normal">
-                  426063, Удмуртская Республика, г. Ижевск, ул. Ключевой посёлок, дом 83а, офис 1001
-                </p>
-                <div class="flex flex-wrap items-center gap-4 sm:gap-6 mt-3 font-mono-tech text-xs text-moss-gray">
-                  <span>График: Пн–Пт 08:00 – 18:00 (МСК+1)</span>
-                  <span class="text-[#204a25] font-medium">Прием аварийных заявок: Круглосуточно</span>
-                </div>
-              </div>
-
-              <!-- Management Persons -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div class="p-6 sm:p-7 border border-light-border bg-white flex flex-col justify-between inner-soft light-box-shadow hover:border-salad-dark transition-colors">
-                  <div>
-                    <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-muted block mb-2 font-medium">Руководство / Экспертиза</span>
-                    <span class="font-display text-lg text-obsidian block font-medium">Катников К. В.</span>
-                    <span class="font-antique text-base text-moss-gray">Руководитель экспертного направления</span>
-                  </div>
-                  <div class="mt-6 pt-4 border-t border-light-border">
-                    <a class="font-mono-tech text-sm text-obsidian hover:text-[#2b6432] transition-colors font-semibold tracking-wide active:scale-95 inline-block" href="tel:89124669277">
-                      8 (912) 466-92-77
-                    </a>
-                  </div>
-                </div>
-
-                <div class="p-6 sm:p-7 border border-light-border bg-white flex flex-col justify-between inner-soft light-box-shadow hover:border-salad-dark transition-colors">
-                  <div>
-                    <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-moss-muted block mb-2 font-medium">Согласование и регистрация</span>
-                    <span class="font-display text-lg text-obsidian block font-medium">Федорова С. В.</span>
-                    <span class="font-antique text-base text-moss-gray">Отдел регистрации заключений ЭПБ</span>
-                  </div>
-                  <div class="mt-6 pt-4 border-t border-light-border">
-                    <a class="font-mono-tech text-sm text-obsidian hover:text-[#2b6432] transition-colors font-semibold tracking-wide active:scale-95 inline-block" href="mailto:mayak.izh@yandex.ru">
-                      mayak.izh@yandex.ru
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Official Requisites with Click to Copy -->
-              <div class="p-6 sm:p-8 border border-light-border bg-white inner-soft light-box-shadow">
-                <div class="flex items-center justify-between mb-4">
-                  <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">Учетные данные юридического лица (кликните для копирования)</span>
-                  <span class="material-symbols-outlined text-xs text-moss-muted">content_copy</span>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono-tech text-xs">
-                  <div class="copy-requisite p-2.5 -m-2 rounded cursor-pointer hover:bg-salad/20 hover:border-salad transition-all group" data-copy="1251800006248" data-name="ОГРН" title="Нажмите, чтобы скопировать">
-                    <div class="flex items-center justify-between">
-                      <span class="text-moss-muted block text-[10px] uppercase tracking-wider group-hover:text-obsidian">ОГРН</span>
-                      <span class="material-symbols-outlined text-[11px] text-moss-muted opacity-0 group-hover:opacity-100 transition-opacity">content_copy</span>
-                    </div>
-                    <span class="text-obsidian font-semibold mt-0.5 block tracking-wider group-hover:text-[#1c4422]">1251800006248</span>
-                  </div>
-                  <div class="copy-requisite p-2.5 -m-2 rounded cursor-pointer hover:bg-salad/20 hover:border-salad transition-all group" data-copy="1800035269" data-name="ИНН" title="Нажмите, чтобы скопировать">
-                    <div class="flex items-center justify-between">
-                      <span class="text-moss-muted block text-[10px] uppercase tracking-wider group-hover:text-obsidian">ИНН</span>
-                      <span class="material-symbols-outlined text-[11px] text-moss-muted opacity-0 group-hover:opacity-100 transition-opacity">content_copy</span>
-                    </div>
-                    <span class="text-obsidian font-semibold mt-0.5 block tracking-wider group-hover:text-[#1c4422]">1800035269</span>
-                  </div>
-                  <div class="copy-requisite p-2.5 -m-2 rounded cursor-pointer hover:bg-salad/20 hover:border-salad transition-all group" data-copy="180001001" data-name="КПП" title="Нажмите, чтобы скопировать">
-                    <div class="flex items-center justify-between">
-                      <span class="text-moss-muted block text-[10px] uppercase tracking-wider group-hover:text-obsidian">КПП</span>
-                      <span class="material-symbols-outlined text-[11px] text-moss-muted opacity-0 group-hover:opacity-100 transition-opacity">content_copy</span>
-                    </div>
-                    <span class="text-obsidian font-semibold mt-0.5 block tracking-wider group-hover:text-[#1c4422]">180001001</span>
-                  </div>
-                  <div class="copy-requisite p-2.5 -m-2 rounded cursor-pointer hover:bg-salad/20 hover:border-salad transition-all group" data-copy="97321482" data-name="ОКПО" title="Нажмите, чтобы скопировать">
-                    <div class="flex items-center justify-between">
-                      <span class="text-moss-muted block text-[10px] uppercase tracking-wider group-hover:text-obsidian">ОКПО</span>
-                      <span class="material-symbols-outlined text-[11px] text-moss-muted opacity-0 group-hover:opacity-100 transition-opacity">content_copy</span>
-                    </div>
-                    <span class="text-obsidian font-semibold mt-0.5 block tracking-wider group-hover:text-[#1c4422]">97321482</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Messengers -->
-              <div class="flex flex-wrap gap-4">
-                <a class="inline-flex items-center gap-2.5 border border-salad-border bg-white hover:bg-salad/20 px-5 py-3 font-mono-tech text-xs font-semibold uppercase tracking-wider text-obsidian hover:border-salad-dark transition-all light-box-shadow active:scale-95" href="https://t.me/+79124669277" target="_blank">
-                  <span>Telegram</span>
-                  <span class="material-symbols-outlined text-xs text-[#24502a]">north_east</span>
-                </a>
-                <a class="inline-flex items-center gap-2.5 border border-salad-border bg-white hover:bg-salad/20 px-5 py-3 font-mono-tech text-xs font-semibold uppercase tracking-wider text-obsidian hover:border-salad-dark transition-all light-box-shadow active:scale-95" href="https://wa.me/79124669277" target="_blank">
-                  <span>WhatsApp</span>
-                  <span class="material-symbols-outlined text-xs text-[#24502a]">north_east</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Right 5 Cols: Location Coordinate Card with Interactive Yandex Map -->
-            <div class="lg:col-span-5 flex flex-col gap-4 reveal-right delay-200">
-              <div class="border border-salad-border/70 bg-white p-6 sm:p-7 flex flex-col justify-between h-full light-box-shadow inner-soft">
-                <div class="flex flex-col gap-4">
-                  <div class="flex items-center justify-between pb-3 border-b border-light-border">
-                    <div class="flex items-center gap-2">
-                      <span class="w-2 h-2 rounded-full bg-salad animate-pulse"></span>
-                      <span class="font-mono-tech text-[10px] uppercase tracking-[0.24em] text-[#24502a] font-semibold">КООРДИНАТЫ ЛАБОРАТОРИИ</span>
-                    </div>
-                    <span class="font-mono-tech text-[10px] text-moss-muted">56.8423° N, 53.2416° E</span>
-                  </div>
-                  <div>
-                    <h3 class="font-display text-xl sm:text-2xl text-obsidian font-normal">Центральный офис и испытательный комплекс</h3>
-                    <p class="font-body text-xs text-moss-gray font-light leading-relaxed mt-2">
-                      Базирование лабораторного парка, калибровочных стендов и архива экспертных заключений: <strong class="text-obsidian font-semibold">г. Ижевск, ул. Ключевой посёлок, 83а, оф. 1001</strong>.
-                    </p>
-                  </div>
-
-                  <!-- Embedded Interactive Yandex Map Widget (Clean view, no obstructions) -->
-                  <div class="relative w-full h-[230px] sm:h-[250px] rounded border border-light-border overflow-hidden shadow-inner my-1">
-                    <iframe src="https://yandex.ru/map-widget/v1/?ll=53.241629%2C56.842339&z=16&pt=53.241629,56.842339,pm2gnm" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; width: 100%; height: 100%; border: 0;" title="Офис ООО МАЯК — Ижевск, ул. Ключевой посёлок, 83а"></iframe>
-                  </div>
-                  <!-- Clean Address Info Bar (does not overlap map controls) -->
-                  <div class="flex items-center justify-between px-3 py-2 bg-warm-ivory border border-light-border text-xs font-mono-tech text-obsidian rounded-sm">
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-sm text-[#24502a]">location_on</span>
-                      <span class="font-medium">г. Ижевск, ул. Ключевой пос., 83а</span>
-                    </div>
-                    <span class="text-moss-muted text-[11px] hidden sm:inline">Офис 1001 // Центральный вход</span>
-                  </div>
-                </div>
-
-                <div class="mt-4 pt-4 border-t border-light-border flex flex-col gap-3">
-                  <div class="flex items-center justify-between">
-                    <span class="font-mono-tech text-xs text-moss-gray">Прямой вызов эксперта:</span>
-                    <a class="font-mono-tech text-sm text-obsidian hover:text-[#2b6432] transition-colors font-bold active:scale-95" href="tel:89124669277">
-                      +7 (912) 466-92-77
-                    </a>
-                  </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    <a class="inline-flex items-center justify-center gap-2 border border-salad-border bg-salad hover:bg-salad-hover py-3 px-3 font-mono-tech text-[10.5px] font-semibold uppercase tracking-wider text-obsidian hover:border-salad-dark transition-all shadow-[0_4px_16px_rgba(158,230,115,0.3)] active:scale-95 text-center" href="https://yandex.ru/maps/?rtext=~56.842339,53.241629&rtt=auto" target="_blank">
-                      <span>Открыть в Картах</span>
-                      <span class="material-symbols-outlined text-xs">open_in_new</span>
-                    </a>
-                    <a class="inline-flex items-center justify-center gap-2 border border-light-border bg-white hover:bg-warm-beige py-3 px-3 font-mono-tech text-[10.5px] font-semibold uppercase tracking-wider text-obsidian transition-all active:scale-95 text-center" href="./contacts.html">
-                      <span>Схема проезда</span>
-                      <span class="material-symbols-outlined text-xs text-[#24502a]">arrow_forward</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+    <section class="block" id="industries" style="padding-top: 10px">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Отрасли</p>
+            <h2 class="font-display">Где работаем</h2>
           </div>
         </div>
-      </section>
+        <div class="chips reveal">
+          <span class="chip">Газораспределение и газопотребление</span>
+          <span class="chip">Теплоэнергетика</span>
+          <span class="chip">Нефть и газ</span>
+          <span class="chip">Хранение нефтепродуктов</span>
+          <span class="chip">Магистральные трубопроводы</span>
+          <span class="chip">Нефтехимия</span>
+          <span class="chip">Химическая промышленность</span>
+          <span class="chip">Металлургия</span>
+          <span class="chip">Пищевая промышленность</span>
+          <span class="chip">ОПК</span>
+        </div>
+      </div>
+    </section>
 
-    </div>
+    <section class="block" id="clients" style="padding-top: 10px">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Реестр ЭПБ</p>
+            <h2 class="font-display">Наши клиенты</h2>
+          </div>
+          <p>Эксплуатанты из заключений, которые «Маяк» внёс в реестр Ростехнадзора.</p>
+        </div>
+        <ul class="client-board reveal">
+          <li><b>Т Плюс</b><span>ПАО · теплоэнергетика</span></li>
+          <li><b>ИЭМЗ «Купол»</b><span>АО · Ижевск</span></li>
+          <li><b>НПП «Эфрил»</b><span>ООО · резервуары</span></li>
+          <li><b>Автокотельная</b><span>ООО · мазутное хозяйство</span></li>
+          <li><b>Текстиль-Энергия</b><span>ООО · энергетика</span></li>
+          <li><b>Свет</b><span>АО · газопотребление</span></li>
+          <li><b>Чайковская текстильная компания</b><span>ООО · производство</span></li>
+          <li><b>Тепловые сети</b><span>МП · Чернушка</span></li>
+          <li><b>ГВВ № 3 ДЗМ</b><span>ГБУЗ · сосуды</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" id="letters" style="padding-top: 10px">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Отзывы</p>
+            <h2 class="font-display">Благодарственные письма</h2>
+          </div>
+        </div>
+        <div class="letters">
+          <article class="letter reveal d1">
+            <small>Энергетика</small>
+            <p class="font-antique">«Работы выполнены в срок, заключение внесено в реестр без замечаний.»</p>
+            <span>Эксплуатирующая организация, теплоэнергетика</span>
+          </article>
+          <article class="letter reveal d2">
+            <small>Газоснабжение</small>
+            <p class="font-antique">«Лаборатория отработала на действующем объекте без остановки сети.»</p>
+            <span>Сети газораспределения и газопотребления</span>
+          </article>
+          <article class="letter reveal d3">
+            <small>Нефтехимия</small>
+            <p class="font-antique">«Диагностирование и паспорта оформлены одним комплектом.»</p>
+            <span>Нефтегазоперерабатывающая отрасль</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top: 20px">
+      <div class="wrap split">
+        <div class="reveal-left">
+          <p class="kicker-dark">Компания</p>
+          <h2 class="font-display" style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px">О нас</h2>
+          <p class="lead" style="color: var(--muted)">ООО «Маяк» — экспертная организация из Ижевска. Лицензия Ростехнадзора на экспертизу промышленной безопасности и собственная аттестованная лаборатория неразрушающего контроля.</p>
+          <p class="lead" style="color: var(--muted)">Директор — Федорова С.В., ответственный исполнитель — Катников К.В. На связи с 7:00 до 16:00 по Москве.</p>
+          <a class="more" href="./about.html">Подробнее о компании</a>
+        </div>
+        <ul class="facts reveal-right">
+          <li><span>Лицензия РТН</span><b>Л043-00109-18/02671242</b></li>
+          <li><span>Свидетельство ЛНК</span><b>ЛНК-056А0801</b></li>
+          <li><span>ИНН</span><b>1800035269</b></li>
+          <li><span>ОГРН</span><b>1251800006248</b></li>
+          <li><span>Город</span><b>Ижевск</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top: 10px">
+      <div class="wrap">
+        <div class="ask reveal">
+          <div>
+            <p class="kicker">Инженеру</p>
+            <h2 class="font-display">Технический вопрос</h2>
+            <p class="lead">Цена зависит от объекта, объёма контроля и доступа. Короткий запрос вместо сметы-автомата.</p>
+            <a class="more" href="./pricing.html" style="color: #f4f1ea; border-color: rgba(244,241,234,.4)">Из чего складывается стоимость</a>
+          </div>
+          <form class="js-question-form">
+            <label>Имя
+              <input required name="name" placeholder="Как к вам обращаться"/>
+            </label>
+            <label>Организация
+              <input name="company" placeholder="ООО «…»"/>
+            </label>
+            <label>Телефон
+              <input required name="phone" placeholder="+7"/>
+            </label>
+            <label>Почта
+              <input type="email" name="email" placeholder="name@company.ru"/>
+            </label>
+            <label class="wide">Вопрос
+              <textarea required name="q" placeholder="Объект, вид работ, сроки, что уже есть из документов"></textarea>
+            </label>
+            <button class="btn btn-light" type="submit">Отправить инженеру</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ==================== MONOCHROME ARCHITECTURAL FOOTER ==================== -->
-  <footer class="w-full bg-warm-beige border-t border-light-border text-moss-gray">
-    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-14 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12">
-        
-        <div class="flex flex-col gap-4">
-          <a class="flex items-center gap-3 group" href="#top">
-            <div class="w-7 h-7 border border-salad-border flex items-center justify-center p-1 bg-white group-hover:border-salad-dark transition-colors">
-              <svg class="w-full h-full text-obsidian" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
-                <polygon fill="#9ee673" fill-opacity="0.4" points="12 4, 18 19, 6 19"></polygon>
-              </svg>
-            </div>
-            <span class="font-display tracking-[0.24em] text-base font-bold text-obsidian uppercase group-hover:text-[#24502a] transition-colors">МАЯК</span>
-          </a>
-          <p class="font-body text-xs text-moss-gray leading-relaxed font-light">
-            Экспертиза промышленной безопасности, техническое диагностирование и неразрушающий контроль опасных производственных объектов.
-          </p>
-          <div class="font-mono-tech text-[10px] text-[#24502a] font-medium mt-1">
-            Свидетельство ЛНК: № 61А140925
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-2.5">
-          <span class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-obsidian mb-2 font-semibold">Направления</span>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="./services-epb.html">Экспертиза техустройств (ФЗ №116)</a>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="./services-buildings.html">Обследование зданий и сооружений</a>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="./services-lab.html">Лабораторный контроль (УЗК, РК, ВИК)</a>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="./services-diagnostics.html">Диагностирование и ресурс</a>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="./services-vessels.html">Освидетельствование сосудов и труб</a>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="./services-passports.html">Разработка паспортов</a>
-        </div>
-
-        <div class="flex flex-col gap-2.5">
-          <span class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-obsidian mb-2 font-semibold">Портал</span>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="#industries">Отрасли промышленности</a>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="#engineering">Комплекс испытаний</a>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="#calculator">Калькулятор стоимости</a>
-          <a class="font-body text-xs text-moss-gray hover:text-obsidian transition-colors font-light" href="./contacts.html">Контакты и схема проезда</a>
-        </div>
-
-        <div class="flex flex-col gap-2.5">
-          <span class="font-mono-tech text-[11px] uppercase tracking-[0.2em] text-obsidian mb-2 font-semibold">Связь</span>
-          <p class="font-body text-xs text-moss-gray font-light">
-            г. Ижевск, ул. Ключевой посёлок, 83а, оф. 1001
-          </p>
-          <a class="font-mono-tech text-xs text-obsidian hover:text-[#2b6432] transition-colors font-bold tracking-wide active:scale-95 inline-block" href="tel:89124669277">
-            8 (912) 466-92-77
-          </a>
-          <a class="font-mono-tech text-xs text-moss-gray hover:text-obsidian transition-colors active:scale-95 inline-block" href="mailto:mayak.izh@yandex.ru">
-            mayak.izh@yandex.ru
-          </a>
-          <div class="flex items-center gap-2 mt-1">
-            <a href="https://t.me/+79124669277" target="_blank" class="px-2 py-0.5 border border-light-border bg-white text-[10px] font-mono-tech hover:bg-salad/20">TG</a>
-            <a href="https://wa.me/79124669277" target="_blank" class="px-2 py-0.5 border border-light-border bg-white text-[10px] font-mono-tech hover:bg-salad/20">WA</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="pt-8 border-t border-light-border flex flex-col md:flex-row justify-between items-center gap-4 font-mono-tech text-[10px] text-moss-muted uppercase tracking-[0.18em]">
-        <span>© 2026 ООО «МАЯК». Все права защищены. Лицензии Ростехнадзора.</span>
-        <div class="flex flex-wrap gap-4 sm:gap-6">
-          <span>ФЗ №116 «О ПРОМЫШЛЕННОЙ БЕЗОПАСНОСТИ»</span>
-          <span>ГОСТ Р ИСО/МЭК 17020</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ==================== FLOATING ACTION PILL ==================== -->
-  <aside id="floating-actions" class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2.5 pointer-events-auto" aria-label="Быстрая связь">
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="w-10 h-10 rounded-full bg-white border border-light-border text-obsidian flex items-center justify-center shadow-lg hover:border-salad hover:bg-warm-beige transition-all duration-300 opacity-0 pointer-events-none translate-y-2 active:scale-95" aria-label="Наверх страницы">
-      <span class="material-symbols-outlined text-sm">arrow_upward</span>
-    </button>
-    
-    <!-- Quick Contact Widget -->
-    <div class="bg-white/95 backdrop-blur-md border border-salad-border/80 shadow-2xl p-1.5 flex items-center gap-1.5 rounded-full light-box-shadow">
-      <a href="tel:89124669277" class="flex items-center gap-2 pl-3 pr-3.5 py-2 rounded-full bg-salad hover:bg-salad-hover text-obsidian font-mono-tech text-xs font-bold transition-all shadow-sm active:scale-95" title="Позвонить эксперту">
-        <span class="w-2 h-2 rounded-full bg-[#1b4421] animate-ping"></span>
-        <span class="hidden sm:inline">8 (912) 466-92-77</span>
-        <span class="material-symbols-outlined text-sm">call</span>
-      </a>
-      <a href="https://t.me/+79124669277" target="_blank" class="w-8 h-8 rounded-full bg-warm-ivory hover:bg-salad/20 border border-light-border flex items-center justify-center text-obsidian transition-colors" title="Написать в Telegram">
-        <span class="font-mono-tech text-[10px] font-bold">TG</span>
-      </a>
-      <a href="https://wa.me/79124669277" target="_blank" class="w-8 h-8 rounded-full bg-warm-ivory hover:bg-salad/20 border border-light-border flex items-center justify-center text-obsidian transition-colors" title="Написать в WhatsApp">
-        <span class="font-mono-tech text-[10px] font-bold">WA</span>
-      </a>
-    </div>
-  </aside>
-
-  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-obsidian text-warm-ivory px-5 py-3 border border-salad-border shadow-2xl font-mono-tech text-xs flex items-center gap-3 opacity-0 pointer-events-none translate-y-4 transition-all duration-300">
-    <span class="material-symbols-outlined text-salad text-sm">check_circle</span>
-    <span id="toast-message">Текст уведомления</span>
-  </div>
-
-  <!-- ==================== SUBMISSION SUCCESS MODAL ==================== -->
-  <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
-    <div class="bg-white border border-salad-border max-w-md w-full p-8 sm:p-10 light-box-shadow flex flex-col items-center text-center gap-5 transform scale-95 transition-all duration-300" id="modal-card">
-      <div class="w-16 h-16 rounded-full bg-salad/20 border-2 border-salad-dark flex items-center justify-center text-salad-dark">
-        <span class="material-symbols-outlined text-3xl font-bold">done</span>
-      </div>
-      <div class="flex flex-col gap-2">
-        <span class="font-mono-tech text-[11px] uppercase tracking-[0.25em] text-[#24502a] font-semibold">Уведомление системы</span>
-        <h3 class="font-display text-2xl text-obsidian font-medium">Заявка успешно принята</h3>
-        <p class="font-body text-xs sm:text-sm text-moss-gray font-light leading-relaxed">
-          Параметры объекта зарегистрированы. Ведущий инженер экспертной группы свяжется с вами по указанному номеру для уточнения деталей и направления сметы.
-        </p>
-      </div>
-      <button id="modal-close-btn" class="w-full mt-2 bg-salad hover:bg-salad-hover text-obsidian border border-salad-dark py-3.5 font-mono-tech text-xs font-bold uppercase tracking-[0.2em] transition-all duration-200 active:scale-95 shadow-sm">
-        Отлично
-      </button>
-    </div>
-  </div>
-
-  <!-- ==================== SCRIPTS: INTERACTIVITY, SMOOTH SCROLL, OBSERVER ==================== -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Reading Progress Bar & Header Shadow
-      const progressBar = document.getElementById('scroll-progress');
-      const header = document.getElementById('site-header');
-      const backToTopBtn = document.getElementById('back-to-top');
-
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        
-        if (progressBar) {
-          progressBar.style.width = progress + '%';
-        }
-
-        // Header shadow
-        if (scrollTop > 30) {
-          header.classList.add('shadow-md');
-        } else {
-          header.classList.remove('shadow-md');
-        }
-
-        // Back to Top button
-        if (scrollTop > 380) {
-          backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-          backToTopBtn.classList.add('opacity-100', 'translate-y-0');
-        } else {
-          backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-          backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
-        }
-      }, { passive: true });
-
-      // Back to top action
-      if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      // 2. Mobile Menu Toggle
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const mobileDrawer = document.getElementById('mobile-drawer');
-      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-      let isMenuOpen = false;
-
-      function toggleMobileMenu(forceClose = false) {
-        if (forceClose || isMenuOpen) {
-          isMenuOpen = false;
-          mobileDrawer.classList.add('hidden');
-          mobileDrawer.classList.remove('flex');
-          document.body.style.overflow = '';
-          mobileMenuBtn.setAttribute('aria-expanded', 'false');
-          // Reset hamburger bars
-          mobileMenuBtn.querySelector('.bar-1').style.transform = 'none';
-          mobileMenuBtn.querySelector('.bar-2').style.opacity = '1';
-          mobileMenuBtn.querySelector('.bar-3').style.transform = 'none';
-        } else {
-          isMenuOpen = true;
-          mobileDrawer.classList.remove('hidden');
-          mobileDrawer.classList.add('flex');
-          document.body.style.overflow = 'hidden';
-          mobileMenuBtn.setAttribute('aria-expanded', 'true');
-          // Animate to X
-          mobileMenuBtn.querySelector('.bar-1').style.transform = 'translateY(8px) rotate(45deg)';
-          mobileMenuBtn.querySelector('.bar-2').style.opacity = '0';
-          mobileMenuBtn.querySelector('.bar-3').style.transform = 'translateY(-8px) rotate(-45deg)';
-        }
-      }
-
-      if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
-      }
-
-      mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          toggleMobileMenu(true);
-        });
-      });
-
-      // Close mobile menu on ESC
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isMenuOpen) {
-          toggleMobileMenu(true);
-        }
-      });
-
-      // 3. Scroll Reveal Observer
-      const revealElements = document.querySelectorAll('.reveal-block, .reveal-left, .reveal-right');
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
-      });
-
-      revealElements.forEach(el => revealObserver.observe(el));
-
-      // 4. Counter Animation for Metrics
-      const counterElements = document.querySelectorAll('.counter-val');
-      let countersAnimated = false;
-      const metricsGrid = document.getElementById('metrics-grid');
-
-      if (metricsGrid && counterElements.length > 0) {
-        const counterObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && !countersAnimated) {
-              countersAnimated = true;
-              counterElements.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
-                const duration = 1400;
-                const start = 0;
-                const startTime = performance.now();
-
-                function updateCounter(currentTime) {
-                  const elapsed = currentTime - startTime;
-                  const progress = Math.min(elapsed / duration, 1);
-                  // easeOutQuad
-                  const currentVal = Math.round(start + (target - start) * (progress * (2 - progress)));
-                  counter.textContent = currentVal;
-                  if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                  } else {
-                    counter.textContent = target;
-                  }
-                }
-                requestAnimationFrame(updateCounter);
-              });
-            }
-          });
-        }, { threshold: 0.3 });
-
-        counterObserver.observe(metricsGrid);
-      }
-
-      // 5. Toast Notification System
-      const toastEl = document.getElementById('toast');
-      const toastMsg = document.getElementById('toast-message');
-      let toastTimeout = null;
-
-      function showToast(message) {
-        if (!toastEl || !toastMsg) return;
-        toastMsg.textContent = message;
-        toastEl.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-        toastEl.classList.add('opacity-100', 'translate-y-0');
-
-        if (toastTimeout) clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-          toastEl.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-          toastEl.classList.remove('opacity-100', 'translate-y-0');
-        }, 3000);
-      }
-
-      // 6. Click to Copy Requisites
-      const copyRequisites = document.querySelectorAll('.copy-requisite');
-      copyRequisites.forEach(item => {
-        item.addEventListener('click', () => {
-          const val = item.getAttribute('data-copy');
-          const name = item.getAttribute('data-name');
-          if (navigator.clipboard && val) {
-            navigator.clipboard.writeText(val).then(() => {
-              showToast(`${name} ${val} скопирован в буфер обмена`);
-            }).catch(() => {
-              showToast(`Скопировано: ${val}`);
-            });
-          } else {
-            showToast(`Значение: ${val}`);
-          }
-        });
-      });
-
-      // 7. Interactive Service Cards -> Target Form Radio & Smooth Scroll
-      const serviceCards = document.querySelectorAll('.service-card');
-      const radioInputs = document.querySelectorAll('input[name="service_type"]');
-      const radioLabels = document.querySelectorAll('.service-radio-label');
-      const calcContainer = document.getElementById('calc-form-container');
-
-      function updateRadioUI(selectedVal) {
-        radioLabels.forEach(label => {
-          const radio = label.querySelector('input[type="radio"]');
-          if (radio && radio.value === selectedVal) {
-            radio.checked = true;
-            label.classList.add('border-salad-border', 'bg-salad/10');
-            label.classList.remove('border-light-border', 'bg-warm-ivory/80');
-          } else {
-            label.classList.remove('border-salad-border', 'bg-salad/10');
-            label.classList.add('border-light-border', 'bg-warm-ivory/80');
-          }
-        });
-      }
-
-      radioInputs.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-          updateRadioUI(e.target.value);
-        });
-      });
-
-      serviceCards.forEach(card => {
-        card.addEventListener('click', () => {
-          const targetVal = card.getAttribute('data-service') || 'devices';
-          updateRadioUI(targetVal);
-
-          const calcSection = document.getElementById('calculator');
-          if (calcSection) {
-            calcSection.scrollIntoView({ behavior: 'smooth' });
-            if (calcContainer) {
-              calcContainer.classList.add('flash-target');
-              setTimeout(() => calcContainer.classList.remove('flash-target'), 1500);
-            }
-          }
-        });
-      });
-
-      // 8. Interactive Industry Cards -> Select in Form & Smooth Scroll
-      const sectorCards = document.querySelectorAll('.sector-card');
-      const sectorSelect = document.getElementById('sector_select');
-
-      sectorCards.forEach(card => {
-        card.addEventListener('click', () => {
-          const sectorVal = card.getAttribute('data-sector');
-          if (sectorSelect && sectorVal) {
-            sectorSelect.value = sectorVal;
-            sectorSelect.classList.add('flash-target');
-            setTimeout(() => sectorSelect.classList.remove('flash-target'), 1500);
-          }
-
-          const calcSection = document.getElementById('calculator');
-          if (calcSection) {
-            calcSection.scrollIntoView({ behavior: 'smooth' });
-            showToast(`Отрасль «${sectorVal}» выбрана в калькуляторе`);
-          }
-        });
-      });
-
-      // 9. File Upload Feedback
-      const fileInput = document.getElementById('file-input');
-      const fileNameLabel = document.getElementById('file-name-label');
-
-      if (fileInput && fileNameLabel) {
-        fileInput.addEventListener('change', () => {
-          if (fileInput.files && fileInput.files.length > 0) {
-            const f = fileInput.files[0];
-            const sizeKb = Math.round(f.size / 1024);
-            fileNameLabel.textContent = `Файл: ${f.name} (${sizeKb} KB)`;
-            fileNameLabel.classList.add('text-[#24502a]', 'font-semibold');
-          } else {
-            fileNameLabel.textContent = 'Прикрепить ТЗ / проект (PDF, DOCX, ZIP)';
-            fileNameLabel.classList.remove('text-[#24502a]', 'font-semibold');
-          }
-        });
-      }
-
-      // 10. Form Submission & Success Modal
-      const calcForm = document.getElementById('calc-form');
-      const successModal = document.getElementById('success-modal');
-      const modalCard = document.getElementById('modal-card');
-      const modalCloseBtn = document.getElementById('modal-close-btn');
-
-      function openModal() {
-        if (!successModal) return;
-        successModal.classList.remove('opacity-0', 'pointer-events-none');
-        successModal.classList.add('opacity-100');
-        if (modalCard) {
-          modalCard.classList.remove('scale-95');
-          modalCard.classList.add('scale-100');
-        }
-      }
-
-      function closeModal() {
-        if (!successModal) return;
-        successModal.classList.add('opacity-0', 'pointer-events-none');
-        successModal.classList.remove('opacity-100');
-        if (modalCard) {
-          modalCard.classList.add('scale-95');
-          modalCard.classList.remove('scale-100');
-        }
-      }
-
-      if (calcForm) {
-        calcForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          openModal();
-          calcForm.reset();
-          updateRadioUI('devices');
-          if (fileNameLabel) {
-            fileNameLabel.textContent = 'Прикрепить ТЗ / проект (PDF, DOCX, ZIP)';
-            fileNameLabel.classList.remove('text-[#24502a]', 'font-semibold');
-          }
-        });
-      }
-
-      if (modalCloseBtn) {
-        modalCloseBtn.addEventListener('click', closeModal);
-      }
-
-      if (successModal) {
-        successModal.addEventListener('click', (e) => {
-          if (e.target === successModal) closeModal();
-        });
-      }
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && successModal && !successModal.classList.contains('pointer-events-none')) {
-          closeModal();
-        }
-      });
-
-      // 11. Quick calc buttons inside service cards
-      document.querySelectorAll('.calc-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const targetVal = btn.getAttribute('data-service') || 'devices';
-          updateRadioUI(targetVal);
-          const calcSection = document.getElementById('calculator');
-          if (calcSection) {
-            calcSection.scrollIntoView({ behavior: 'smooth' });
-            if (calcContainer) {
-              calcContainer.classList.add('flash-target');
-              setTimeout(() => calcContainer.classList.remove('flash-target'), 1500);
-            }
-          }
-        });
-      });
-
-      // 12. Cinematic Page Transitions
-      const curtain = document.getElementById('page-curtain');
-      if (curtain) {
-        curtain.classList.remove('opacity-100');
-        curtain.classList.add('opacity-0', 'pointer-events-none');
-      }
-
-      window.addEventListener('pageshow', () => {
-        if (curtain) {
-          curtain.classList.remove('opacity-100');
-          curtain.classList.add('opacity-0', 'pointer-events-none');
-        }
-      });
-
-      document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href) return;
-        if (
-          href.startsWith('#') ||
-          href.startsWith('tel:') ||
-          href.startsWith('mailto:') ||
-          href.startsWith('javascript:') ||
-          link.getAttribute('target') === '_blank' ||
-          href.startsWith('http://') ||
-          href.startsWith('https://')
-        ) return;
-
-        link.addEventListener('click', (e) => {
-          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-          e.preventDefault();
-          if (curtain) {
-            curtain.classList.remove('pointer-events-none', 'opacity-0');
-            curtain.classList.add('opacity-100');
-          }
-          setTimeout(() => {
-            window.location.href = href;
-          }, 200);
-        });
-      });
-
-      // Back-to-top already safely wired in section 1
-    });
-  </script>
+  <div id="site-bottom"></div>
+  <script src="./js/chrome.js"></script>
 </body>
 </html>

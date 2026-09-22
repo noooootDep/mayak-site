@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" fill="none" role="img" aria-label=" 0O:">
+  <g stroke="#141414" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- bird -->
+    <path d="M148 28c6 4 12 5 20 3-6 3-10 8-12 14-2-6-7-11-14-13 5 1 9-1 6-4z"/>
+    <!-- lantern dome -->
+    <path d="M92 46c8-16 18-16 26 0"/>
+    <path d="M100 32v10"/>
+    <circle cx="100" cy="29" r="2.2" fill="#141414" stroke="none"/>
+    <!-- lantern room -->
+    <path d="M86 46h28v16H86z"/>
+    <path d="M93 46v16M107 46v16"/>
+    <!-- gallery -->
+    <path d="M78 62h44"/>
+    <path d="M80 62v12M88 62v12M96 62v12M104 62v12M112 62v12M120 62v12"/>
+    <path d="M76 74h48"/>
+    <!-- tower body -->
+    <path d="M84 74l-10 168"/>
+    <path d="M116 74l10 168"/>
+    <path d="M88 96l-8 146"/>
+    <path d="M96 90l-6 152"/>
+    <path d="M104 90l6 152"/>
+    <path d="M112 96l8 146"/>
+    <!-- windows -->
+    <path d="M98 118v14M98 156v14M98 194v14"/>
+    <!-- door -->
+    <path d="M93 228c0-8 14-8 14 0v14H93z"/>
+    <!-- ground / water -->
+    <path d="M28 250c18-8 36 6 54-2 16-7 28 4 46-3 16-6 30 5 44-2"/>
+    <path d="M40 262c14-6 28 4 42-2 16-7 26 3 40-2"/>
+  </g>
+  <!-- lamp accent -->
+  <circle cx="100" cy="54" r="3.2" fill="#C45C64"/>
+</svg>
