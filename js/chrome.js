@@ -279,21 +279,22 @@
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach((el) => io.observe(el));
 
-    const curtainEl = document.getElementById("page-curtain");
     document.querySelectorAll("a[href]").forEach((link) => {
       const href = link.getAttribute("href") || "";
       if (!href || href.startsWith("#") || href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("http") || link.target === "_blank") return;
       link.addEventListener("click", (e) => {
-        if (e.metaKey || e.ctrlKey || e.button !== 0) return;
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
         e.preventDefault();
-        if (curtainEl) {
-          curtainEl.classList.remove("opacity-0", "pointer-events-none");
-          curtainEl.classList.add("opacity-100");
-        }
-        setTimeout(() => { location.href = href; }, 180);
+        document.documentElement.classList.add("is-leaving");
+        setTimeout(() => { location.href = href; }, 220);
+        setTimeout(() => { document.documentElement.classList.remove("is-leaving"); }, 2000);
       });
     });
   }
+
+  window.addEventListener("pageshow", () => {
+    document.documentElement.classList.remove("is-leaving");
+  });
 
   document.addEventListener("DOMContentLoaded", () => {
     mount();
