@@ -452,6 +452,21 @@ html.is-leaving #page-curtain {
 .letter small { color: #c45c64; font-weight: 750; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
 
 .reveal-right { align-self: start; }
+
+.question-aside { align-self: start; }
+.question-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 22px;
+}
+.question-contacts a {
+  display: inline;
+  margin: 0;
+  line-height: 1.35;
+  font-size: 15px;
+}
 .req-card {
   background: #fff;
   border-radius: 16px;
