@@ -100,10 +100,9 @@
               <a class="font-mono-tech text-sm tracking-wide font-bold text-white hover:text-[#9ddec0]" href="tel:${PHONE_CITY_TEL}">${PHONE_CITY}</a>
               <a class="font-mono-tech text-[11px] text-[#9db5a8] hover:text-white" href="tel:${PHONE_MOBILE_TEL}">${PHONE_MOBILE}</a>
             </div>
-            <!-- pricing link hidden per client request -->
-            <a class="hidden items-center gap-2 px-4 py-2.5 rounded-full bg-[#f4f1ea] hover:bg-white text-[#0e1a15] text-[13px] font-semibold transition-all" href="./pricing.html" style="display:none">
-              Стоимость услуг
-              <span class="material-symbols-outlined text-xs">north_east</span>
+            <a class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#f4f1ea] hover:bg-white text-[#0e1a15] text-[13px] font-semibold transition-all" href="./question.html">
+              Задать вопрос
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
             </a>
             <button id="mobile-menu-btn" class="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border border-white/20 rounded-full" aria-label="Открыть меню" aria-expanded="false">
               <span class="bar-1 w-5 h-0.5 bg-white transition-transform"></span>
