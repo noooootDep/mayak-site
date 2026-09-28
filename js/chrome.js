@@ -100,7 +100,8 @@
               <a class="font-mono-tech text-sm tracking-wide font-bold text-white hover:text-[#9ddec0]" href="tel:${PHONE_CITY_TEL}">${PHONE_CITY}</a>
               <a class="font-mono-tech text-[11px] text-[#9db5a8] hover:text-white" href="tel:${PHONE_MOBILE_TEL}">${PHONE_MOBILE}</a>
             </div>
-            <a class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#f4f1ea] hover:bg-white text-[#0e1a15] text-[13px] font-semibold transition-all" href="./pricing.html">
+            <!-- pricing link hidden per client request -->
+            <a class="hidden items-center gap-2 px-4 py-2.5 rounded-full bg-[#f4f1ea] hover:bg-white text-[#0e1a15] text-[13px] font-semibold transition-all" href="./pricing.html" style="display:none">
               Стоимость услуг
               <span class="material-symbols-outlined text-xs">north_east</span>
             </a>
@@ -118,7 +119,6 @@
           ${SERVICES.map((s) => `<a class="py-3 px-4 border border-white/10 rounded-2xl" href="${s.href}">${s.title}</a>`).join("")}
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./powers.html">Полномочия</a>
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./question.html">Технический вопрос</a>
-          <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./pricing.html">Стоимость услуг</a>
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./contacts.html">Контакты</a>
           <a class="py-3 px-4 bg-[#f4f1ea] text-[#0e1a15] text-center rounded-full font-semibold" href="${MAX_URL}" target="_blank" rel="noopener">Написать в MAX</a>
         </nav>
@@ -147,7 +147,7 @@
               <a class="hover:text-white" href="./about.html">О нас</a>
               <a class="hover:text-white" href="./powers.html">Полномочия и схема</a>
               <a class="hover:text-white" href="./question.html">Технический вопрос</a>
-              <a class="hover:text-white" href="./pricing.html">Стоимость услуг</a>
+
               <a class="hover:text-white" href="./contacts.html">Контакты и реквизиты</a>
               <a class="hover:text-white" href="https://www.gosnadzor.ru/" target="_blank" rel="noopener">Ростехнадзор</a>
             </div>

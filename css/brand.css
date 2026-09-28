@@ -595,6 +595,17 @@ html.is-leaving #page-curtain {
   border-radius: 999px;
 }
 
+.page-hero-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -12px rgba(14, 26, 21, 0.18);
+}
+@media (max-width: 1023px) {
+  .page-hero-img { max-height: 220px; border-radius: 16px; }
+}
+
 main .bg-white.border,
 main article.border,
 main li.border,
