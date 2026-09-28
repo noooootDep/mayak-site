@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth" id="top">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <title>ООО «Маяк» — испытания, экспертиза и технический контроль ОПО</title>
+  <meta name="description" content="ООО «Маяк», Ижевск. Экспертиза промышленной безопасности, лаборатория НК, обследование зданий и диагностирование оборудования. Лицензия Ростехнадзора Л043-00109-18/02671242, ЛНК-056А0801."/>
+  <link rel="icon" href="./assets/images/logo.svg"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: "#141414", paper: "#f4f7f3", rose: "#c45c64", "rose-deep": "#1f6b45", green: "#1f6b45", "green-deep": "#134830", line: "#d5e0d6", muted: "#5d6a60" },
+          fontFamily: { display: ["Cormorant Garamond", "serif"], antique: ["Cormorant Garamond", "serif"], body: ["Manrope", "sans-serif"], "mono-tech": ["Space Grotesk", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="./css/brand.css?v=9"/>
+</head>
+<body class="bg-paper text-ink antialiased min-h-screen flex flex-col">
+  <div id="site-top"></div>
+
+  <main class="flex-1">
+    <section class="stage">
+      <div class="stage-grid">
+        <div>
+          <p class="kicker">Ижевск · вся Россия</p>
+          <h1 class="font-display">Испытания, экспертиза и технический контроль</h1>
+          <p class="lead">ООО «Маяк» проводит экспертизу промышленной безопасности, лабораторный контроль и диагностирование ОПО. Заключения вносим в реестр Ростехнадзора.</p>
+          <div class="stage-actions">
+            <a class="btn btn-light" href="./question.html">Задать технический вопрос</a>
+            <a class="btn btn-ghost" href="./pricing.html">Стоимость услуг</a>
+          </div>
+          <div class="stage-docs">
+            <div>
+              <small>Лицензия Ростехнадзора</small>
+              <b>Л043-00109-18/02671242</b>
+            </div>
+            <div>
+              <small>Свидетельство ЛНК</small>
+              <b>ЛНК-056А0801 · до 2029</b>
+            </div>
+          </div>
+        </div>
+        <div class="stage-mark">
+          <img src="./assets/images/logo-mark.png" alt="Логотип Маяк"/>
+        </div>
+      </div>
+      <div class="stage-metrics">
+        <div><strong>99</strong><span>заключений ЭПБ в реестре</span></div>
+        <div><strong>11</strong><span>эксплуатирующих организаций</span></div>
+        <div><strong>2029</strong><span>аттестация лаборатории до января</span></div>
+        <div><strong>7–16</strong><span>Пн–Пт, время московское</span></div>
+      </div>
+    </section>
+
+    <section class="block" id="services">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Направления</p>
+            <h2 class="font-display">Виды выполняемых работ</h2>
+          </div>
+          <p>Шесть направлений — те же названия, что в меню. Подробности на отдельных страницах.</p>
+        </div>
+        <div class="work-list reveal">
+          <a class="work-row" href="./services-epb.html">
+            <span class="work-idx">01</span>
+            <span>
+              <span class="work-tag">ФЗ-116</span>
+              <strong>Экспертиза промышленной безопасности</strong>
+              <span class="work-text">Техустройства, здания и сооружения, документация на перевооружение, консервацию и ликвидацию. Регистрация заключения в реестре.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-lab.html">
+            <span class="work-idx">02</span>
+            <span>
+              <span class="work-tag">ЛНК-056А0801</span>
+              <strong>Лабораторные исследования и контроль</strong>
+              <span class="work-text">Неразрушающий и разрушающий контроль: УЗК, РК, МПК, ПВК, ВИК, ТК. Выезд лаборатории на объект.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-buildings.html">
+            <span class="work-idx">03</span>
+            <span>
+              <span class="work-tag">ГОСТ 31937</span>
+              <strong>Техническое обследование зданий и сооружений</strong>
+              <span class="work-text">Инструментальный анализ несущих конструкций, эстакад, фундаментов и корпусов на ОПО.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-diagnostics.html">
+            <span class="work-idx">04</span>
+            <span>
+              <span class="work-tag">Диагностика</span>
+              <strong>Техническое диагностирование оборудования</strong>
+              <span class="work-text">Фактическое состояние, причины износа, остаточный ресурс и режимы дальнейшей безопасной работы.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-vessels.html">
+            <span class="work-idx">05</span>
+            <span>
+              <span class="work-tag">Давление</span>
+              <strong>Освидетельствование сосудов и трубопроводов</strong>
+              <span class="work-text">Первичное, периодическое и внеочередное освидетельствование сосудов, котлов, трубопроводов и РВС.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+          <a class="work-row" href="./services-passports.html">
+            <span class="work-idx">06</span>
+            <span>
+              <span class="work-tag">Документация</span>
+              <strong>Разработка и восстановление паспортов</strong>
+              <span class="work-text">Паспорта техустройств, ПЛА, ПЛАРН, обоснование безопасности и эксплуатационная документация ОПО.</span>
+            </span>
+            <span class="work-go">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="scheme" style="padding-top: 0">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Как мы работаем</p>
+            <h2 class="font-display">Схема взаимодействия</h2>
+          </div>
+          <a class="more" href="./powers.html">Полномочия и полная схема</a>
+        </div>
+        <div class="steps">
+          <article class="step reveal d1"><em>01</em><h3>Заявка</h3><p>Пишете технический вопрос и прикладываете паспорт, схему или фото объекта.</p></article>
+          <article class="step reveal d2"><em>02</em><h3>Анализ и договор</h3><p>Смотрим состав работ, нормативные сроки и готовим коммерческое предложение.</p></article>
+          <article class="step reveal d3"><em>03</em><h3>Выезд и контроль</h3><p>Лаборатория и эксперты выезжают на площадку, проводят НК и обследование.</p></article>
+          <article class="step reveal d4"><em>04</em><h3>Реестр</h3><p>Оформляем заключение и сопровождаем внесение в реестр Ростехнадзора.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="industries" style="padding-top: 10px">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Отрасли</p>
+            <h2 class="font-display">Где работаем</h2>
+          </div>
+        </div>
+        <div class="chips reveal">
+          <span class="chip">Газораспределение и газопотребление</span>
+          <span class="chip">Теплоэнергетика</span>
+          <span class="chip">Нефть и газ</span>
+          <span class="chip">Хранение нефтепродуктов</span>
+          <span class="chip">Магистральные трубопроводы</span>
+          <span class="chip">Нефтехимия</span>
+          <span class="chip">Химическая промышленность</span>
+          <span class="chip">Металлургия</span>
+          <span class="chip">Пищевая промышленность</span>
+          <span class="chip">ОПК</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="clients" style="padding-top: 10px">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Реестр ЭПБ</p>
+            <h2 class="font-display">Наши клиенты</h2>
+          </div>
+        </div>
+        <ul class="client-board reveal">
+          <li><img src="./assets/images/clients/tplus.png" alt="ПАО «Т Плюс»"/></li>
+          <li><img src="./assets/images/clients/kupol.png" alt="АО «ИЭМЗ «Купол»"/></li>
+          <li><img src="./assets/images/clients/efril.png" alt="ООО НПП «Эфрил»"/></li>
+          <li><img src="./assets/images/clients/ak.png" alt="ООО «Автокотельная»"/></li>
+          <li><img src="./assets/images/clients/svet.png" alt="АО «Свет»"/></li>
+          <li><img class="logo-tall" src="./assets/images/clients/chtk.png" alt="Чайковская текстильная компания"/></li>
+          <li><img src="./assets/images/clients/teploseti.png" alt="МП «Тепловые сети»"/></li>
+          <li class="client-more"><b>и многое другое</b><span>организации из реестра ЭПБ</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" id="letters" style="padding-top: 10px">
+      <div class="wrap">
+        <div class="block-head reveal">
+          <div>
+            <p class="kicker-dark">Отзывы</p>
+            <h2 class="font-display">Благодарственные письма</h2>
+          </div>
+        </div>
+        <div class="letters">
+          <article class="letter reveal d1">
+            <small>Энергетика</small>
+            <p class="font-antique">«Работы выполнены в срок, заключение внесено в реестр без замечаний.»</p>
+            <span>Эксплуатирующая организация, теплоэнергетика</span>
+          </article>
+          <article class="letter reveal d2">
+            <small>Газоснабжение</small>
+            <p class="font-antique">«Лаборатория отработала на действующем объекте без остановки сети.»</p>
+            <span>Сети газораспределения и газопотребления</span>
+          </article>
+          <article class="letter reveal d3">
+            <small>Нефтехимия</small>
+            <p class="font-antique">«Диагностирование и паспорта оформлены одним комплектом.»</p>
+            <span>Нефтегазоперерабатывающая отрасль</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top: 20px">
+      <div class="wrap split">
+        <div class="reveal-left">
+          <p class="kicker-dark">Компания</p>
+          <h2 class="font-display" style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px">О нас</h2>
+          <p class="lead" style="color: var(--muted)">ООО «Маяк» — экспертная организация из Ижевска. Лицензия Ростехнадзора на экспертизу промышленной безопасности и собственная аттестованная лаборатория неразрушающего контроля.</p>
+          <p class="lead" style="color: var(--muted)">Директор — Федорова С.В., ответственный исполнитель — Катников К.В. На связи с 7:00 до 16:00 по Москве.</p>
+          <a class="more" href="./about.html">Подробнее о компании</a>
+        </div>
+        <ul class="facts reveal-right">
+          <li><span>Лицензия РТН</span><b>Л043-00109-18/02671242</b></li>
+          <li><span>Свидетельство ЛНК</span><b>ЛНК-056А0801</b></li>
+          <li><span>ИНН</span><b>1800035269</b></li>
+          <li><span>ОГРН</span><b>1251800006248</b></li>
+          <li><span>Город</span><b>Ижевск</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top: 10px">
+      <div class="wrap">
+        <div class="ask reveal">
+          <div>
+            <p class="kicker">Инженеру</p>
+            <h2 class="font-display">Технический вопрос</h2>
+            <p class="lead">Цена зависит от объекта, объёма контроля и доступа. Короткий запрос вместо сметы-автомата.</p>
+            <a class="more" href="./pricing.html" style="color: #f4f1ea; border-color: rgba(244,241,234,.4)">Из чего складывается стоимость</a>
+          </div>
+          <form class="js-question-form">
+            <label>Имя
+              <input required name="name" placeholder="Как к вам обращаться"/>
+            </label>
+            <label>Организация
+              <input name="company" placeholder="ООО «…»"/>
+            </label>
+            <label>Телефон
+              <input required name="phone" placeholder="+7"/>
+            </label>
+            <label>Почта
+              <input type="email" name="email" placeholder="name@company.ru"/>
+            </label>
+            <label class="wide">Вопрос
+              <textarea required name="q" placeholder="Объект, вид работ, сроки, что уже есть из документов"></textarea>
+            </label>
+            <button class="btn btn-light" type="submit">Отправить инженеру</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-bottom"></div>
+  <script src="./js/chrome.js?v=6"></script>
+</body>
+</html>

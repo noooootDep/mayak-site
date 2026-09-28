@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth" id="top">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <title>ООО «Маяк» — испытания, экспертиза и технический контроль ОПО</title>
+  <meta name="description" content="ООО «Маяк», Ижевск. Экспертиза промышленной безопасности, лаборатория НК, обследование зданий и диагностирование оборудования. Лицензия Ростехнадзора Л043-00109-18/02671242, ЛНК-056А0801."/>
+  <link rel="icon" href="./assets/images/logo.svg"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: "#141414", paper: "#f7f4ee", rose: "#c45c64", "rose-deep": "#9a3d45", line: "#ddd4c6", muted: "#6b6560" },
+          fontFamily: { display: ["Cormorant Garamond", "serif"], antique: ["Cormorant Garamond", "serif"], body: ["Manrope", "sans-serif"], "mono-tech": ["Space Grotesk", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="./css/brand.css"/>
+</head>
+<body class="bg-paper text-ink antialiased min-h-screen flex flex-col">
+  <div id="site-top"></div>
+
+  <main class="flex-1 pt-28 sm:pt-32">
+    <section class="paper-grid border-b border-line px-4 sm:px-10 lg:px-14 py-16 sm:py-24">
+      <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 reveal-left">
+          <div class="inline-flex items-center gap-2 border border-line bg-white px-3 py-1.5 font-mono-tech text-[10px] uppercase tracking-[0.22em] mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose animate-pulse"></span>
+            Ижевск · выезд по всей России
+          </div>
+          <h1 class="font-display text-3xl sm:text-5xl lg:text-[58px] leading-[1.12] font-normal mb-6">
+            Испытания, экспертиза<br/>
+            <span class="serif-accent text-4xl sm:text-6xl lg:text-[68px] tracking-normal">и технический контроль</span>
+          </h1>
+          <p class="text-muted text-base sm:text-lg max-w-xl leading-relaxed mb-8">
+            ООО «Маяк» проводит экспертизу промышленной безопасности, лабораторные исследования и диагностирование опасных производственных объектов. Заключения регистрируем в Ростехнадзоре.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="./question.html" class="inline-flex items-center gap-2 px-6 py-3.5 bg-ink text-white text-sm font-semibold hover:bg-rose-deep transition-colors">Задать технический вопрос</a>
+            <a href="./pricing.html" class="inline-flex items-center gap-2 px-6 py-3.5 bg-white border border-ink text-sm font-semibold hover:border-rose hover:text-rose-deep transition-colors">Как формируется цена</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 flex flex-col items-center reveal-right">
+          <img src="./assets/images/logo-mayak.jpg" alt="Логотип Маяк — маяк" class="logo-mark-lg float-logo bg-white"/>
+          <p class="mt-6 font-mono-tech text-[10px] uppercase tracking-[0.28em] text-muted">ООО «Маяк»</p>
+        </div>
+      </div>
+      <div class="max-w-[1440px] mx-auto mt-16 grid grid-cols-2 lg:grid-cols-4 border border-line bg-white reveal">
+        <div class="p-6 border-r border-b lg:border-b-0 border-line">
+          <div class="font-display text-3xl">99</div>
+          <div class="text-xs text-muted mt-1">заключений ЭПБ в реестре Ростехнадзора</div>
+        </div>
+        <div class="p-6 border-b lg:border-b-0 lg:border-r border-line">
+          <div class="font-display text-3xl">б/с</div>
+          <div class="text-xs text-muted mt-1">срок лицензии Ростехнадзора без ограничения</div>
+        </div>
+        <div class="p-6 border-r border-line">
+          <div class="font-display text-3xl">2029</div>
+          <div class="text-xs text-muted mt-1">аттестация лаборатории ЛНК действует до января</div>
+        </div>
+        <div class="p-6">
+          <div class="font-display text-3xl">7–16</div>
+          <div class="text-xs text-muted mt-1">рабочие часы по Москве, Пн–Пт</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 sm:px-10 lg:px-14 py-20 border-b border-line" id="services">
+      <div class="max-w-[1440px] mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+          <div>
+            <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-3">Направления</p>
+            <h2 class="font-display text-3xl sm:text-5xl">Виды выполняемых работ</h2>
+          </div>
+          <p class="text-sm text-muted max-w-md">Те же названия, что в меню. Без нумерации — как просил заказчик. Подробности на отдельных страницах.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="./services-epb.html" class="group bg-white border border-line p-8 hover:-translate-y-1 hover:border-ink transition-all reveal d1">
+            <span class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep">ФЗ-116</span>
+            <h3 class="font-display text-xl mt-3 mb-3 group-hover:text-rose-deep">Экспертиза промышленной безопасности</h3>
+            <p class="text-sm text-muted leading-relaxed">Техустройства, здания и сооружения, документация на перевооружение, консервацию и ликвидацию ОПО. Регистрация заключения в реестре.</p>
+          </a>
+          <a href="./services-lab.html" class="group bg-white border border-line p-8 hover:-translate-y-1 hover:border-ink transition-all reveal d2">
+            <span class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep">ЛНК-056А0801</span>
+            <h3 class="font-display text-xl mt-3 mb-3 group-hover:text-rose-deep">Лабораторные исследования и контроль</h3>
+            <p class="text-sm text-muted leading-relaxed">Неразрушающий и разрушающий контроль: УЗК, РК, МПК, ПВК, ВИК, ТК. Выезд лаборатории на объект.</p>
+          </a>
+          <a href="./services-buildings.html" class="group bg-white border border-line p-8 hover:-translate-y-1 hover:border-ink transition-all reveal d3">
+            <span class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep">ГОСТ 31937</span>
+            <h3 class="font-display text-xl mt-3 mb-3 group-hover:text-rose-deep">Техническое обследование зданий и сооружений</h3>
+            <p class="text-sm text-muted leading-relaxed">Инструментальный анализ несущих конструкций, эстакад, фундаментов и корпусов на ОПО.</p>
+          </a>
+          <a href="./services-diagnostics.html" class="group bg-white border border-line p-8 hover:-translate-y-1 hover:border-ink transition-all reveal d1">
+            <span class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep">Диагностика</span>
+            <h3 class="font-display text-xl mt-3 mb-3 group-hover:text-rose-deep">Техническое диагностирование оборудования</h3>
+            <p class="text-sm text-muted leading-relaxed">Фактическое состояние, причины износа, остаточный ресурс и режимы дальнейшей безопасной работы.</p>
+          </a>
+          <a href="./services-vessels.html" class="group bg-white border border-line p-8 hover:-translate-y-1 hover:border-ink transition-all reveal d2">
+            <span class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep">Давление</span>
+            <h3 class="font-display text-xl mt-3 mb-3 group-hover:text-rose-deep">Освидетельствование сосудов и трубопроводов</h3>
+            <p class="text-sm text-muted leading-relaxed">Первичное, периодическое и внеочередное освидетельствование сосудов, котлов, трубопроводов и РВС.</p>
+          </a>
+          <a href="./services-passports.html" class="group bg-white border border-line p-8 hover:-translate-y-1 hover:border-ink transition-all reveal d3">
+            <span class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep">Документация</span>
+            <h3 class="font-display text-xl mt-3 mb-3 group-hover:text-rose-deep">Разработка и восстановление паспортов</h3>
+            <p class="text-sm text-muted leading-relaxed">Паспорта техустройств, ПЛА, ПЛАРН, обоснование безопасности и эксплуатационная документация ОПО.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 sm:px-10 lg:px-14 py-20 border-b border-line bg-white" id="scheme">
+      <div class="max-w-[1440px] mx-auto">
+        <div class="mb-12 reveal">
+          <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-3">Как мы работаем</p>
+          <h2 class="font-display text-3xl sm:text-5xl">Схема взаимодействия</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <article class="step-card border border-line p-6 reveal d1">
+            <div class="step-num font-display text-3xl mb-3">01</div>
+            <h3 class="font-semibold mb-2">Заявка</h3>
+            <p class="text-sm text-muted">Пишете технический вопрос, прикладываете паспорт, схему или фото объекта.</p>
+          </article>
+          <article class="step-card border border-line p-6 reveal d2">
+            <div class="step-num font-display text-3xl mb-3">02</div>
+            <h3 class="font-semibold mb-2">Анализ и договор</h3>
+            <p class="text-sm text-muted">Смотрим состав работ, нормативные сроки и готовим коммерческое предложение.</p>
+          </article>
+          <article class="step-card border border-line p-6 reveal d3">
+            <div class="step-num font-display text-3xl mb-3">03</div>
+            <h3 class="font-semibold mb-2">Выезд и контроль</h3>
+            <p class="text-sm text-muted">Лаборатория и эксперты выезжают на площадку, проводят НК и обследование.</p>
+          </article>
+          <article class="step-card border border-line p-6 reveal d4">
+            <div class="step-num font-display text-3xl mb-3">04</div>
+            <h3 class="font-semibold mb-2">Реестр Ростехнадзора</h3>
+            <p class="text-sm text-muted">Оформляем заключение и сопровождаем внесение в государственный реестр.</p>
+          </article>
+        </div>
+        <a href="./powers.html" class="inline-flex items-center gap-2 mt-8 font-mono-tech text-[11px] uppercase tracking-[0.16em] text-rose-deep hover:text-ink">Полномочия, лицензия и полная схема →</a>
+      </div>
+    </section>
+
+    <section class="px-4 sm:px-10 lg:px-14 py-20 border-b border-line" id="industries">
+      <div class="max-w-[1440px] mx-auto">
+        <div class="mb-10 reveal">
+          <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-3">Отрасли</p>
+          <h2 class="font-display text-3xl sm:text-5xl">Где работаем</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-px bg-line border border-line reveal">
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Газораспределение и газопотребление</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Теплоэнергетика</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Нефть и газ</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Хранение нефтепродуктов</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Магистральные трубопроводы</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Нефтехимия</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Химическая промышленность</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Металлургия</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">Пищевая промышленность</p></div>
+          <div class="bg-white p-5 min-h-[120px]"><p class="font-semibold text-sm">ОПК</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 sm:px-10 lg:px-14 py-20 border-b border-line bg-white" id="clients">
+      <div class="max-w-[1440px] mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
+          <div>
+            <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-3">Реестр ЭПБ</p>
+            <h2 class="font-display text-3xl sm:text-5xl">Отрасли заказчиков</h2>
+          </div>
+          <p class="text-sm text-muted max-w-md">11 эксплуатирующих организаций в открытом реестре. Названия на monitor-pb закрыты, поэтому здесь отрасли, по которым у «Маяка» есть заключения.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 reveal">
+          <div class="client-tile">
+            <svg class="client-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 36V20l8-6 8 6v16M16 36V24h8v12M32 36V14l8 8v14"/></svg>
+            <span>Энергетика</span>
+          </div>
+          <div class="client-tile">
+            <svg class="client-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 34c8-14 20-14 28 0"/><circle cx="16" cy="20" r="3"/><circle cx="32" cy="18" r="3"/><path d="M16 23v8M32 21v10"/></svg>
+            <span>Газоснабжение</span>
+          </div>
+          <div class="client-tile">
+            <svg class="client-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="14" y="10" width="20" height="28" rx="2"/><path d="M14 18h20M14 26h20M20 10v28"/></svg>
+            <span>Химия и НПЗ</span>
+          </div>
+          <div class="client-tile">
+            <svg class="client-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 32c6-10 10-18 16-18s10 8 16 18"/><path d="M24 14v4"/></svg>
+            <span>Нефтегазодобыча</span>
+          </div>
+          <div class="client-tile">
+            <svg class="client-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 28h36M10 28v6M38 28v6M18 22h12v6H18z"/></svg>
+            <span>Трубопроводы</span>
+          </div>
+          <div class="client-tile">
+            <svg class="client-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 8l4 12h12l-10 8 4 12-10-7-10 7 4-12-10-8h12z"/></svg>
+            <span>Взрывчатые материалы</span>
+          </div>
+          <div class="client-tile">
+            <svg class="client-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 36c8 0 12-8 12-16H12c0 8 4 16 12 16z"/><path d="M20 16c0-6 8-6 8 0"/></svg>
+            <span>Растительное сырьё</span>
+          </div>
+          <div class="client-tile">
+            <svg class="client-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="12" y="16" width="24" height="20" rx="2"/><path d="M18 16v-4h12v4M20 24h8M20 30h8"/></svg>
+            <span>Пищевая</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 sm:px-10 lg:px-14 py-20 border-b border-line" id="letters">
+      <div class="max-w-[1440px] mx-auto">
+        <div class="mb-10 reveal">
+          <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-3">Отзывы</p>
+          <h2 class="font-display text-3xl sm:text-5xl">Благодарственные письма</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <article class="letter-card p-8 reveal d1">
+            <p class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep mb-4">Письмо · энергетика</p>
+            <p class="font-antique text-2xl mb-4">«Работы выполнены в срок, заключение внесено в реестр без замечаний.»</p>
+            <p class="text-xs text-muted">Эксплуатирующая организация, теплоэнергетика</p>
+          </article>
+          <article class="letter-card p-8 reveal d2">
+            <p class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep mb-4">Письмо · газоснабжение</p>
+            <p class="font-antique text-2xl mb-4">«Лаборатория отработала на действующем объекте без остановки сети.»</p>
+            <p class="text-xs text-muted">Сети газораспределения и газопотребления</p>
+          </article>
+          <article class="letter-card p-8 reveal d3">
+            <p class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep mb-4">Письмо · нефтехимия</p>
+            <p class="font-antique text-2xl mb-4">«Диагностирование и паспорта оформлены одним комплектом.»</p>
+            <p class="text-xs text-muted">Нефтегазоперерабатывающая отрасль</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 sm:px-10 lg:px-14 py-20 border-b border-line bg-white">
+      <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-3">Компания</p>
+          <h2 class="font-display text-3xl sm:text-5xl mb-5">О нас</h2>
+          <p class="text-muted leading-relaxed mb-4">ООО «Маяк» — экспертная организация из Ижевска. Лицензия Ростехнадзора на экспертизу промышленной безопасности, собственная аттестованная лаборатория неразрушающего контроля.</p>
+          <p class="text-muted leading-relaxed mb-6">Директор — Федорова С.В., ответственный исполнитель — Катников К.В. Работаем с 7:00 до 16:00 по Москве.</p>
+          <a href="./about.html" class="inline-flex items-center gap-2 font-mono-tech text-[11px] uppercase tracking-[0.16em] border-b border-ink pb-1">Подробнее о компании</a>
+        </div>
+        <div class="border border-line p-8 reveal-right">
+          <p class="font-mono-tech text-[10px] uppercase tracking-widest text-muted mb-4">Реестр</p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex justify-between border-b border-line pb-2"><span>Лицензия РТН</span><span class="font-semibold">Л043-00109-18/02671242</span></li>
+            <li class="flex justify-between border-b border-line pb-2"><span>Свидетельство ЛНК</span><span class="font-semibold">ЛНК-056А0801</span></li>
+            <li class="flex justify-between border-b border-line pb-2"><span>ИНН / ОГРН</span><span class="font-semibold">1800035269 / 1251800006248</span></li>
+            <li class="flex justify-between"><span>Город</span><span class="font-semibold">Ижевск</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 sm:px-10 lg:px-14 py-20">
+      <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5 reveal-left">
+          <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-3">Не калькулятор</p>
+          <h2 class="font-display text-3xl sm:text-5xl mb-4">Технический вопрос</h2>
+          <p class="text-muted leading-relaxed mb-6">Цена зависит от объекта, объёма контроля, доступа и состава документов. Поэтому вместо сметы-автомата — короткий инженерный запрос, как у профильных лабораторий.</p>
+          <a href="./pricing.html" class="text-sm underline underline-offset-4 hover:text-rose-deep">Сначала посмотреть, из чего складывается стоимость</a>
+        </div>
+        <form class="js-question-form lg:col-span-7 bg-white border border-line p-6 sm:p-10 reveal-right grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label class="flex flex-col gap-2 text-xs font-semibold">Имя
+            <input required class="border border-line px-3 py-3 font-normal" name="name" placeholder="Как к вам обращаться"/>
+          </label>
+          <label class="flex flex-col gap-2 text-xs font-semibold">Организация
+            <input class="border border-line px-3 py-3 font-normal" name="company" placeholder="ООО «…»"/>
+          </label>
+          <label class="flex flex-col gap-2 text-xs font-semibold">Телефон
+            <input required class="border border-line px-3 py-3 font-normal" name="phone" placeholder="+7"/>
+          </label>
+          <label class="flex flex-col gap-2 text-xs font-semibold">Почта
+            <input class="border border-line px-3 py-3 font-normal" type="email" name="email" placeholder="name@company.ru"/>
+          </label>
+          <label class="sm:col-span-2 flex flex-col gap-2 text-xs font-semibold">Вопрос
+            <textarea required class="border border-line px-3 py-3 font-normal min-h-[120px]" name="q" placeholder="Объект, вид работ, сроки, что уже есть из документов"></textarea>
+          </label>
+          <button class="sm:col-span-2 py-3.5 bg-ink text-white font-mono-tech text-[11px] uppercase tracking-[0.18em] hover:bg-rose-deep transition-colors" type="submit">Отправить инженеру</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-bottom"></div>
+  <script src="./js/chrome.js"></script>
+</body>
+</html>
