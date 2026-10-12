@@ -13,12 +13,12 @@
   const LNK_FILE = encodeURI("Свидетельство об аттестации ЛНК ООО Маяк А0801 НК-КА-17 2026.pdf");
 
   const SERVICES = [
-    { href: "./services-epb.html", title: "Экспертиза промышленной безопасности", tag: "ФЗ-116" },
-    { href: "./services-lab.html", title: "Лабораторные исследования и контроль", tag: "ЛНК" },
-    { href: "./services-buildings.html", title: "Техническое обследование зданий и сооружений", tag: "ГОСТ 31937" },
-    { href: "./services-diagnostics.html", title: "Техническое диагностирование оборудования", tag: "Ресурс" },
-    { href: "./services-vessels.html", title: "Освидетельствование сосудов и трубопроводов", tag: "Давление" },
-    { href: "./services-passports.html", title: "Разработка и восстановление паспортов", tag: "ТР ТС" }
+    { href: "./services-epb.html", title: "Экспертиза промышленной безопасности" },
+    { href: "./services-lab.html", title: "Лабораторные исследования и контроль" },
+    { href: "./services-buildings.html", title: "Техническое обследование зданий и сооружений" },
+    { href: "./services-diagnostics.html", title: "Техническое диагностирование оборудования" },
+    { href: "./services-vessels.html", title: "Техническое освидетельствование" },
+    { href: "./services-passports.html", title: "Разработка и восстановление паспортов" }
   ];
 
   function pageName() {
@@ -85,9 +85,8 @@
               </a>
               <div class="dropdown absolute top-full left-0 w-[360px] bg-white border border-[#ddd4c6] shadow-2xl p-2 z-50 flex flex-col">
                 ${SERVICES.map((s) => `
-                  <a href="${s.href}" class="px-3 py-2.5 text-[12px] font-body text-[#141414] hover:bg-[#1f6b45]/10 border-b border-[#e4eee6] last:border-0 flex items-center justify-between gap-3">
+                  <a href="${s.href}" class="px-3 py-2.5 text-[12px] font-body text-[#141414] hover:bg-[#1f6b45]/10 border-b border-[#e4eee6] last:border-0">
                     <span>${s.title}</span>
-                    <span class="font-mono-tech text-[9px] uppercase tracking-wider text-[#6b6560] shrink-0">${s.tag}</span>
                   </a>`).join("")}
               </div>
             </div>
@@ -100,7 +99,7 @@
               <a class="font-mono-tech text-sm tracking-wide font-bold text-white hover:text-[#9ddec0]" href="tel:${PHONE_CITY_TEL}">${PHONE_CITY}</a>
               <a class="font-mono-tech text-[11px] text-[#9db5a8] hover:text-white" href="tel:${PHONE_MOBILE_TEL}">${PHONE_MOBILE}</a>
             </div>
-            <a class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#f4f1ea] hover:bg-white text-[#0e1a15] text-[13px] font-semibold transition-all" href="./question.html">
+            <a class="header-ask hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold transition-all" href="./question.html">
               Задать вопрос
               <span class="material-symbols-outlined text-xs">arrow_forward</span>
             </a>
@@ -134,8 +133,8 @@
                 <img src="./assets/images/logo-mark.png" alt="" class="w-9 h-12 object-contain"/>
                 <span class="brand-word text-white uppercase font-bold">МАЯК</span>
               </a>
-              <p class="text-xs leading-relaxed text-[#9c9488]">Испытания, экспертиза промышленной безопасности и технический контроль ОПО. Ижевск, работа по всей России.</p>
-              <p class="font-mono-tech text-[10px] text-[#8fceb0]">Лицензия ${LICENSE} · ЛНК ${LNK}</p>
+              <p class="text-xs leading-relaxed text-[#9c9488]">Испытания, экспертиза, технический контроль.</p>
+              <p class="font-mono-tech text-[10px] text-[#8fceb0]">Лицензия ${LICENSE} · ЛНК 056А0801</p>
             </div>
             <div class="flex flex-col gap-2.5 text-xs">
               <span class="font-mono-tech text-[11px] uppercase tracking-[0.16em] text-white mb-1">Услуги</span>
@@ -144,7 +143,7 @@
             <div class="flex flex-col gap-2.5 text-xs">
               <span class="font-mono-tech text-[11px] uppercase tracking-[0.16em] text-white mb-1">Компания</span>
               <a class="hover:text-white" href="./about.html">О нас</a>
-              <a class="hover:text-white" href="./powers.html">Полномочия и схема</a>
+              <a class="hover:text-white" href="./powers.html">Полномочия и схема проезда</a>
               <a class="hover:text-white" href="./question.html">Технический вопрос</a>
 
               <a class="hover:text-white" href="./contacts.html">Контакты и реквизиты</a>
@@ -161,8 +160,7 @@
             </div>
           </div>
           <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 font-mono-tech text-[10px] uppercase tracking-[0.14em] text-[#7a7368]">
-            <span>© 2026 ООО «Маяк». ФЗ № 116-ФЗ</span>
-            <span>Директор Федорова С.В. · Исполнитель Катников К.В.</span>
+            <span>© 2026 ООО «Маяк»</span>
           </div>
         </div>
       </footer>
@@ -181,7 +179,7 @@
         <div class="bg-white max-w-md w-full p-8 text-center border border-[#ddd4c6]">
           <div class="w-14 h-14 mx-auto mb-4 rounded-full border border-[#1f6b45] text-[#1f6b45] flex items-center justify-center text-2xl">✓</div>
           <h3 class="font-display text-2xl mb-2">Вопрос принят</h3>
-          <p class="text-sm text-[#6b6560] mb-6">Инженер свяжется с вами в рабочее время: Пн–Пт 7:00–16:00 (МСК).</p>
+          <p class="text-sm text-[#6b6560] mb-6">Технический специалист свяжется с вами в рабочее время: Пн–Пт 7:00–16:00 (МСК).</p>
           <button id="modal-close-btn" class="w-full py-3 bg-[#141414] text-white font-mono-tech text-xs uppercase tracking-widest">Закрыть</button>
         </div>
       </div>`;
