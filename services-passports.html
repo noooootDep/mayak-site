@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:"#141414",paper:"#f4f7f3",rose:"#c45c64","rose-deep":"#1f6b45",green:"#1f6b45","green-deep":"#134830",line:"#d5e0d6",muted:"#5d6a60"},fontFamily:{display:["Cormorant Garamond","serif"],antique:["Cormorant Garamond","serif"],body:["Manrope","sans-serif"],"mono-tech":["Space Grotesk","sans-serif"]}}}};</script>
-  <link rel="stylesheet" href="./css/brand.css?v=12"/>
+  <link rel="stylesheet" href="./css/brand.css?v=14"/>
 </head>
 <body class="bg-paper text-ink antialiased min-h-screen flex flex-col">
   <div id="site-top"></div>
@@ -22,7 +22,8 @@
         <div class="reveal">
           <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-4">Документация</p>
           <h1 class="font-display text-4xl sm:text-6xl max-w-4xl mb-6">Разработка и восстановление паспортов</h1>
-          <p class="text-lg text-muted max-w-2xl leading-relaxed">Паспорта техустройств, ПЛА, ПЛАРН, обоснование безопасности и эксплуатационная документация ОПО.</p>
+          <p class="text-lg text-muted max-w-2xl leading-relaxed">В случае утраты, утери или невозможности дальнейшего использования по причине износа паспорта и (или) руководства (инструкции) по эксплуатации оборудования, находящегося в эксплуатации, их дубликаты должны оформляться организацией-изготовителем данного оборудования.</p>
+          <p class="text-lg text-muted max-w-2xl leading-relaxed mt-4">При отсутствии организации-изготовителя восстановление паспорта (оформление эксплуатационного паспорта) оборудования должно осуществляться организацией, проводящей экспертизу промышленной безопасности технического устройства, применяемого на опасном производственном объекте (специализированной организацией).</p>
           <div class="flex flex-wrap gap-3 mt-8">
             <a href="./question.html" class="px-6 py-3 bg-green text-white font-mono-tech text-[11px] uppercase tracking-widest rounded-full">Технический вопрос</a>
           </div>
@@ -34,16 +35,25 @@
     </section>
     <section class="px-4 sm:px-10 lg:px-14 py-16">
       <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
-        <ul class="lg:col-span-7 space-y-4 text-sm reveal-left"><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Идентификация изделия и обмеры</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Поверочные прочностные расчёты</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Дубликат паспорта установленного образца</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>ПЛА, ПЛАРН, обоснование безопасности, технологические регламенты</span></li></ul>
-        <aside class="lg:col-span-5 border border-line bg-white p-8 reveal-right">
+        <ul class="lg:col-span-12 space-y-4 text-sm reveal-left sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0"><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Паспорт оборудования</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Руководство (инструкция) по эксплуатации оборудования</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Чертежи общего вида оборудования и его основных элементов</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Исполнительные схемы линейных объектов</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Расчет пропускной способности предохранительных клапанов</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Расчет на прочность и устойчивость</span></li></ul>
+        <aside class="lg:col-span-12 border border-line bg-white p-8">
           <p class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep mb-3">Состав работы</p>
-          <p class="text-sm text-muted leading-relaxed">Опираемся на ГОСТ 2.601 / 2.610, ТР ТС 032/2013 и ТР ТС 010/2011.</p>
+          <p class="text-sm text-muted leading-relaxed">Экспертная организация при восстановлении паспорта должна выполнить следующие основные работы:</p>
+          <ol class="text-sm text-muted leading-relaxed mt-3 space-y-3 list-decimal pl-5">
+            <li>Провести анализ (изучение) представленных эксплуатирующей организацией материалов, проверку полноты и достаточности приведенной в них информации для составления (восстановления) паспорта.</li>
+            <li>Выполнить обследование (диагностирование) оборудования с применением методов неразрушающего и, при необходимости, разрушающего контроля для установления фактического состояния оборудования, подтверждения или уточнения представленных о нем сведений, а также восстановления недостающей информации об оборудовании. Объём и виды применяемых при обследовании методов определяются экспертной организацией в зависимости от полноты представленных сведений (выборочно при наличии информации о марках и характеристиках примененных материалов или, в случае её отсутствия, поэлементно в полном объёме в отношении каждого элемента, в том числе сварных соединений и присоединенных к нему деталей, арматуры и иных устройств, входящих в состав оборудования), в том числе:
+              <ul class="mt-3 space-y-3 list-disc pl-5">
+                <li>при наличии у эксплуатирующей организации чертежей и иных документов организации-изготовителя, отражающих сведения о конструкции оборудования и его элементов, об основных и сварочных материалах, примененных при изготовлении, а также о методах и объёмах проведенного контроля и проведенных испытаний, объём обследования, выполняемого экспертной организацией при восстановлении паспорта, должен определяться, исходя из необходимости установления фактического состояния оборудования и подтверждения (уточнения) данных, указанных в представленной документации;</li>
+                <li>при отсутствии технической документации, содержащей необходимые сведения об оборудовании, в ходе обследования должны быть проведены необходимые измерения и исследования с применением методов неразрушающего и разрушающего контроля, позволяющие, помимо указанного выше, определить марку и характеристики (химический состав и механические свойства) примененных материалов.</li>
+              </ul>
+            </li>
+          </ol>
         </aside>
       </div>
     </section>
 
   </main>
   <div id="site-bottom"></div>
-  <script src="./js/chrome.js?v=9"></script>
+  <script src="./js/chrome.js?v=10"></script>
 </body>
 </html>

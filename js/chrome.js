@@ -39,17 +39,14 @@
   function logoBlock() {
     return `
       <a class="flex items-center gap-3 group shrink-0" href="./index.html" aria-label="ООО МАЯК — на главную">
-        <img src="./assets/images/logo-mark.png" alt="" class="logo-mark"/>
-        <span class="flex flex-col leading-tight">
-          <span class="brand-word text-[15px] sm:text-[16px] font-bold uppercase text-white">МАЯК</span>
-          <span class="text-[10px] text-[#b7cfc2]">Испытания · Экспертиза · Техконтроль</span>
-        </span>
+        <img src="./assets/images/logo-brand.jpg" alt="МАЯК" class="logo-brand"/>
+        <span class="brand-sub leading-tight hidden md:block">Испытания · Экспертиза · Техконтроль</span>
       </a>`;
   }
 
   function topBar() {
     return `
-      <div class="fixed top-0 left-0 w-full z-50 bg-[#0e1a15] text-[#c5d5cc] text-[10px] sm:text-[11px] font-mono-tech py-1.5 px-4 sm:px-8 lg:px-14 border-b border-white/10">
+      <div class="fixed top-0 left-0 w-full z-50 bg-[#0e1a15] text-[#c5d5cc] text-[13px] font-mono-tech py-2 px-4 sm:px-8 lg:px-14 border-b border-white/10">
         <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-3">
           <div class="flex items-center gap-2 sm:gap-3 overflow-hidden whitespace-nowrap">
             <span class="text-white font-medium">ООО «Маяк»</span>
@@ -73,13 +70,13 @@
     const current = pageName();
     const serviceOpen = current.startsWith("services-");
     return `
-      <header id="site-header" class="fixed top-[30px] left-0 w-full z-50 bg-[#0e1a15]/92 backdrop-blur-md border-b border-white/10">
-        <div class="h-16 sm:h-20 max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 flex items-center justify-between gap-4">
+      <header id="site-header" class="fixed top-[38px] left-0 w-full z-50 border-b">
+        <div class="h-[92px] max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 flex items-center justify-between gap-4">
           ${logoBlock()}
           <nav class="hidden xl:flex items-center gap-1" aria-label="Навигация">
-            <a class="nav-link whitespace-nowrap px-3 py-2 text-[13px] text-[#d7e4dc] hover:text-white${current === "about.html" ? " is-active text-white" : ""}" href="./about.html">О нас</a>
+            <a class="nav-link whitespace-nowrap px-3 py-2 text-sm hover:text-[#1f6b45]${current === "about.html" ? " is-active" : ""}" href="./about.html">О нас</a>
             <div class="relative group py-2">
-              <a class="nav-link whitespace-nowrap px-3 py-2 text-[13px] text-[#d7e4dc] hover:text-white flex items-center gap-1${serviceOpen ? " is-active text-white" : ""}" href="./services-epb.html">
+              <a class="nav-link whitespace-nowrap px-3 py-2 text-sm hover:text-[#1f6b45] flex items-center gap-1${serviceOpen ? " is-active" : ""}" href="./services-epb.html">
                 Услуги
                 <span class="material-symbols-outlined text-xs">expand_more</span>
               </a>
@@ -90,33 +87,35 @@
                   </a>`).join("")}
               </div>
             </div>
-            <a class="nav-link whitespace-nowrap px-3 py-2 text-[13px] text-[#d7e4dc] hover:text-white${current === "powers.html" ? " is-active text-white" : ""}" href="./powers.html">Полномочия</a>
-            <a class="nav-link whitespace-nowrap px-3 py-2 text-[13px] text-[#d7e4dc] hover:text-white${current === "question.html" ? " is-active text-white" : ""}" href="./question.html">Технический вопрос</a>
-            <a class="nav-link whitespace-nowrap px-3 py-2 text-[13px] text-[#d7e4dc] hover:text-white${current === "contacts.html" ? " is-active text-white" : ""}" href="./contacts.html">Контакты</a>
+            <a class="nav-link whitespace-nowrap px-3 py-2 text-sm hover:text-[#1f6b45]${current === "powers.html" ? " is-active" : ""}" href="./powers.html">Полномочия</a>
+            <a class="nav-link whitespace-nowrap px-3 py-2 text-sm hover:text-[#1f6b45]${current === "question.html" ? " is-active" : ""}" href="./question.html">Технический вопрос</a>
+            <a class="nav-link whitespace-nowrap px-3 py-2 text-sm hover:text-[#1f6b45]${current === "facts.html" ? " is-active" : ""}" href="./facts.html">Интересные факты</a>
+            <a class="nav-link whitespace-nowrap px-3 py-2 text-sm hover:text-[#1f6b45]${current === "contacts.html" ? " is-active" : ""}" href="./contacts.html">Контакты</a>
           </nav>
           <div class="flex items-center gap-3 sm:gap-5 shrink-0">
             <div class="hidden md:flex flex-col items-end text-right">
-              <a class="font-mono-tech text-sm tracking-wide font-bold text-white hover:text-[#9ddec0]" href="tel:${PHONE_CITY_TEL}">${PHONE_CITY}</a>
-              <a class="font-mono-tech text-[11px] text-[#9db5a8] hover:text-white" href="tel:${PHONE_MOBILE_TEL}">${PHONE_MOBILE}</a>
+              <a class="font-mono-tech text-sm tracking-wide font-bold hover:text-[#1f6b45]" href="tel:${PHONE_CITY_TEL}">${PHONE_CITY}</a>
+              <a class="font-mono-tech text-sm text-[#5c6b63] hover:text-[#1f6b45]" href="tel:${PHONE_MOBILE_TEL}">${PHONE_MOBILE}</a>
             </div>
             <a class="header-ask hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold transition-all" href="./question.html">
               Задать вопрос
               <span class="material-symbols-outlined text-xs">arrow_forward</span>
             </a>
-            <button id="mobile-menu-btn" class="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border border-white/20 rounded-full" aria-label="Открыть меню" aria-expanded="false">
-              <span class="bar-1 w-5 h-0.5 bg-white transition-transform"></span>
-              <span class="bar-2 w-5 h-0.5 bg-white transition-opacity"></span>
-              <span class="bar-3 w-5 h-0.5 bg-white transition-transform"></span>
+            <button id="mobile-menu-btn" class="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border border-[#12201a]/20 rounded-full" aria-label="Открыть меню" aria-expanded="false">
+              <span class="bar-1 w-5 h-0.5 bg-[#12201a] transition-transform"></span>
+              <span class="bar-2 w-5 h-0.5 bg-[#12201a] transition-opacity"></span>
+              <span class="bar-3 w-5 h-0.5 bg-[#12201a] transition-transform"></span>
             </button>
           </div>
         </div>
       </header>
-      <div id="mobile-drawer" class="fixed inset-0 top-[110px] w-full overflow-y-auto border-t border-white/10 hidden flex-col xl:hidden z-50 bg-[#0e1a15] text-[#f4f1ea]">
+      <div id="mobile-drawer" class="fixed inset-0 top-[130px] w-full overflow-y-auto border-t border-white/10 hidden flex-col xl:hidden z-50 bg-[#0e1a15] text-[#f4f1ea]">
         <nav class="px-5 py-6 flex flex-col gap-2 max-w-lg mx-auto text-sm">
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./about.html">О нас</a>
           ${SERVICES.map((s) => `<a class="py-3 px-4 border border-white/10 rounded-2xl" href="${s.href}">${s.title}</a>`).join("")}
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./powers.html">Полномочия</a>
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./question.html">Технический вопрос</a>
+          <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./facts.html">Интересные факты</a>
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./contacts.html">Контакты</a>
           <a class="py-3 px-4 bg-[#f4f1ea] text-[#0e1a15] text-center rounded-full font-semibold" href="${MAX_URL}" target="_blank" rel="noopener">Написать в MAX</a>
         </nav>
@@ -130,27 +129,26 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             <div class="flex flex-col gap-4">
               <a class="flex items-center gap-3" href="./index.html">
-                <img src="./assets/images/logo-mark.png" alt="" class="w-9 h-12 object-contain"/>
-                <span class="brand-word text-white uppercase font-bold">МАЯК</span>
+                <img src="./assets/images/logo-brand.jpg" alt="МАЯК" class="h-16 w-auto bg-white rounded-xl"/>
               </a>
-              <p class="text-xs leading-relaxed text-[#9c9488]">Испытания, экспертиза, технический контроль.</p>
-              <p class="font-mono-tech text-[10px] text-[#8fceb0]">Лицензия ${LICENSE} · ЛНК 056А0801</p>
+              <p class="text-sm leading-relaxed text-[#c9d7cf]">Испытания, экспертиза, технический контроль.</p>
+              <p class="font-mono-tech text-[13px] text-[#8fceb0]">Лицензия ${LICENSE} · ЛНК 056А0801</p>
             </div>
-            <div class="flex flex-col gap-2.5 text-xs">
-              <span class="font-mono-tech text-[11px] uppercase tracking-[0.16em] text-white mb-1">Услуги</span>
+            <div class="flex flex-col gap-2.5 text-sm">
+              <span class="font-mono-tech text-[13px] uppercase tracking-[0.16em] text-white mb-1">Услуги</span>
               ${SERVICES.map((s) => `<a class="hover:text-white" href="${s.href}">${s.title}</a>`).join("")}
             </div>
-            <div class="flex flex-col gap-2.5 text-xs">
-              <span class="font-mono-tech text-[11px] uppercase tracking-[0.16em] text-white mb-1">Компания</span>
+            <div class="flex flex-col gap-2.5 text-sm">
+              <span class="font-mono-tech text-[13px] uppercase tracking-[0.16em] text-white mb-1">Компания</span>
               <a class="hover:text-white" href="./about.html">О нас</a>
-              <a class="hover:text-white" href="./powers.html">Полномочия и схема проезда</a>
+              <a class="hover:text-white" href="./powers.html">Полномочия и подробная схема взаимодействия</a>
               <a class="hover:text-white" href="./question.html">Технический вопрос</a>
-
+              <a class="hover:text-white" href="./facts.html">Интересные факты</a>
               <a class="hover:text-white" href="./contacts.html">Контакты и реквизиты</a>
               <a class="hover:text-white" href="https://www.gosnadzor.ru/" target="_blank" rel="noopener">Ростехнадзор</a>
             </div>
-            <div class="flex flex-col gap-2.5 text-xs">
-              <span class="font-mono-tech text-[11px] uppercase tracking-[0.16em] text-white mb-1">Связь</span>
+            <div class="flex flex-col gap-2.5 text-sm">
+              <span class="font-mono-tech text-[13px] uppercase tracking-[0.16em] text-white mb-1">Связь</span>
               <p>426063, г. Ижевск, ул. Ключевой посёлок, 83а, оф. 1001</p>
               <p>Пн–Пт 7:00–16:00 (МСК)</p>
               <a class="text-white font-mono-tech font-bold" href="tel:${PHONE_CITY_TEL}">${PHONE_CITY}</a>
@@ -159,7 +157,7 @@
               <a class="inline-flex w-fit px-2 py-1 border border-white/20 hover:bg-[#1f6b45] hover:border-[#1f6b45] hover:text-white" href="${MAX_URL}" target="_blank" rel="noopener">MAX</a>
             </div>
           </div>
-          <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 font-mono-tech text-[10px] uppercase tracking-[0.14em] text-[#7a7368]">
+          <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 font-mono-tech text-[13px] uppercase tracking-[0.14em] text-[#9c9488]">
             <span>© 2026 ООО «Маяк»</span>
           </div>
         </div>
@@ -188,7 +186,7 @@
   function curtain() {
     return `
       <div id="page-curtain" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 bg-[#f7f4ee] flex flex-col items-center justify-center">
-        <img src="./assets/images/logo-mark.png" alt="" class="w-14 h-20 object-contain mb-3"/>
+        <img src="./assets/images/logo-brand.jpg" alt="" class="h-24 w-auto bg-white rounded-xl object-contain mb-3"/>
         <span class="brand-word text-sm font-bold uppercase text-white">МАЯК</span>
         <div class="w-40 h-[2px] bg-[#d5e0d6] overflow-hidden mt-3"><div class="w-16 h-full bg-[#1f6b45] animate-[shimmer_1.2s_infinite]"></div></div>
       </div>

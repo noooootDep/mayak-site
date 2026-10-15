@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:"#141414",paper:"#f4f7f3",rose:"#c45c64","rose-deep":"#1f6b45",green:"#1f6b45","green-deep":"#134830",line:"#d5e0d6",muted:"#5d6a60"},fontFamily:{display:["Cormorant Garamond","serif"],antique:["Cormorant Garamond","serif"],body:["Manrope","sans-serif"],"mono-tech":["Space Grotesk","sans-serif"]}}}};</script>
-  <link rel="stylesheet" href="./css/brand.css?v=12"/>
+  <link rel="stylesheet" href="./css/brand.css?v=14"/>
 </head>
 <body class="bg-paper text-ink antialiased min-h-screen flex flex-col">
   <div id="site-top"></div>
@@ -23,7 +23,7 @@
         <div class="reveal">
           <p class="font-mono-tech text-[10px] uppercase tracking-[0.28em] text-rose-deep mb-4">ФЗ-116</p>
           <h1 class="font-display text-4xl sm:text-6xl max-w-4xl mb-6">Экспертиза промышленной безопасности</h1>
-          <p class="text-lg text-muted max-w-2xl leading-relaxed">Устанавливаем соответствие объекта экспертизы требованиям промышленной безопасности и регистрируем заключение в реестре Ростехнадзора.</p>
+          <p class="text-lg text-muted max-w-2xl leading-relaxed">Устанавливаем соответствие объекта экспертизы требованиям промышленной безопасности и помогаем вносить заключения в реестр Ростехнадзора.</p>
           <div class="flex flex-wrap gap-3 mt-8">
             <a href="./question.html" class="px-6 py-3 bg-green text-white font-mono-tech text-[11px] uppercase tracking-widest rounded-full">Технический вопрос</a>
           </div>
@@ -35,16 +35,40 @@
     </section>
     <section class="px-4 sm:px-10 lg:px-14 py-16">
       <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
-        <ul class="lg:col-span-7 space-y-4 text-sm reveal-left"><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Технические устройства на ОПО I–IV классов</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Здания и сооружения производственного назначения</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Документация на техническое перевооружение, консервацию и ликвидацию</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Расчёт и обоснование остаточного ресурса</span></li></ul>
-        <aside class="lg:col-span-5 border border-line bg-white p-8 reveal-right">
-          <p class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep mb-3">Состав работы</p>
-          <p class="text-sm text-muted leading-relaxed">Нормативная база: Федеральный закон № 116-ФЗ, федеральные нормы и правила Ростехнадзора. Срок типичной экспертизы — от 5 рабочих дней после выезда и комплекта документов.</p>
-        </aside>
+        <ul class="lg:col-span-5 space-y-4 text-sm reveal-left"><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Технические устройства на ОПО I–IV классов</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Здания и сооружения производственного назначения</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Документация на техническое перевооружение</span></li><li class="flex gap-3"><span class="text-rose-deep">▸</span><span>Расчетные и аналитические процедуры</span></li></ul>
+        <div class="lg:col-span-7 space-y-4 reveal-right">
+          <aside class="border border-line bg-white p-8">
+            <p class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep mb-3">Нормативная база</p>
+            <ul class="text-sm text-muted leading-relaxed space-y-3">
+              <li>Федеральный закон № 116-ФЗ от 21 июля 1997 г. «О промышленной безопасности опасных производственных объектов».</li>
+              <li>Приказ Ростехнадзора № 420 от 20 октября 2020 г. «Об утверждении федеральных норм и правил в области промышленной безопасности «Правила проведения экспертизы промышленной безопасности».</li>
+            </ul>
+          </aside>
+          <aside class="border border-line bg-white p-8">
+            <p class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep mb-3">Сроки проведения экспертизы</p>
+            <p class="text-sm text-muted leading-relaxed">В соответствии с п.14 Правил проведения экспертизы промышленной безопасности срок проведения экспертизы определяется сложностью объекта экспертизы, но не должен превышать трех месяцев со дня получения экспертной организацией от заказчика экспертизы комплекта необходимых материалов и документов. Срок проведения экспертизы может быть продлен по соглашению сторон.</p>
+            <p class="text-sm text-muted leading-relaxed mt-3">Фактический срок проведения экспертизы обычно составляет около двадцати рабочих дней.</p>
+          </aside>
+          <aside class="border border-line bg-white p-8">
+            <p class="font-mono-tech text-[10px] uppercase tracking-widest text-rose-deep mb-3">Стоимость проведения экспертизы</p>
+            <p class="text-sm text-muted leading-relaxed">Стоимость проведения экспертизы промышленной безопасности зависит от многих факторов. Это сложность объекта экспертизы, его параметры и технические характеристики, географическая удаленность и доступность объекта экспертизы для проведения неразрушающего контроля, срочность выполнения экспертных работ.</p>
+            <p class="text-sm text-muted leading-relaxed mt-3">Базовые стоимости некоторых объектов экспертизы:</p>
+            <ul class="text-sm text-muted leading-relaxed mt-3 space-y-2">
+              <li>Экспертиза промышленной безопасности сосуда, работающего под давлением — от 16 тыс. рублей</li>
+              <li>Экспертиза промышленной безопасности технологического трубопровода — от 40 тыс. рублей</li>
+              <li>Экспертиза промышленной безопасности горизонтального резервуара — от 20 тыс. рублей</li>
+              <li>Экспертиза промышленной безопасности водогрейного котла — от 24 тыс. рублей</li>
+              <li>Экспертиза промышленной безопасности ПРГ — от 28 тыс. рублей</li>
+              <li>Экспертиза промышленной безопасности здания — от 50 тыс. рублей</li>
+              <li>Экспертиза промышленной безопасности документации на техническое перевооружение — от 40 тыс. рублей</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </section>
 
   </main>
   <div id="site-bottom"></div>
-  <script src="./js/chrome.js?v=9"></script>
+  <script src="./js/chrome.js?v=10"></script>
 </body>
 </html>
