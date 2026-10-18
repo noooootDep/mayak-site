@@ -39,8 +39,8 @@
   function logoBlock() {
     return `
       <a class="flex items-center gap-3 group shrink-0" href="./index.html" aria-label="ООО МАЯК — на главную">
-        <img src="./assets/images/logo-brand.jpg" alt="МАЯК" class="logo-brand"/>
-        <span class="brand-sub leading-tight hidden md:block">Испытания · Экспертиза · Техконтроль</span>
+        <img src="./assets/images/logo-shield.png" alt="" class="logo-brand"/>
+        <span class="brand-name">МАЯК</span>
       </a>`;
   }
 
@@ -129,7 +129,8 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             <div class="flex flex-col gap-4">
               <a class="flex items-center gap-3" href="./index.html">
-                <img src="./assets/images/logo-brand.jpg" alt="МАЯК" class="h-16 w-auto bg-white rounded-xl"/>
+                <img src="./assets/images/logo-shield.png" alt="" class="h-14 w-auto bg-[#f7f4ee] rounded-lg p-1"/>
+                <span class="text-white font-extrabold text-2xl tracking-tight">МАЯК</span>
               </a>
               <p class="text-sm leading-relaxed text-[#c9d7cf]">Испытания, экспертиза, технический контроль.</p>
               <p class="font-mono-tech text-[13px] text-[#8fceb0]">Лицензия ${LICENSE} · ЛНК 056А0801</p>
@@ -186,8 +187,8 @@
   function curtain() {
     return `
       <div id="page-curtain" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 bg-[#f7f4ee] flex flex-col items-center justify-center">
-        <img src="./assets/images/logo-brand.jpg" alt="" class="h-24 w-auto bg-white rounded-xl object-contain mb-3"/>
-        <span class="brand-word text-sm font-bold uppercase text-white">МАЯК</span>
+        <img src="./assets/images/logo-shield.png" alt="" class="h-24 w-auto bg-[#f7f4ee] rounded-2xl p-2 object-contain mb-3"/>
+        <span class="text-3xl font-extrabold tracking-tight text-white">МАЯК</span>
         <div class="w-40 h-[2px] bg-[#d5e0d6] overflow-hidden mt-3"><div class="w-16 h-full bg-[#1f6b45] animate-[shimmer_1.2s_infinite]"></div></div>
       </div>
       <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] z-[70]" style="width:0%"></div>`;

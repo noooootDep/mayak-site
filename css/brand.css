@@ -62,12 +62,13 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
   border-bottom: 1px solid rgba(18, 32, 26, 0.08);
 }
 #site-header a { color: #12201a; }
-#site-header .brand-sub {
-  color: #5c6b63;
-  font-size: 13px;
-  font-weight: 500;
+#site-header .brand-name {
+  color: #141414;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
   white-space: nowrap;
-  flex-shrink: 0;
 }
 #site-header a[href^="tel:"] { color: #12201a; }
 #site-header .nav-link { font-size: 14px; }
@@ -84,11 +85,10 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 #site-header .dropdown a:hover { color: #0e1a15; }
 
 .logo-brand {
-  height: 84px;
+  height: 68px;
   width: auto;
   object-fit: contain;
-  background: #fff;
-  border-radius: 12px;
+  background: transparent;
 }
 
 .logo-mark-lg {
@@ -637,6 +637,15 @@ html.is-leaving #page-curtain {
   border-radius: 999px;
 }
 
+.office-photo {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -12px rgba(14, 26, 21, 0.18);
+}
 .page-hero-img {
   width: 100%;
   max-height: 320px;
