@@ -60,7 +60,7 @@
           <div class="flex items-center gap-3 sm:gap-5 shrink-0">
             <span class="hidden sm:inline">Пн–Пт 7:00–16:00 (МСК)</span>
             <a href="mailto:${EMAIL}" class="hover:text-white">${EMAIL}</a>
-            <a href="${MAX_URL}" target="_blank" rel="noopener" class="px-1.5 py-0.5 rounded-sm bg-white/10 hover:bg-[#1f6b45] hover:text-white text-[#b7e0c6] font-bold uppercase" title="Написать в MAX по номеру ${PHONE_MOBILE}">MAX</a>
+            <a href="${MAX_URL}" target="_blank" rel="noopener" class="inline-flex items-center" title="Написать в MAX, ${PHONE_MOBILE}"><img src="./assets/images/max-icon.png" alt="MAX" class="max-icon"/></a>
           </div>
         </div>
       </div>`;
@@ -117,7 +117,7 @@
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./question.html">Технический вопрос</a>
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./facts.html">Интересные факты</a>
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./contacts.html">Контакты</a>
-          <a class="py-3 px-4 bg-[#f4f1ea] text-[#0e1a15] text-center rounded-full font-semibold" href="${MAX_URL}" target="_blank" rel="noopener">Написать в MAX</a>
+          <a class="py-3 px-4 bg-[#f4f1ea] text-[#0e1a15] text-center rounded-full font-semibold inline-flex items-center justify-center" href="${MAX_URL}" target="_blank" rel="noopener" title="Написать в MAX, ${PHONE_MOBILE}"><img src="./assets/images/max-icon.png" alt="MAX" class="max-icon"/></a>
         </nav>
       </div>`;
   }
@@ -155,11 +155,11 @@
               <a class="text-white font-mono-tech font-bold" href="tel:${PHONE_CITY_TEL}">${PHONE_CITY}</a>
               <a class="text-white font-mono-tech" href="tel:${PHONE_MOBILE_TEL}">${PHONE_MOBILE}</a>
               <a class="hover:text-white" href="mailto:${EMAIL}">${EMAIL}</a>
-              <a class="inline-flex w-fit px-2 py-1 border border-white/20 hover:bg-[#1f6b45] hover:border-[#1f6b45] hover:text-white" href="${MAX_URL}" target="_blank" rel="noopener">MAX</a>
+              <a class="inline-flex w-fit" href="${MAX_URL}" target="_blank" rel="noopener" title="Написать в MAX, ${PHONE_MOBILE}"><img src="./assets/images/max-icon.png" alt="MAX" class="max-icon"/></a>
             </div>
           </div>
           <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 font-mono-tech text-[13px] uppercase tracking-[0.14em] text-[#9c9488]">
-            <span>© 2026 ООО «Маяк»</span>
+            <span>© ООО «Маяк»</span>
           </div>
         </div>
       </footer>
@@ -170,7 +170,7 @@
             <span class="w-2 h-2 rounded-full bg-[#1f6b45] animate-pulse"></span>
             <span class="hidden sm:inline">${PHONE_CITY}</span>
           </a>
-          <a href="${MAX_URL}" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-[#f7f4ee] border border-[#ddd4c6] flex items-center justify-center font-mono-tech text-[10px] font-bold" title="MAX">MAX</a>
+          <a href="${MAX_URL}" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-[#f7f4ee] border border-[#ddd4c6] flex items-center justify-center" title="Написать в MAX, ${PHONE_MOBILE}"><img src="./assets/images/max-icon.png" alt="MAX" class="max-icon"/></a>
         </div>
       </aside>
       <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#141414] text-white px-5 py-3 font-mono-tech text-xs opacity-0 pointer-events-none translate-y-4 transition-all">Заявка принята</div>
@@ -178,7 +178,7 @@
         <div class="bg-white max-w-md w-full p-8 text-center border border-[#ddd4c6]">
           <div class="w-14 h-14 mx-auto mb-4 rounded-full border border-[#1f6b45] text-[#1f6b45] flex items-center justify-center text-2xl">✓</div>
           <h3 class="font-display text-2xl mb-2">Вопрос принят</h3>
-          <p class="text-sm text-[#6b6560] mb-6">Технический специалист свяжется с вами в рабочее время: Пн–Пт 7:00–16:00 (МСК).</p>
+          <p class="text-sm text-[#6b6560] mb-6">Откроется почта с письмом на ${EMAIL}. Отправьте его — технический специалист ответит в рабочее время, Пн–Пт 7:00–16:00 (МСК).</p>
           <button id="modal-close-btn" class="w-full py-3 bg-[#141414] text-white font-mono-tech text-xs uppercase tracking-widest">Закрыть</button>
         </div>
       </div>`;
@@ -253,7 +253,17 @@
     document.querySelectorAll("form.js-question-form").forEach((form) => {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        form.reset();
+        const labels = { name: "Имя", company: "Организация", phone: "Телефон", email: "Почта", type: "Тип работ", q: "Вопрос" };
+        const data = new FormData(form);
+        const lines = [];
+        data.forEach((value, key) => {
+          const text = String(value).trim();
+          if (!text) return;
+          lines.push((labels[key] || key) + ": " + text);
+        });
+        const subject = encodeURIComponent("Технический вопрос с сайта ООО «Маяк»");
+        const body = encodeURIComponent(lines.join("\n"));
+        window.location.href = "mailto:" + EMAIL + "?subject=" + subject + "&body=" + body;
         Mayak.openModal();
       });
     });

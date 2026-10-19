@@ -71,7 +71,8 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
   white-space: nowrap;
 }
 #site-header a[href^="tel:"] { color: #12201a; }
-#site-header .nav-link { font-size: 14px; }
+#site-header .nav-link { font-size: 14px; font-weight: 700; }
+.max-icon { width: 22px; height: 22px; display: block; object-fit: contain; }
 #site-header .nav-link.is-active { color: #1f6b45; }
 #site-header a.header-ask {
   background: #1f6b45;
