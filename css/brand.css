@@ -271,12 +271,11 @@ html.is-leaving #page-curtain {
   margin-top: 0;
 }
 .stage-hero-img img {
-  width: 100%;
+  display: block;
+  width: auto;
+  max-width: 100%;
   height: auto;
   max-height: calc(100vh - 280px);
-  object-fit: contain;
-  object-position: center center;
-  object-position: center top;
   border-radius: 24px;
   box-shadow: 0 20px 50px -16px rgba(14, 26, 21, 0.22);
 }
@@ -700,10 +699,9 @@ main .overflow-x-auto.border {
 @media (max-width: 1023px) {
   .dropdown { display: none !important; }
   .stage { padding-top: 148px; justify-content: flex-start; }
-  .stage-hero-img img { max-height: none; }
   .stage-grid, .steps, .letters, .split, .ask { grid-template-columns: 1fr; }
   .client-board { grid-template-columns: repeat(2, 1fr); }
-  .stage-hero-img img { max-height: none; height: auto; object-fit: contain; object-position: center top; border-radius: 18px; }
+  .stage-hero-img img { max-height: none; max-width: 100%; height: auto; border-radius: 18px; }
   .stage-metrics { grid-template-columns: 1fr 1fr; }
   .block-head { flex-direction: column; align-items: flex-start; }
   .work-row { grid-template-columns: 1fr; }
