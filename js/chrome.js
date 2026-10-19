@@ -73,7 +73,7 @@
       <header id="site-header" class="fixed top-[38px] left-0 w-full z-50 border-b">
         <div class="h-[92px] max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 flex items-center justify-between gap-4">
           ${logoBlock()}
-          <nav class="hidden xl:flex items-center gap-1" aria-label="Навигация">
+          <nav class="hidden min-[1100px]:flex items-center gap-1" aria-label="Навигация">
             <a class="nav-link whitespace-nowrap px-3 py-2 text-sm hover:text-[#1f6b45]${current === "about.html" ? " is-active" : ""}" href="./about.html">О нас</a>
             <div class="relative group py-2">
               <a class="nav-link whitespace-nowrap px-3 py-2 text-sm hover:text-[#1f6b45] flex items-center gap-1${serviceOpen ? " is-active" : ""}" href="./services-epb.html">
@@ -101,7 +101,7 @@
               Задать вопрос
               <span class="material-symbols-outlined text-xs">arrow_forward</span>
             </a>
-            <button id="mobile-menu-btn" class="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border border-[#12201a]/20 rounded-full" aria-label="Открыть меню" aria-expanded="false">
+            <button id="mobile-menu-btn" class="min-[1100px]:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border border-[#12201a]/20 rounded-full" aria-label="Открыть меню" aria-expanded="false">
               <span class="bar-1 w-5 h-0.5 bg-[#12201a] transition-transform"></span>
               <span class="bar-2 w-5 h-0.5 bg-[#12201a] transition-opacity"></span>
               <span class="bar-3 w-5 h-0.5 bg-[#12201a] transition-transform"></span>
@@ -109,7 +109,7 @@
           </div>
         </div>
       </header>
-      <div id="mobile-drawer" class="fixed inset-0 top-[130px] w-full overflow-y-auto border-t border-white/10 hidden flex-col xl:hidden z-50 bg-[#0e1a15] text-[#f4f1ea]">
+      <div id="mobile-drawer" class="fixed inset-0 top-[130px] w-full overflow-y-auto border-t border-white/10 hidden flex-col min-[1100px]:hidden z-50 bg-[#0e1a15] text-[#f4f1ea]">
         <nav class="px-5 py-6 flex flex-col gap-2 max-w-lg mx-auto text-sm">
           <a class="py-3 px-4 border border-white/10 rounded-2xl" href="./about.html">О нас</a>
           ${SERVICES.map((s) => `<a class="py-3 px-4 border border-white/10 rounded-2xl" href="${s.href}">${s.title}</a>`).join("")}
