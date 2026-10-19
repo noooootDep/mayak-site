@@ -277,12 +277,24 @@ html.is-leaving #page-curtain {
   border-radius: 24px;
   box-shadow: 0 20px 50px -16px rgba(14, 26, 21, 0.22);
 }
-@media (max-height: 860px) {
-  .stage-hero-img img {
-    height: calc(100vh - 250px);
-    object-fit: cover;
-    object-position: center top;
+@media (max-height: 900px) {
+  .stage {
+    height: 100vh;
+    padding-top: 132px;
+    padding-bottom: 12px;
+    justify-content: center;
+    overflow: hidden;
   }
+  .stage-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .stage-hero-img img {
+    width: auto;
+    max-width: min(46vw, 100%);
+    height: calc(100vh - 250px);
+    max-height: calc(100vh - 250px);
+  }
+  .stage-metrics { margin-top: 12px; }
 }
 
 .stage-metrics {
