@@ -177,8 +177,8 @@
       <div id="success-modal" class="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-black/50 opacity-0 pointer-events-none transition-opacity">
         <div class="bg-white max-w-md w-full p-8 text-center border border-[#ddd4c6]">
           <div class="w-14 h-14 mx-auto mb-4 rounded-full border border-[#1f6b45] text-[#1f6b45] flex items-center justify-center text-2xl">✓</div>
-          <h3 class="font-display text-2xl mb-2">Вопрос принят</h3>
-          <p class="text-sm text-[#6b6560] mb-6">Откроется почта с письмом на ${EMAIL}. Отправьте его — технический специалист ответит в рабочее время, Пн–Пт 7:00–16:00 (МСК).</p>
+          <h3 id="modal-title" class="font-display text-2xl mb-2">Вопрос принят</h3>
+          <p id="modal-text" class="text-sm text-[#6b6560] mb-6">Вопрос отправлен на почту компании. Ответим в рабочее время, Пн–Пт 7:00–16:00 (МСК).</p>
           <button id="modal-close-btn" class="w-full py-3 bg-[#141414] text-white font-mono-tech text-xs uppercase tracking-widest">Закрыть</button>
         </div>
       </div>`;
@@ -253,18 +253,44 @@
     document.querySelectorAll("form.js-question-form").forEach((form) => {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        const labels = { name: "Имя", company: "Организация", phone: "Телефон", email: "Почта", type: "Тип работ", q: "Вопрос" };
-        const data = new FormData(form);
-        const lines = [];
-        data.forEach((value, key) => {
-          const text = String(value).trim();
-          if (!text) return;
-          lines.push((labels[key] || key) + ": " + text);
+        const button = form.querySelector("button[type='submit']");
+        const title = document.getElementById("modal-title");
+        const text = document.getElementById("modal-text");
+        const payload = {
+          _subject: "Технический вопрос с сайта ООО «Маяк»",
+          _template: "table",
+          _captcha: "false"
+        };
+        new FormData(form).forEach((value, key) => {
+          const line = String(value).trim();
+          if (line) payload[key === "q" ? "message" : key] = line;
         });
-        const subject = encodeURIComponent("Технический вопрос с сайта ООО «Маяк»");
-        const body = encodeURIComponent(lines.join("\n"));
-        window.location.href = "mailto:" + EMAIL + "?subject=" + subject + "&body=" + body;
-        Mayak.openModal();
+        if (button) button.disabled = true;
+        fetch("https://formsubmit.co/ajax/" + EMAIL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload)
+        }).then((res) => res.json().then((body) => ({ ok: res.ok, body }))).then(({ ok, body }) => {
+          const message = (body && (body.message || body.success)) || "";
+          if (String(message).toLowerCase().indexOf("activation") !== -1 || String(message).toLowerCase().indexOf("activate") !== -1) {
+            if (title) title.textContent = "Нужно одно подтверждение";
+            if (text) text.textContent = "На " + EMAIL + " ушло письмо со ссылкой. Его нужно открыть один раз, после этого вопросы с сайта начнут приходить сами.";
+          } else if (!ok) {
+            if (title) title.textContent = "Не отправилось";
+            if (text) text.textContent = "Напишите на " + EMAIL + " или позвоните. Форма сейчас не смогла доставить письмо.";
+          } else {
+            if (title) title.textContent = "Вопрос принят";
+            if (text) text.textContent = "Вопрос отправлен на почту компании. Ответим в рабочее время, Пн–Пт 7:00–16:00 (МСК).";
+            form.reset();
+          }
+          Mayak.openModal();
+        }).catch(() => {
+          if (title) title.textContent = "Не отправилось";
+          if (text) text.textContent = "Напишите на " + EMAIL + " или позвоните. Форма сейчас не смогла доставить письмо.";
+          Mayak.openModal();
+        }).finally(() => {
+          if (button) button.disabled = false;
+        });
       });
     });
 
