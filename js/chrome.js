@@ -163,7 +163,7 @@
           </div>
         </div>
       </footer>
-      <aside class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
+      <aside id="quick-dock" class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
         <button id="back-to-top" class="w-10 h-10 rounded-full bg-white border border-[#ddd4c6] opacity-0 pointer-events-none" aria-label="Наверх">↑</button>
         <div class="bg-white border border-[#ddd4c6] shadow-xl p-1.5 flex items-center gap-1.5 rounded-full">
           <a href="tel:${PHONE_CITY_TEL}" class="flex items-center gap-2 pl-3 pr-3 py-2 rounded-full bg-[#141414] text-white font-mono-tech text-xs font-bold">
@@ -199,18 +199,16 @@
       const toast = document.getElementById("toast");
       if (!toast) return;
       toast.textContent = msg;
-      toast.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
-      setTimeout(() => toast.classList.add("opacity-0", "pointer-events-none", "translate-y-4"), 2800);
+      toast.classList.add("is-on");
+      setTimeout(() => toast.classList.remove("is-on"), 2800);
     },
     openModal() {
       const m = document.getElementById("success-modal");
-      if (m) {
-        m.classList.remove("opacity-0", "pointer-events-none");
-      }
+      if (m) m.classList.add("is-open");
     },
     closeModal() {
       const m = document.getElementById("success-modal");
-      if (m) m.classList.add("opacity-0", "pointer-events-none");
+      if (m) m.classList.remove("is-open");
     }
   };
 
@@ -234,6 +232,20 @@
 
     const progress = document.getElementById("scroll-progress");
     const back = document.getElementById("back-to-top");
+    const dock = document.getElementById("quick-dock");
+    function placeDock() {
+      if (!dock) return;
+      const img = document.querySelector(".stage-hero-img img");
+      if (!img) {
+        dock.classList.remove("is-parked");
+        return;
+      }
+      const r = img.getBoundingClientRect();
+      const parked = r.bottom > window.innerHeight - 120 && r.right > window.innerWidth - 320;
+      dock.classList.toggle("is-parked", parked);
+    }
+    placeDock();
+    window.addEventListener("resize", placeDock);
     window.addEventListener("scroll", () => {
       const y = window.scrollY;
       const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -242,6 +254,7 @@
         back.classList.toggle("opacity-0", y < 380);
         back.classList.toggle("pointer-events-none", y < 380);
       }
+      placeDock();
     });
     if (back) back.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
@@ -326,6 +339,7 @@
 
   window.addEventListener("pageshow", () => {
     document.documentElement.classList.remove("is-leaving");
+    if (window.Mayak) Mayak.closeModal();
   });
 
   document.addEventListener("DOMContentLoaded", () => {
