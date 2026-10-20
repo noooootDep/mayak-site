@@ -25,7 +25,7 @@
       </div>
     </section>
     <section class="px-4 sm:px-10 lg:px-14 py-16">
-      <div id="facts-list" class="max-w-[900px] mx-auto flex flex-col gap-5">
+      <div id="facts-list" class="max-w-[900px] mx-auto flex flex-col gap-5" hidden>
         <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
           <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 09.10.2026г.</p>
           <p class="leading-relaxed">Не все знают, что ультразвуковой контроль сварных соединений требует высокой квалификации дефектоскописта при небольших толщинах (около 4 мм) контролируемых элементов. Например, сварное соединение трубы 530х10мм проконтролировать легче, чем сварное соединение трубы 89х4мм.</p>
@@ -76,11 +76,16 @@
               return { date: (cells[0] || "").trim(), text: (cells[1] || "").trim() };
             }).filter(function (item) { return item.text; });
             facts.sort(function (a, b) { return stamp(b.date) - stamp(a.date); });
-            if (!facts.length) return;
-            document.getElementById("facts-list").innerHTML = facts.map(function (item) {
-              return '<article class="bg-white border border-line rounded-[20px] p-6 sm:p-8"><p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено ' + escapeHtml(item.date) + '</p><p class="leading-relaxed">' + escapeHtml(item.text) + '</p></article>';
-            }).join("");
-          }).catch(function () {});
+            var list = document.getElementById("facts-list");
+            if (facts.length) {
+              list.innerHTML = facts.map(function (item) {
+                return '<article class="bg-white border border-line rounded-[20px] p-6 sm:p-8"><p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено ' + escapeHtml(item.date) + '</p><p class="leading-relaxed">' + escapeHtml(item.text) + '</p></article>';
+              }).join("");
+            }
+            list.hidden = false;
+          }).catch(function () {
+            document.getElementById("facts-list").hidden = false;
+          });
         })();
       </script>
     </section>
