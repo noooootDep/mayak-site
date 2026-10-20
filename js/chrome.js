@@ -4,7 +4,7 @@
   const PHONE_MOBILE = "+7 (912) 466-92-77";
   const PHONE_MOBILE_TEL = "+79124669277";
   const EMAIL = "mayak.izh@yandex.ru";
-  const MAX_URL = "https://max.ru/";
+  const MAX_URL = "https://max.ru/u/f9LHodD0cOIQkxE0fzW2yE5lhqCztsEGjdQbT1GbRTjuusT78kCeIXJbZh8";
   const LICENSE = "Л043-00109-18/02671242";
   const LICENSE_DATE = "15.07.2025";
   const LNK = "ЛНК-056А0801";
