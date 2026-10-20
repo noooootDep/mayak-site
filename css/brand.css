@@ -210,17 +210,18 @@ html.is-leaving #page-curtain {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 150px 28px 24px;
+  padding: 150px 20px 24px;
 }
 
 .stage-grid {
-  width: min(1280px, 100%);
+  width: min(1180px, 100%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: clamp(24px, 3vw, 48px);
   align-items: center;
   min-width: 0;
+  justify-items: start;
 }
 .stage-grid > * { min-width: 0; }
 
@@ -246,9 +247,10 @@ html.is-leaving #page-curtain {
 
 .stage h1 {
   font-size: clamp(32px, 4vw, 48px);
-  max-width: 12ch;
+  max-width: 22ch;
   color: var(--ink);
-  margin-bottom: 18px;
+  margin: 0 0 18px;
+  text-align: left;
   overflow-wrap: break-word;
 }
 
@@ -259,6 +261,7 @@ html.is-leaving #page-curtain {
   line-height: 1.6;
   margin-bottom: 28px;
 }
+.stage .lead { max-width: 62ch; }
 
 .stage-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
 
@@ -754,19 +757,23 @@ main .overflow-x-auto.border {
 #quick-dock { transition: opacity 0.2s ease; }
 #quick-dock.is-parked { opacity: 0; pointer-events: none; }
 
-@media (max-height: 800px) and (min-width: 1024px) {
-  .stage { padding-top: 142px; padding-bottom: 12px; }
-  .stage-grid {
-    width: max-content;
-    max-width: 100%;
-    grid-template-columns: minmax(300px, 520px) auto;
+@media (min-width: 1024px) {
+  .stage { padding-left: 0; padding-right: 0; }
+  .stage-grid,
+  .stage-metrics {
+    width: min(1440px, 100%);
+    padding-left: calc(3.5rem + 60px);
+    padding-right: 3.5rem;
+    box-sizing: border-box;
   }
-  .stage h1 { font-size: 36px; margin-bottom: 12px; }
-  .kicker { margin-bottom: 10px; }
-  .lead { font-size: 15px; line-height: 1.5; margin-bottom: 16px; }
-  .stage-actions { margin-bottom: 16px; }
-  .stage-hero-img img { height: calc(100svh - 158px); }
-  .stage-metrics { margin-top: 12px; }
+}
+
+@media (max-height: 900px) and (min-width: 1024px) {
+  .stage { padding-top: 150px; padding-bottom: 0; }
+  .stage-hero-img img {
+    height: calc(100svh - 169px);
+    max-width: none;
+  }
 }
 
 @media (max-width: 1023px) {
