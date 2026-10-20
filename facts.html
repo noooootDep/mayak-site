@@ -25,18 +25,22 @@
       </div>
     </section>
     <section class="px-4 sm:px-10 lg:px-14 py-16">
-      <div id="facts-list" class="max-w-[900px] mx-auto flex flex-col gap-5" hidden>
+      <div id="facts-list" class="max-w-[900px] mx-auto flex flex-col gap-5">
         <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
-          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 09.10.2026г.</p>
-          <p class="leading-relaxed">Не все знают, что ультразвуковой контроль сварных соединений требует высокой квалификации дефектоскописта при небольших толщинах (около 4 мм) контролируемых элементов. Например, сварное соединение трубы 530х10мм проконтролировать легче, чем сварное соединение трубы 89х4мм.</p>
+          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 09.10.2026</p>
+          <p class="leading-relaxed">Тест</p>
         </article>
         <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
-          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 02.10.2026г.</p>
+          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 02.10.2026</p>
           <p class="leading-relaxed">Не все знают, что если в паспорте или руководстве по эксплуатации технического устройства не указан его срок службы, то техническое устройство подлежит экспертизе промышленной безопасности, если фактический срок его службы превышает десять лет в соответствии с п. 4 ФНиП в области ПБ «Правила проведения экспертизы промышленной безопасности».</p>
         </article>
         <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
-          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 25.09.2026г.</p>
+          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 25.09.2026</p>
           <p class="leading-relaxed">Не все знают, что газопровод — это сооружение. Поэтому, в случае отсутствия проектной документации на газопровод, либо отсутствия в проектной документации данных о сроке эксплуатации необходимо проводить экспертизу промышленной безопасности данного газопровода в соответствии с п.5 ФНиП в области ПБ «Правила проведения экспертизы промышленной безопасности».</p>
+        </article>
+        <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
+          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 25.09.2026</p>
+          <p class="leading-relaxed">Тестетететет</p>
         </article>
       </div>
       <script>
@@ -77,15 +81,16 @@
             }).filter(function (item) { return item.text; });
             facts.sort(function (a, b) { return stamp(b.date) - stamp(a.date); });
             var list = document.getElementById("facts-list");
-            if (facts.length) {
-              list.innerHTML = facts.map(function (item) {
-                return '<article class="bg-white border border-line rounded-[20px] p-6 sm:p-8"><p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено ' + escapeHtml(item.date) + '</p><p class="leading-relaxed">' + escapeHtml(item.text) + '</p></article>';
-              }).join("");
-            }
-            list.hidden = false;
-          }).catch(function () {
-            document.getElementById("facts-list").hidden = false;
-          });
+            var shown = Array.prototype.map.call(list.querySelectorAll("article"), function (article) {
+              var bits = article.querySelectorAll("p");
+              return (bits[0] ? bits[0].textContent.replace("Размещено ", "") : "") + "\n" + (bits[1] ? bits[1].textContent : "");
+            }).join("\n");
+            var next = facts.map(function (item) { return item.date + "\n" + item.text; }).join("\n");
+            if (!facts.length || shown === next) return;
+            list.innerHTML = facts.map(function (item) {
+              return '<article class="bg-white border border-line rounded-[20px] p-6 sm:p-8"><p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено ' + escapeHtml(item.date) + '</p><p class="leading-relaxed">' + escapeHtml(item.text) + '</p></article>';
+            }).join("");
+          }).catch(function () {});
         })();
       </script>
     </section>
