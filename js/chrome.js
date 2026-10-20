@@ -46,21 +46,21 @@
 
   function topBar() {
     return `
-      <div class="fixed top-0 left-0 w-full z-50 bg-[#0e1a15] text-[#c5d5cc] text-[13px] font-mono-tech py-2 px-4 sm:px-8 lg:px-14 border-b border-white/10">
-        <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-3">
-          <div class="flex items-center gap-2 sm:gap-3 overflow-hidden whitespace-nowrap">
-            <span class="text-white font-medium">ООО «Маяк»</span>
-            <span class="text-[#5a534c]">|</span>
-            <a href="./${LICENSE_FILE}" target="_blank" class="hover:text-white underline-offset-2 hover:underline" title="Выписка из реестра лицензий">Лицензия № ${LICENSE} от ${LICENSE_DATE}</a>
-            <span class="text-[#5a534c] hidden md:inline">|</span>
-            <a href="./${LNK_FILE}" target="_blank" class="hidden md:inline hover:text-white underline-offset-2 hover:underline" title="Свидетельство об аттестации ЛНК">Свидетельство ЛНК № ${LNK} от ${LNK_DATE}</a>
-            <span class="text-[#5a534c] hidden lg:inline">|</span>
-            <a href="https://www.gosnadzor.ru/" target="_blank" rel="noopener" class="hidden lg:inline hover:text-white underline-offset-2 hover:underline">Ростехнадзор</a>
+      <div class="topbar fixed top-0 left-0 w-full z-50 bg-[#0e1a15] text-[#c5d5cc] text-[13px] font-mono-tech py-2 px-4 sm:px-8 lg:px-14 border-b border-white/10">
+        <div class="topbar-row max-w-[1440px] mx-auto">
+          <div class="topbar-left">
+            <span class="text-white font-medium shrink-0">ООО «Маяк»</span>
+            <span class="topbar-extra text-[#5a534c]">|</span>
+            <a href="./${LICENSE_FILE}" target="_blank" class="topbar-extra hover:text-white underline-offset-2 hover:underline" title="Выписка из реестра лицензий">Лицензия № ${LICENSE} от ${LICENSE_DATE}</a>
+            <span class="topbar-wide text-[#5a534c]">|</span>
+            <a href="./${LNK_FILE}" target="_blank" class="topbar-wide hover:text-white underline-offset-2 hover:underline" title="Свидетельство об аттестации ЛНК">Свидетельство ЛНК № ${LNK} от ${LNK_DATE}</a>
+            <span class="topbar-wide text-[#5a534c]">|</span>
+            <a href="https://www.gosnadzor.ru/" target="_blank" rel="noopener" class="topbar-wide hover:text-white underline-offset-2 hover:underline">Ростехнадзор</a>
           </div>
-          <div class="flex items-center gap-3 sm:gap-5 shrink-0">
-            <span class="hidden sm:inline">Пн–Пт 7:00–16:00 (МСК)</span>
-            <a href="mailto:${EMAIL}" class="hover:text-white">${EMAIL}</a>
-            <a href="${MAX_URL}" target="_blank" rel="noopener" class="inline-flex items-center" title="Написать в MAX, ${PHONE_MOBILE}"><img src="./assets/images/max-icon.png" alt="MAX" class="max-icon"/></a>
+          <div class="topbar-right">
+            <span class="topbar-hours">Пн–Пт 7:00–16:00 (МСК)</span>
+            <a href="mailto:${EMAIL}" class="topbar-mail hover:text-white">${EMAIL}</a>
+            <a href="${MAX_URL}" target="_blank" rel="noopener" class="inline-flex items-center shrink-0" title="Написать в MAX, ${PHONE_MOBILE}"><img src="./assets/images/max-icon.png" alt="MAX" class="max-icon"/></a>
           </div>
         </div>
       </div>`;

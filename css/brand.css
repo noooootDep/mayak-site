@@ -73,6 +73,43 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 #site-header a[href^="tel:"] { color: #12201a; }
 #site-header .nav-link { font-size: 14px; font-weight: 700; }
 .max-icon { width: 22px; height: 22px; display: block; object-fit: contain; }
+
+.topbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.topbar-right { flex: 0 0 auto; gap: 10px; }
+.topbar-left { flex: 1 1 auto; overflow: hidden; white-space: nowrap; }
+.topbar-left a,
+.topbar-mail { flex-shrink: 0; }
+.topbar-mail {
+  max-width: 58vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topbar-hours,
+.topbar-wide { display: none; }
+@media (min-width: 1100px) {
+  .topbar-hours { display: inline; }
+}
+@media (min-width: 1440px) {
+  .topbar-wide { display: inline; }
+}
+@media (max-width: 720px) {
+  .topbar-extra { display: none; }
+  .topbar-mail { max-width: 52vw; }
+}
 #site-header .nav-link.is-active { color: #1f6b45; }
 #site-header a.header-ask {
   background: #1f6b45;
