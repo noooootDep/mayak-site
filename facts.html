@@ -25,22 +25,17 @@
       </div>
     </section>
     <section class="px-4 sm:px-10 lg:px-14 py-16">
-      <div id="facts-list" class="max-w-[900px] mx-auto flex flex-col gap-5">
+      <div id="facts-list" class="max-w-[900px] mx-auto flex flex-col gap-5" aria-busy="true">
         <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
-          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 09.10.2026</p>
-          <p class="leading-relaxed">Тест</p>
+          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-4">Загрузка</p>
+          <div class="h-3 w-2/3 rounded-full bg-[#e7efe8] mb-3"></div>
+          <div class="h-3 w-full rounded-full bg-[#e7efe8] mb-3"></div>
+          <div class="h-3 w-5/6 rounded-full bg-[#e7efe8]"></div>
         </article>
         <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
-          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 02.10.2026</p>
-          <p class="leading-relaxed">Не все знают, что если в паспорте или руководстве по эксплуатации технического устройства не указан его срок службы, то техническое устройство подлежит экспертизе промышленной безопасности, если фактический срок его службы превышает десять лет в соответствии с п. 4 ФНиП в области ПБ «Правила проведения экспертизы промышленной безопасности».</p>
-        </article>
-        <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
-          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 25.09.2026</p>
-          <p class="leading-relaxed">Не все знают, что газопровод — это сооружение. Поэтому, в случае отсутствия проектной документации на газопровод, либо отсутствия в проектной документации данных о сроке эксплуатации необходимо проводить экспертизу промышленной безопасности данного газопровода в соответствии с п.5 ФНиП в области ПБ «Правила проведения экспертизы промышленной безопасности».</p>
-        </article>
-        <article class="bg-white border border-line rounded-[20px] p-6 sm:p-8">
-          <p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено 25.09.2026</p>
-          <p class="leading-relaxed">Тестетететет</p>
+          <div class="h-3 w-1/3 rounded-full bg-[#e7efe8] mb-4"></div>
+          <div class="h-3 w-full rounded-full bg-[#e7efe8] mb-3"></div>
+          <div class="h-3 w-4/5 rounded-full bg-[#e7efe8]"></div>
         </article>
       </div>
       <script>
@@ -81,16 +76,19 @@
             }).filter(function (item) { return item.text; });
             facts.sort(function (a, b) { return stamp(b.date) - stamp(a.date); });
             var list = document.getElementById("facts-list");
-            var shown = Array.prototype.map.call(list.querySelectorAll("article"), function (article) {
-              var bits = article.querySelectorAll("p");
-              return (bits[0] ? bits[0].textContent.replace("Размещено ", "") : "") + "\n" + (bits[1] ? bits[1].textContent : "");
-            }).join("\n");
-            var next = facts.map(function (item) { return item.date + "\n" + item.text; }).join("\n");
-            if (!facts.length || shown === next) return;
+            list.removeAttribute("aria-busy");
+            if (!facts.length) {
+              list.innerHTML = '<p class="text-muted">Пока нет заметок.</p>';
+              return;
+            }
             list.innerHTML = facts.map(function (item) {
               return '<article class="bg-white border border-line rounded-[20px] p-6 sm:p-8"><p class="text-[12px] uppercase tracking-widest text-rose-deep font-bold mb-3">Размещено ' + escapeHtml(item.date) + '</p><p class="leading-relaxed">' + escapeHtml(item.text) + '</p></article>';
             }).join("");
-          }).catch(function () {});
+          }).catch(function () {
+            var list = document.getElementById("facts-list");
+            list.removeAttribute("aria-busy");
+            list.innerHTML = '<p class="text-muted">Не удалось загрузить заметки. Обновите страницу.</p>';
+          });
         })();
       </script>
     </section>
