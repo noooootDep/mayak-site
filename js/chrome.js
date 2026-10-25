@@ -4,8 +4,8 @@
   const PHONE_MOBILE = "+7 (912) 466-92-77";
   const PHONE_MOBILE_TEL = "+79124669277";
   const EMAIL = "mayak.izh@yandex.ru";
-  // Адрес веб-приложения из tools/form-mail.gs; пока пустой, форма уходит через formsubmit.
-  const FORM_URL = "";
+  // Адрес веб-приложения из tools/form-mail.gs; если пустой, форма уходит через formsubmit.
+  const FORM_URL = "https://script.google.com/macros/s/AKfycbxqSXB6JlHIFyoesfsiQSLCgiEoxUZ9gumQcbf-LS9DP73s6XKTNPWQCVq_5OS9Cm5u/exec";
   const MAX_URL = "https://max.ru/u/f9LHodD0cOIQkxE0fzW2yE5lhqCztsEGjdQbT1GbRTjuusT78kCeIXJbZh8";
   const LICENSE = "Л043-00109-18/02671242";
   const LICENSE_DATE = "15.07.2025";
@@ -300,7 +300,7 @@
           button.textContent = "Отправляем…";
         }
         const controller = window.AbortController ? new AbortController() : null;
-        const timer = controller ? setTimeout(() => controller.abort(), 15000) : 0;
+        const timer = controller ? setTimeout(() => controller.abort(), 30000) : 0;
         const request = FORM_URL
           ? fetch(FORM_URL, {
             method: "POST",
