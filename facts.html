@@ -71,7 +71,9 @@
             if (!res.ok) throw new Error("sheet");
             return res.text();
           }).then(function (text) {
-            var facts = parseCsv(text).slice(1).map(function (cells) {
+            var rows = parseCsv(text);
+            if (rows.length && !stamp(rows[0][0])) rows.shift();
+            var facts = rows.map(function (cells) {
               return { date: (cells[0] || "").trim(), text: (cells[1] || "").trim() };
             }).filter(function (item) { return item.text; });
             facts.sort(function (a, b) { return stamp(b.date) - stamp(a.date); });
