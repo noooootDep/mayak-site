@@ -160,6 +160,7 @@
           </div>
           <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 font-mono-tech text-[13px] uppercase tracking-[0.14em] text-[#9c9488]">
             <span>© ООО «Маяк»</span>
+            <a class="hover:text-white normal-case tracking-normal" href="./privacy.html">Политика обработки персональных данных</a>
           </div>
         </div>
       </footer>
