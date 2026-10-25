@@ -180,6 +180,7 @@
           <div class="w-14 h-14 mx-auto mb-4 rounded-full border border-[#1f6b45] text-[#1f6b45] flex items-center justify-center text-2xl">✓</div>
           <h3 id="modal-title" class="font-display text-2xl mb-2">Вопрос принят</h3>
           <p id="modal-text" class="text-sm text-[#6b6560] mb-6">Вопрос отправлен на почту компании. Ответим в рабочее время, Пн–Пт 7:00–16:00 (МСК).</p>
+          <a id="modal-mail" style="display:none" class="w-full py-3 mb-2 bg-[#1f6b45] text-white font-mono-tech text-xs uppercase tracking-widest hover:bg-[#134830]" href="mailto:${EMAIL}">Отправить письмом</a>
           <button id="modal-close-btn" class="w-full py-3 bg-[#141414] text-white font-mono-tech text-xs uppercase tracking-widest">Закрыть</button>
         </div>
       </div>`;
@@ -279,19 +280,37 @@
           const line = String(value).trim();
           if (line) payload[key === "q" ? "message" : key] = line;
         });
-        if (button) button.disabled = true;
+        const mail = document.getElementById("modal-mail");
+        const labels = { name: "Имя", company: "Организация", phone: "Телефон", email: "Почта", type: "Тип работ", message: "Вопрос" };
+        const letter = Object.keys(labels).filter((key) => payload[key]).map((key) => labels[key] + ": " + payload[key]).join("\n");
+        if (mail) {
+          mail.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(payload._subject) + "&body=" + encodeURIComponent(letter);
+          mail.style.display = "none";
+        }
+        function failed() {
+          if (title) title.textContent = "Не отправилось";
+          if (text) text.textContent = "Форма сейчас не смогла доставить вопрос. Нажмите «Отправить письмом» — откроется почта с уже заполненным текстом, — или позвоните " + PHONE_CITY + ".";
+          if (mail) mail.style.display = "block";
+        }
+        const label = button ? button.textContent : "";
+        if (button) {
+          button.disabled = true;
+          button.textContent = "Отправляем…";
+        }
+        const controller = window.AbortController ? new AbortController() : null;
+        const timer = controller ? setTimeout(() => controller.abort(), 15000) : 0;
         fetch("https://formsubmit.co/ajax/" + EMAIL, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
+          signal: controller ? controller.signal : undefined
         }).then((res) => res.json().then((body) => ({ ok: res.ok, body }))).then(({ ok, body }) => {
           const message = (body && (body.message || body.success)) || "";
           if (String(message).toLowerCase().indexOf("activation") !== -1 || String(message).toLowerCase().indexOf("activate") !== -1) {
             if (title) title.textContent = "Нужно одно подтверждение";
             if (text) text.textContent = "На " + EMAIL + " ушло письмо со ссылкой. Его нужно открыть один раз, после этого вопросы с сайта начнут приходить сами.";
-          } else if (!ok) {
-            if (title) title.textContent = "Не отправилось";
-            if (text) text.textContent = "Напишите на " + EMAIL + " или позвоните. Форма сейчас не смогла доставить письмо.";
+          } else if (!ok || String(body && body.success) === "false") {
+            failed();
           } else {
             if (title) title.textContent = "Вопрос принят";
             if (text) text.textContent = "Вопрос отправлен на почту компании. Ответим в рабочее время, Пн–Пт 7:00–16:00 (МСК).";
@@ -299,11 +318,14 @@
           }
           Mayak.openModal();
         }).catch(() => {
-          if (title) title.textContent = "Не отправилось";
-          if (text) text.textContent = "Напишите на " + EMAIL + " или позвоните. Форма сейчас не смогла доставить письмо.";
+          failed();
           Mayak.openModal();
         }).finally(() => {
-          if (button) button.disabled = false;
+          clearTimeout(timer);
+          if (button) {
+            button.disabled = false;
+            button.textContent = label;
+          }
         });
       });
     });
