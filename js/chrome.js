@@ -4,6 +4,8 @@
   const PHONE_MOBILE = "+7 (912) 466-92-77";
   const PHONE_MOBILE_TEL = "+79124669277";
   const EMAIL = "mayak.izh@yandex.ru";
+  // Адрес веб-приложения из tools/form-mail.gs; пока пустой, форма уходит через formsubmit.
+  const FORM_URL = "";
   const MAX_URL = "https://max.ru/u/f9LHodD0cOIQkxE0fzW2yE5lhqCztsEGjdQbT1GbRTjuusT78kCeIXJbZh8";
   const LICENSE = "Л043-00109-18/02671242";
   const LICENSE_DATE = "15.07.2025";
@@ -299,12 +301,20 @@
         }
         const controller = window.AbortController ? new AbortController() : null;
         const timer = controller ? setTimeout(() => controller.abort(), 15000) : 0;
-        fetch("https://formsubmit.co/ajax/" + EMAIL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(payload),
-          signal: controller ? controller.signal : undefined
-        }).then((res) => res.json().then((body) => ({ ok: res.ok, body }))).then(({ ok, body }) => {
+        const request = FORM_URL
+          ? fetch(FORM_URL, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload),
+            signal: controller ? controller.signal : undefined
+          })
+          : fetch("https://formsubmit.co/ajax/" + EMAIL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(payload),
+            signal: controller ? controller.signal : undefined
+          });
+        request.then((res) => res.json().then((body) => ({ ok: res.ok && !(body && body.ok === false), body }))).then(({ ok, body }) => {
           const message = (body && (body.message || body.success)) || "";
           if (String(message).toLowerCase().indexOf("activation") !== -1 || String(message).toLowerCase().indexOf("activate") !== -1) {
             if (title) title.textContent = "Нужно одно подтверждение";
