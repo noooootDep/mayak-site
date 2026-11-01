@@ -169,8 +169,8 @@
       <aside id="quick-dock" class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
         <button id="back-to-top" class="w-10 h-10 rounded-full bg-white border border-[#ddd4c6] opacity-0 pointer-events-none" aria-label="Наверх">↑</button>
         <div class="bg-white border border-[#ddd4c6] shadow-xl p-1.5 flex items-center gap-1.5 rounded-full">
-          <a href="tel:${PHONE_CITY_TEL}" class="flex items-center gap-2 pl-3 pr-3 py-2 rounded-full bg-[#141414] text-white font-mono-tech text-xs font-bold">
-            <span class="w-2 h-2 rounded-full bg-[#1f6b45] animate-pulse"></span>
+          <a href="tel:${PHONE_CITY_TEL}" aria-label="Позвонить ${PHONE_CITY}" class="flex items-center gap-2 pl-3 pr-3 py-2 rounded-full bg-[#141414] text-white font-mono-tech text-xs font-bold">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
             <span class="hidden sm:inline">${PHONE_CITY}</span>
           </a>
           <a href="${MAX_URL}" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-[#f7f4ee] border border-[#ddd4c6] flex items-center justify-center" title="Написать в MAX, ${PHONE_MOBILE}"><img src="./assets/images/max-icon.png" alt="MAX" class="max-icon"/></a>
